@@ -1,0 +1,40 @@
+<svg width="300" height="120" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background (transparent) -->
+  <rect width="300" height="120" fill="transparent"/>
+  
+  <!-- Gift Tag Frame -->
+  <!-- Top horizontal line -->
+  <line x1="30" y1="25" x2="270" y2="25" stroke="#B8860B" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Bottom horizontal line -->
+  <line x1="30" y1="95" x2="270" y2="95" stroke="#B8860B" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Left vertical line -->
+  <line x1="30" y1="20" x2="30" y2="100" stroke="#B8860B" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Right vertical line -->
+  <line x1="270" y1="20" x2="270" y2="100" stroke="#B8860B" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Bow at the top center -->
+  <g transform="translate(150, 25)">
+    <!-- Left bow loop -->
+    <path d="M -8 -5 Q -12 -8 -8 -12 Q -4 -8 -8 -5" stroke="#B8860B" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- Right bow loop -->
+    <path d="M 8 -5 Q 12 -8 8 -12 Q 4 -8 8 -5" stroke="#B8860B" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- Bow center knot -->
+    <rect x="-2" y="-3" width="4" height="6" stroke="#B8860B" stroke-width="2" fill="none"/>
+    <!-- Bow tails -->
+    <line x1="-8" y1="-12" x2="-12" y2="-18" stroke="#B8860B" stroke-width="2" stroke-linecap="round"/>
+    <line x1="8" y1="-12" x2="12" y2="-18" stroke="#B8860B" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Main Text: GOLDEN TAG -->
+  <text x="150" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="none" stroke="#B8860B" stroke-width="1.5">
+    GOLDEN TAG
+  </text>
+  
+  <!-- Sub Text: CORPORATE GIFTS -->
+  <text x="150" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="none" stroke="#B8860B" stroke-width="1.2">
+    CORPORATE GIFTS
+  </text>
+</svg>
