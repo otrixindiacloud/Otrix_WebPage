@@ -1,25 +1,45 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 export default function SecondaryHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const navigationItems = [
+    { href: "/", label: "HOME" },
+    { href: "/about", label: "ABOUT" },
     { href: "/products", label: "PRODUCTS" },
-    { href: "/store", label: "STORE" },
     { href: "/e-catalog", label: "E-CATALOG" },
     { href: "/contact", label: "CONTACT" }
   ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 10); // Make fixed when scrolling more than 10px
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (isScrolled) {
+      document.body.style.paddingTop = '64px'; // 64px is the height of secondary header
+    } else {
+      document.body.style.paddingTop = '0px';
+    }
+  }, [isScrolled]);
 
   return (
     <motion.header 
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="bg-background border-b border-border shadow-sm"
+      className={`${isScrolled ? 'fixed top-0 left-0 right-0 z-50' : ''} bg-background border-b border-border shadow-sm`}
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between h-16 px-4">

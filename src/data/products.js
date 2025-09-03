@@ -16,7 +16,7 @@ const products = [
     category: "Electronics",
     price: 11499,
     description: "5G, 6000mAh battery, 90Hz display",
-    image: "/images/galaxy-m14.jpg",
+    image: "/images/Samsung Galaxy M14.jpg",
   },
   {
     id: 3,
@@ -56,7 +56,7 @@ const products = [
     category: "Electronics",
     price: 45999,
     description: "Intel i5, 8GB RAM, 512GB SSD, Windows 11",
-    image: "/images/dell-laptop.jpg",
+    image: "/images/Laptop Sleeve.jpg",
   },
   {
     id: 24,

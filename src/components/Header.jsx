@@ -15,10 +15,21 @@ export default function Header() {
   const [searchQuery, setSearchQuery] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { user, logout } = useAuth();
 
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 10); // Hide header when scrolling more than 10px
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   // Show a loading state until mounted to prevent hydration issues
@@ -51,11 +62,11 @@ export default function Header() {
   return (
     <motion.header 
       initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      animate={{ y: isScrolled ? -100 : 0, opacity: isScrolled ? 0 : 1 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
       className="bg-background border-b border-border shadow-sm"
     >
-      <div className="max-w-7xl mx-auto px-2 pl-1">
+      <div className="max-w-7xl mx-auto px-2" >
         {/* Main Header Content */}
         <motion.div 
           className="flex items-center h-20"
@@ -72,7 +83,7 @@ export default function Header() {
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.2 }}
             >
-              <Link href="/" className="flex items-center">
+              <Link href="/" className="flex items-center" style={{ marginLeft: '-105px'}}>
                 <Image
                   src="/WhatsApp Image 2025-09-02 at 13.23.47_d30ef7bb.jpg"
                   alt="Golden Tag Corporate Gifts"
@@ -225,8 +236,10 @@ export default function Header() {
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <Link href="/account" className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200 font-medium text-sm">
-                      Profile
+                    <Link href="/account" className="w-10 h-10 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center" title="Profile" style={{marginRight:-90}} >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                      </svg>
                     </Link>
                   </motion.div>
                   <motion.div
@@ -238,9 +251,12 @@ export default function Header() {
                         logout();
                         setIsMobileMenuOpen(false);
                       }}
-                      className="px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 transition-colors duration-200 font-medium text-sm"
+                      className="w-10 h-10 bg-gray-600 text-white rounded-md hover:bg-gray-700 transition-colors duration-200 flex items-center justify-center"
+                      title="Logout" style={{ marginRight:-300,marginLeft:40}}
                     >
-                      Logout
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                      </svg>
                     </button>
                   </motion.div>
                 </motion.div>

@@ -178,33 +178,39 @@ export default function Footer() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="flex items-center justify-center mb-3">
-            <div className="w-2 h-2 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
-            <div className="mx-2 w-2 h-2 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
+          {/* Center - Copyright */}
+          <div className="text-center">
+            <div className="flex items-center justify-center mb-3">
+              <div className="w-2 h-2 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
+              <div className="mx-2 w-2 h-2 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
+            </div>
+            
+            <p className="text-gray-400 text-sm font-medium">
+              Copyright 2025 © Golden Tag Corporate Gifts. All rights reserved.
+            </p>
           </div>
-          
-          <p className="text-gray-400 text-sm font-medium">
-            Copyright 2025 © Golden Tag Corporate Gifts. All rights reserved.
-          </p>
+
+          {/* Center - Back to Top Button */}
+          <div className="flex justify-end mt-4">
+            <motion.button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="group relative p-3 rounded-full bg-gray-800 hover:bg-gray-700 transition-all duration-300 border border-gray-700 hover:border-gray-600"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              title="Back to top"
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <svg className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+              </svg>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/20 to-orange-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </motion.button>
+          </div>
         </motion.div>
       </div>
-
-      {/* Back to Top Button - Fixed Position */}
-      <motion.button
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-6 right-6 z-50 group relative p-3 rounded-full bg-gray-800 hover:bg-gray-700 transition-all duration-300 border border-gray-700 hover:border-gray-600"
-        whileHover={{ scale: 1.05, y: -2 }}
-        whileTap={{ scale: 0.95 }}
-        title="Back to top"
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.3, delay: 0.5 }}
-      >
-        <svg className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-        </svg>
-        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/20 to-orange-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      </motion.button>
     </motion.footer>
   );
 }

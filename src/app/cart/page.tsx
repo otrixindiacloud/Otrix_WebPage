@@ -184,8 +184,8 @@ export default function Cart() {
         {cartItems.length > 0 && (
           <div className="mt-16">
             <div className="flex items-center justify-between mb-8">
-              <h2 className="text-3xl font-bold text-foreground">Recently Viewed</h2>
-              <div className="flex items-center space-x-2 text-muted-foreground">
+              <h2 className="text-3xl font-bold text-gray-800">Recently Viewed</h2>
+              <div className="flex items-center space-x-2 text-gray-500">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -195,61 +195,67 @@ export default function Cart() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="group bg-card border border-border rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-2 hover:border-primary/20 relative">
+                <div key={i} className="group bg-white border-2 border-gray-100 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:border-amber-200 hover:-translate-y-2 relative">
                   {/* Product Image Container */}
-                  <div className="relative h-48 bg-gradient-to-br from-muted to-muted/50 overflow-hidden">
+                  <div className="aspect-square bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center relative overflow-hidden">
                     {/* Image Placeholder with Icon */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-24 h-24 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center shadow-lg">
-                        <svg className="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
+                      <div className="w-32 h-32 bg-gradient-to-br from-amber-100 to-orange-100 rounded-xl flex items-center justify-center shadow-lg">
+                        <span className="text-amber-600 text-sm font-semibold">Product Image</span>
                       </div>
                     </div>
                     
                     {/* Golden Tag Badge */}
-                    <div className="absolute top-3 right-3 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground text-xs px-3 py-1.5 rounded-full font-bold shadow-lg backdrop-blur-sm">
+                    <div className="absolute top-3 right-3 bg-gradient-to-r from-amber-500 to-orange-600 text-white text-xs px-3 py-1 rounded-full font-bold shadow-lg">
                       GT
                     </div>
                     
                     {/* Category Badge */}
                     <div className="absolute top-3 left-3">
-                      <span className="bg-background/90 backdrop-blur-sm text-foreground text-xs px-2.5 py-1 rounded-full border border-border font-medium shadow-sm">
+                      <span className="bg-white/90 backdrop-blur-sm text-amber-800 text-xs px-2 py-1 rounded-full border border-amber-200 font-medium">
                         🛍️ Product
                       </span>
                     </div>
                     
                     {/* Hover Overlay */}
-                    <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-amber-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                   
                   {/* Product Info */}
-                  <div className="p-5">
-                    <div className="mb-3">
-                      <h4 className="font-bold text-card-foreground text-lg mb-1 group-hover:text-primary transition-colors duration-300">
-                        Premium Product {i}
-                      </h4>
-                      <p className="text-muted-foreground text-sm">High-quality corporate gift</p>
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="bg-amber-100 text-amber-800 text-xs px-3 py-1 rounded-full border border-amber-200 font-medium">
+                        Premium
+                      </span>
+                      <span className="text-amber-600 text-xs font-bold bg-amber-50 px-2 py-1 rounded">STORE</span>
                     </div>
+                    <h4 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-amber-600 transition-colors line-clamp-2">
+                      Premium Product {i}
+                    </h4>
+                    <p className="text-gray-600 text-sm mb-4 line-clamp-2">High-quality corporate gift</p>
                     
-                    {/* Price and Rating */}
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-center space-x-1">
-                        <span className="text-2xl font-bold text-primary">$49.99</span>
-                        <span className="text-muted-foreground text-sm line-through">$69.99</span>
-                      </div>
-                      <div className="flex items-center space-x-1">
+                    {/* Rating */}
+                    <div className="flex items-center mb-4">
+                      <div className="flex mr-2">
                         {[...Array(5)].map((_, starIndex) => (
                           <svg key={starIndex} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                           </svg>
                         ))}
-                        <span className="text-muted-foreground text-xs ml-1">(4.8)</span>
+                        <span className="text-sm text-gray-500 ml-1">(4.8)</span>
+                      </div>
+                    </div>
+                    
+                    {/* Price */}
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center space-x-2">
+                        <span className="text-2xl font-bold text-amber-600">$49.99</span>
+                        <span className="text-gray-400 text-sm line-through">$69.99</span>
                       </div>
                     </div>
                     
                     {/* Add to Cart Button */}
-                    <button className="w-full bg-primary text-primary-foreground py-3 px-4 rounded-xl text-sm font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 group-hover:scale-[1.02] transform">
+                    <button className="w-full bg-gradient-to-r from-amber-500 to-orange-600 text-white py-3 px-4 rounded-xl text-sm font-semibold hover:from-amber-600 hover:to-orange-700 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/25 group-hover:scale-[1.02] transform">
                       <span className="flex items-center justify-center space-x-2">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5m6-5v6a2 2 0 11-4 0v-6m4 0V9a2 2 0 00-2-2H9a2 2 0 00-2 2v4.01" />
@@ -260,7 +266,7 @@ export default function Cart() {
                   </div>
                   
                   {/* Bottom Accent Line */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-primary/50 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 via-amber-400 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
               ))}
             </div>

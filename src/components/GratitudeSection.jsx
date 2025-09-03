@@ -5,11 +5,12 @@ export default function GratitudeSection() {
     {
       id: 1,
       title: "GRATITUDE GIFTS FOR CLIENTS",
-      icon: (
-        <div className="w-20 h-20 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center border-2 border-gray-300 shadow-lg">
+      icon: "../images/gratitude/client-gifts.jpg",
+      fallbackIcon: (
+        <div className="w-20 h-20 bg-gradient-to-br from-amber-100 to-orange-100 rounded-full flex items-center justify-center border-2 border-amber-300 shadow-lg">
           <div className="text-center">
-            <div className="w-8 h-8 bg-gray-400 rounded-full mb-1"></div>
-            <div className="w-4 h-2 bg-gray-400 rounded mx-auto"></div>
+            <div className="w-8 h-8 bg-amber-400 rounded-full mb-1"></div>
+            <div className="w-4 h-2 bg-amber-400 rounded mx-auto"></div>
           </div>
         </div>
       ),
@@ -18,11 +19,12 @@ export default function GratitudeSection() {
     {
       id: 2,
       title: "EMPLOYEE APPRECIATION GIFTS",
-      icon: (
-        <div className="w-20 h-20 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center border-2 border-gray-300 shadow-lg">
+      icon: "/images/gratitude/employee-appreciation.jpg",
+      fallbackIcon: (
+        <div className="w-20 h-20 bg-gradient-to-br from-amber-100 to-orange-100 rounded-full flex items-center justify-center border-2 border-amber-300 shadow-lg">
           <div className="text-center">
-            <div className="w-12 h-8 bg-gray-400 rounded mb-1"></div>
-            <div className="w-8 h-2 bg-gray-400 rounded mx-auto"></div>
+            <div className="w-12 h-8 bg-amber-400 rounded mb-1"></div>
+            <div className="w-8 h-2 bg-amber-400 rounded mx-auto"></div>
           </div>
         </div>
       ),
@@ -31,11 +33,12 @@ export default function GratitudeSection() {
     {
       id: 3,
       title: "TOKENS FOR EVENTS OR PARTNERS",
-      icon: (
-        <div className="w-20 h-20 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center border-2 border-gray-300 shadow-lg">
+      icon: "/images/gratitude/event-tokens.jpg",
+      fallbackIcon: (
+        <div className="w-20 h-20 bg-gradient-to-br from-amber-100 to-orange-100 rounded-full flex items-center justify-center border-2 border-amber-300 shadow-lg">
           <div className="text-center">
-            <div className="w-10 h-10 bg-gray-400 rounded-full mb-1"></div>
-            <div className="w-6 h-2 bg-gray-400 rounded mx-auto"></div>
+            <div className="w-10 h-10 bg-amber-400 rounded-full mb-1"></div>
+            <div className="w-6 h-2 bg-amber-400 rounded mx-auto"></div>
           </div>
         </div>
       ),
@@ -76,7 +79,21 @@ export default function GratitudeSection() {
               </div>
               
               <div className="flex justify-center relative z-10 mb-6">
-                {type.icon}
+                <div className="relative">
+                  <img 
+                    src={type.icon} 
+                    alt={type.title}
+                    className="w-16 h-16 object-contain"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      const fallback = e.target.parentElement.querySelector('.fallback-icon');
+                      if (fallback) fallback.style.display = 'block';
+                    }}
+                  />
+                  <div className="fallback-icon hidden">
+                    {type.fallbackIcon.props.children}
+                  </div>
+                </div>
                 <div className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs px-2 py-1 rounded-full font-bold transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg">
                   GT
                 </div>

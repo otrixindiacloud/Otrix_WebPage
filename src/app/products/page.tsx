@@ -1,9 +1,7 @@
 "use client";
 
-
-
 import { useState } from "react";
-import { useCart } from "../../contexts/CartContext";
+import { useCart } from "@/contexts/CartContext";
 
 export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -43,7 +41,7 @@ export default function Products() {
       name: "Laptop Sleeve",
       price: 39.99,
       category: "bags",
-      image: "/placeholder.png",
+      image: "/images/Laptop Sleeve.jpg",
       rating: 4.4,
       reviews: 123,
       inStock: true,
@@ -124,7 +122,7 @@ export default function Products() {
       name: "Wireless Power Bank",
       price: 59.99,
       category: "electronics",
-      image: "/placeholder.png",
+      image: "/images/Wireless Power Bank.jpg",
       rating: 4.7,
       reviews: 234,
       inStock: true,
@@ -629,7 +627,16 @@ export default function Products() {
                 <div key={product.id} className="bg-white border-2 border-gray-100 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 group hover:border-amber-200 hover:-translate-y-2">
                   {/* Product Image */}
                   <div className="aspect-square bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center relative overflow-hidden">
-                    <div className="w-32 h-32 bg-gradient-to-br from-amber-100 to-orange-100 rounded-xl flex items-center justify-center shadow-lg">
+                    <img 
+                      src={product.image} 
+                      alt={product.name}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div className="w-32 h-32 bg-gradient-to-br from-amber-100 to-orange-100 rounded-xl flex items-center justify-center shadow-lg hidden">
                       <span className="text-amber-600 text-sm font-semibold">Product Image</span>
                     </div>
                     <div className="absolute top-3 right-3 bg-gradient-to-r from-amber-500 to-orange-600 text-white text-xs px-3 py-1 rounded-full font-bold shadow-lg">
