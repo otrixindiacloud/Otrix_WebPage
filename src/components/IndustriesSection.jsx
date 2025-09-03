@@ -137,149 +137,118 @@ export default function IndustriesSection() {
   const industries = [
     {
       id: 1,
-      name: "BAGS & WALLETS",
+      name: "ELECTRONIC DEVICES",
       icon: (
-        <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center border-2 border-gray-200 group-hover:border-amber-300 transition-all duration-500">
-          <div className="text-center transform group-hover:scale-110 transition-transform duration-500">
-            <div className="w-16 h-8 bg-gray-300 rounded mb-1 group-hover:bg-amber-200 transition-colors duration-500"></div>
-            <div className="w-12 h-6 bg-gray-300 rounded group-hover:bg-amber-300 transition-colors duration-500"></div>
-          </div>
+        <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center border-2 border-blue-300 group-hover:border-blue-400 transition-all duration-500 shadow-lg group-hover:shadow-xl">
+          <svg className="w-10 h-10 text-blue-600 group-hover:text-blue-700 transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M4 6h16v2H4zm0 5h16v6H4z"/>
+          </svg>
         </div>
       ),
-      description: "Premium bags and wallets for corporate needs"
+      description: "Devices and accessories"
     },
     {
       id: 2,
-      name: "DRINKWARE",
-      icon: (
-        <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center border-2 border-gray-200 group-hover:border-amber-300 transition-all duration-500">
-          <div className="text-center transform group-hover:scale-110 transition-transform duration-500">
-            <div className="w-8 h-12 bg-gray-300 rounded-full mb-1 group-hover:bg-amber-200 transition-colors duration-500"></div>
-            <div className="w-6 h-8 bg-gray-300 rounded-full group-hover:bg-amber-300 transition-colors duration-500"></div>
-          </div>
-        </div>
-      ),
-      description: "Elegant drinkware solutions"
-    },
-    {
-      id: 3,
-      name: "ELECTRONIC DEVICES",
-      icon: (
-        <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center border-2 border-gray-200 group-hover:border-amber-300 transition-all duration-500">
-          <div className="text-center transform group-hover:scale-110 transition-transform duration-500">
-            <div className="w-16 h-10 bg-gray-300 rounded mb-1 group-hover:bg-amber-200 transition-colors duration-500"></div>
-            <div className="w-8 h-6 bg-gray-300 rounded group-hover:bg-amber-300 transition-colors duration-500"></div>
-          </div>
-        </div>
-      ),
-      description: "Modern electronic gadgets and accessories"
-    },
-    {
-      id: 4,
       name: "HOME & OFFICE ACCESSORIES",
       icon: (
-        <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center border-2 border-gray-200 group-hover:border-amber-300 transition-all duration-500">
-          <div className="text-center transform group-hover:scale-110 transition-transform duration-500">
-            <div className="w-16 h-12 bg-gray-300 rounded mb-1 group-hover:bg-amber-200 transition-colors duration-500"></div>
-            <div className="w-8 h-4 bg-gray-300 rounded group-hover:bg-amber-300 transition-colors duration-500"></div>
-          </div>
+        <div className="w-20 h-20 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center border-2 border-gray-300 group-hover:border-gray-400 transition-all duration-500 shadow-lg group-hover:shadow-xl">
+          <svg className="w-10 h-10 text-gray-600 group-hover:text-gray-700 transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+          </svg>
         </div>
       ),
       description: "Essential accessories for work and home"
     },
     {
-      id: 5,
+      id: 3,
       name: "WRITING INSTRUMENTS",
       icon: (
-        <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center border-2 border-gray-200 group-hover:border-amber-300 transition-all duration-500">
-          <div className="text-center transform group-hover:scale-110 transition-transform duration-500">
-            <div className="w-2 h-16 bg-gray-300 rounded-full mb-1 group-hover:bg-amber-200 transition-colors duration-500"></div>
-            <div className="w-8 h-2 bg-gray-300 rounded-full group-hover:bg-amber-300 transition-colors duration-500"></div>
-          </div>
+        <div className="w-20 h-20 bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-full flex items-center justify-center border-2 border-yellow-300 group-hover:border-yellow-400 transition-all duration-500 shadow-lg group-hover:shadow-xl">
+          <svg className="w-10 h-10 text-yellow-600 group-hover:text-yellow-700 transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+          </svg>
         </div>
       ),
       description: "Premium pens and writing accessories"
     },
     {
-      id: 6,
+      id: 4,
       name: "TECHNOLOGY GADGETS",
       icon: (
-        <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center border-2 border-gray-200 group-hover:border-amber-300 transition-all duration-500">
-          <div className="text-center transform group-hover:scale-110 transition-transform duration-500">
-            <div className="w-12 h-8 bg-gray-300 rounded mb-1 group-hover:bg-amber-200 transition-colors duration-500"></div>
-            <div className="w-6 h-4 bg-gray-300 rounded group-hover:bg-amber-300 transition-colors duration-500"></div>
-          </div>
+        <div className="w-20 h-20 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full flex items-center justify-center border-2 border-purple-300 group-hover:border-purple-400 transition-all duration-500 shadow-lg group-hover:shadow-xl">
+          <svg className="w-10 h-10 text-purple-600 group-hover:text-purple-700 transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
         </div>
       ),
       description: "Smart tech solutions for modern needs"
     },
     {
-      id: 7,
+      id: 5,
       name: "FASHION ACCESSORIES",
       icon: (
-        <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center border-2 border-gray-200 group-hover:border-amber-300 transition-all duration-500">
-          <div className="text-center transform group-hover:scale-110 transition-transform duration-500">
-            <div className="w-10 h-10 bg-gray-300 rounded-full mb-1 group-hover:bg-amber-200 transition-colors duration-500"></div>
-            <div className="w-6 h-6 bg-gray-300 rounded-full group-hover:bg-amber-300 transition-colors duration-500"></div>
-          </div>
+        <div className="w-20 h-20 bg-gradient-to-br from-pink-100 to-pink-200 rounded-full flex items-center justify-center border-2 border-pink-300 group-hover:border-pink-400 transition-all duration-500 shadow-lg group-hover:shadow-xl">
+          <svg className="w-10 h-10 text-pink-600 group-hover:text-pink-700 transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
         </div>
       ),
-      description: "Stylish accessories for professionals"
+      description: "Stylish accessories"
+    },
+    {
+      id: 6,
+      name: "BAGS & WALLETS",
+      icon: (
+        <div className="w-20 h-20 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center border-2 border-green-300 group-hover:border-green-400 transition-all duration-500 shadow-lg group-hover:shadow-xl">
+          <svg className="w-10 h-10 text-green-600 group-hover:text-green-700 transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 7h-8v6h8V7zm-2 4h-4V9h4v2zm4-12H3C1.9 1 1 1.9 1 3v18c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H3V5h18v14z"/>
+          </svg>
+        </div>
+      ),
+      description: "Premium bags and wallets"
+    },
+    {
+      id: 7,
+      name: "DRINKWARE",
+      icon: (
+        <div className="w-20 h-20 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full flex items-center justify-center border-2 border-orange-300 group-hover:border-orange-400 transition-all duration-500 shadow-lg group-hover:shadow-xl">
+          <svg className="w-10 h-10 text-orange-600 group-hover:text-orange-700 transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+          </svg>
+        </div>
+      ),
+      description: "Elegant drinkware solutions"
     },
     {
       id: 8,
       name: "WELLNESS PRODUCTS",
       icon: (
-        <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center border-2 border-gray-200 group-hover:border-amber-300 transition-all duration-500">
-          <div className="text-center transform group-hover:scale-110 transition-transform duration-500">
-            <div className="w-14 h-8 bg-gray-300 rounded mb-1 group-hover:bg-amber-200 transition-colors duration-500"></div>
-            <div className="w-8 h-6 bg-gray-300 rounded group-hover:bg-amber-300 transition-colors duration-500"></div>
-          </div>
+        <div className="w-20 h-20 bg-gradient-to-br from-teal-100 to-teal-200 rounded-full flex items-center justify-center border-2 border-teal-300 group-hover:border-teal-400 transition-all duration-500 shadow-lg group-hover:shadow-xl">
+          <svg className="w-10 h-10 text-teal-600 group-hover:text-teal-700 transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
         </div>
       ),
       description: "Health and wellness essentials"
-    },
-    {
-      id: 9,
-      name: "SPORTS EQUIPMENT",
-      icon: (
-        <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center border-2 border-gray-200 group-hover:border-amber-300 transition-all duration-500">
-          <div className="text-center transform group-hover:scale-110 transition-transform duration-500">
-            <div className="w-16 h-6 bg-gray-300 rounded-full mb-1 group-hover:bg-amber-200 transition-colors duration-500"></div>
-            <div className="w-10 h-4 bg-gray-300 rounded-full group-hover:bg-amber-300 transition-colors duration-500"></div>
-          </div>
-        </div>
-      ),
-      description: "Quality sports and fitness gear"
-    },
-    {
-      id: 10,
-      name: "GOURMET GIFTS",
-      icon: (
-        <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center border-2 border-gray-200 group-hover:border-amber-300 transition-all duration-500">
-          <div className="text-center transform group-hover:scale-110 transition-transform duration-500">
-            <div className="w-12 h-12 bg-gray-300 rounded mb-1 group-hover:bg-amber-200 transition-colors duration-500"></div>
-            <div className="w-8 h-8 bg-gray-300 rounded group-hover:bg-amber-300 transition-colors duration-500"></div>
-          </div>
-        </div>
-      ),
-      description: "Premium food and beverage gifts"
     }
   ];
 
   return (
     <section className="golden-tag-section bg-muted">
       <div className="golden-tag-container">
-        {/* Section Divider with Animation */}
+        {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="flex justify-center mb-6">
-            <div className="text-3xl font-bold text-amber-600 animate-pulse">
+          <div className="flex justify-center mb-4">
+            <div className="text-2xl font-bold text-amber-600 tracking-wider">
               STORE
             </div>
           </div>
-          <div className="w-32 h-px bg-amber-300 mx-auto mb-4 animate-pulse"></div>
-          <h2 className="golden-tag-heading animate-fade-in">BROWSE BY INDUSTRIES</h2>
-          <p className="text-amber-600 font-semibold text-lg animate-fade-in-delay">Our Premium Product Categories</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+            BROWSE BY INDUSTRIES
+          </h2>
+          <p className="text-amber-600 font-medium text-lg">
+            Our Premium Product Categories
+          </p>
         </div>
 
         {/* Horizontal Scrolling Industries */}
@@ -290,38 +259,38 @@ export default function IndustriesSection() {
           <button
             onClick={scrollLeft}
             disabled={isScrolling || currentScrollIndex === 0}
-            className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full shadow-lg border transition-all duration-500 transform hover:scale-125 ${
+            className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 p-4 rounded-full shadow-xl border-2 transition-all duration-500 transform hover:scale-110 ${
               currentScrollIndex === 0 
-                ? 'bg-gray-200 text-gray-400 cursor-not-allowed opacity-50' 
-                : 'bg-white/90 hover:bg-white text-amber-600 border-amber-200 hover:border-amber-300 hover:-translate-x-1'
+                ? 'bg-gray-100 text-gray-400 cursor-not-allowed opacity-50 border-gray-200' 
+                : 'bg-white hover:bg-gray-50 text-gray-700 border-gray-300 hover:border-gray-400 hover:-translate-x-1 shadow-lg hover:shadow-xl'
             } ${isScrolling ? 'animate-pulse' : ''}`}
             aria-label="Scroll left"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
           
           <button
             onClick={scrollRight}
             disabled={isScrolling || currentScrollIndex === industries.length - 1}
-            className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full shadow-lg border transition-all duration-500 transform hover:scale-125 ${
+            className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 p-4 rounded-full shadow-xl border-2 transition-all duration-500 transform hover:scale-110 ${
               currentScrollIndex === industries.length - 1 
-                ? 'bg-gray-200 text-gray-400 cursor-not-allowed opacity-50' 
-                : 'bg-white/90 hover:bg-white text-amber-600 border-amber-200 hover:border-amber-300 hover:translate-x-1'
+                ? 'bg-gray-100 text-gray-400 cursor-not-allowed opacity-50 border-gray-200' 
+                : 'bg-white hover:bg-gray-50 text-gray-700 border-gray-300 hover:border-gray-400 hover:translate-x-1 shadow-lg hover:shadow-xl'
             } ${isScrolling ? 'animate-pulse' : ''}`}
             aria-label="Scroll right"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
             </svg>
           </button>
 
           {/* Scroll Container */}
           <div 
             ref={scrollContainerRef}
-            className={`flex gap-6 overflow-x-auto pb-6 scrollbar-hide px-4 transition-all duration-300 ${
-              isAutoScrolling && !isHovered ? 'ring-2 ring-amber-200 ring-opacity-50' : ''
+            className={`flex gap-8 overflow-x-auto pb-6 scrollbar-hide px-8 transition-all duration-300 ${
+              isAutoScrolling && !isHovered ? 'ring-2 ring-yellow-200 ring-opacity-30' : ''
             }`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
@@ -329,33 +298,54 @@ export default function IndustriesSection() {
             {industries.map((industry, index) => (
               <div 
                 key={industry.id} 
-                className="text-center group bg-white hover:bg-gradient-to-br hover:from-amber-50 hover:to-yellow-50 p-6 rounded-xl transition-all duration-500 flex-shrink-0 min-w-[280px] transform hover:scale-105 hover:-translate-y-2 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-amber-200 cursor-pointer"
+                className={`text-center group p-6 rounded-xl transition-all duration-500 flex-shrink-0 min-w-[300px] transform hover:scale-105 hover:-translate-y-2 shadow-lg hover:shadow-2xl border cursor-pointer relative overflow-hidden ${
+                  index === 2 ? 'bg-gradient-to-br from-yellow-50 to-yellow-100 border-yellow-200' : 'bg-white border-gray-100 hover:border-gray-200'
+                }`}
                 style={{
                   animationDelay: `${index * 100}ms`,
                   animation: 'slideInFromBottom 0.6s ease-out forwards'
                 }}
               >
-                <div className="mb-4 flex justify-center relative">
+                {/* Background Pattern */}
+                <div className="absolute inset-0 opacity-5">
+                  <div className="absolute top-4 right-4 w-20 h-20 bg-current rounded-full"></div>
+                  <div className="absolute bottom-4 left-4 w-16 h-16 bg-current rounded-full"></div>
+                </div>
+                
+                <div className="mb-6 flex justify-center relative z-10">
                   {industry.icon}
-                  <div className="absolute -top-2 -right-2 bg-amber-600 text-white text-xs px-2 py-1 rounded-full font-bold transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg">
+                  <div className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs px-2 py-1 rounded-full font-bold transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg">
                     GT
                   </div>
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-amber-600 transition-all duration-500 transform group-hover:scale-105">
+                
+                <h3 className={`text-lg font-bold mb-3 transition-all duration-500 transform group-hover:scale-105 ${
+                  index === 2 ? 'text-yellow-800' : 'text-gray-800 group-hover:text-gray-900'
+                }`}>
                   {industry.name}
                 </h3>
-                <p className="text-muted-foreground text-sm group-hover:text-gray-700 transition-colors duration-500">
+                
+                <p className={`text-sm transition-colors duration-500 ${
+                  index === 2 ? 'text-yellow-700' : 'text-gray-600 group-hover:text-gray-700'
+                }`}>
                   {industry.description}
                 </p>
                 
                 {/* Hover Effect Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-400/5 to-yellow-400/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                <div className={`absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none ${
+                  index === 2 ? 'bg-gradient-to-br from-yellow-200/10 to-yellow-300/10' : 'bg-gradient-to-br from-gray-100/20 to-gray-200/20'
+                }`}></div>
+                
+                {/* Bottom Accent Line */}
+                <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 rounded-full transition-all duration-500 ${
+                  index === 2 ? 'bg-yellow-500' : 'bg-transparent group-hover:bg-gray-300'
+                }`}></div>
               </div>
             ))}
           </div>
           
           {/* Dynamic Scroll Indicators */}
-          <div className="flex justify-center mt-8 space-x-3">
+          <div className="flex justify-center mt-10 space-x-4">
             {industries.map((_, index) => (
               <button
                 key={index}
@@ -369,10 +359,10 @@ export default function IndustriesSection() {
                     setCurrentScrollIndex(index);
                   }
                 }}
-                className={`w-3 h-3 rounded-full transition-all duration-500 transform hover:scale-125 ${
+                className={`w-4 h-4 rounded-full transition-all duration-500 transform hover:scale-125 border-2 ${
                   index === currentScrollIndex 
-                    ? 'bg-amber-500 scale-125 shadow-lg shadow-amber-500/50' 
-                    : 'bg-amber-200 hover:bg-amber-300'
+                    ? 'bg-yellow-400 scale-125 shadow-lg shadow-yellow-400/50 border-yellow-500' 
+                    : 'bg-gray-200 hover:bg-gray-300 border-gray-300 hover:border-gray-400'
                 }`}
                 aria-label={`Go to category ${index + 1}`}
               />

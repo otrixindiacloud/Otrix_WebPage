@@ -54,17 +54,17 @@ export default function NotificationButton() {
   const getNotificationColor = (type) => {
     switch (type) {
       case 'welcome':
-        return 'bg-green-100 text-green-800';
+        return 'bg-green-500/10 text-green-600 dark:text-green-400';
       case 'product':
-        return 'bg-blue-100 text-blue-800';
+        return 'bg-blue-500/10 text-blue-600 dark:text-blue-400';
       case 'offer':
-        return 'bg-yellow-100 text-yellow-800';
+        return 'bg-yellow-500/10 text-yellow-600 dark:text-yellow-400';
       case 'order':
-        return 'bg-purple-100 text-purple-800';
+        return 'bg-purple-500/10 text-purple-600 dark:text-purple-400';
       case 'system':
-        return 'bg-gray-100 text-gray-800';
+        return 'bg-muted text-muted-foreground';
       default:
-        return 'bg-gray-100 text-gray-800';
+        return 'bg-muted text-muted-foreground';
     }
   };
 
@@ -73,7 +73,7 @@ export default function NotificationButton() {
       {/* Notification Bell Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="relative p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors duration-200"
+        className="relative p-2 text-muted-foreground hover:text-foreground hover:bg-muted rounded-full transition-colors duration-200"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -86,7 +86,7 @@ export default function NotificationButton() {
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
-            className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium"
+            className="absolute -top-1 -right-1 bg-destructive text-destructive-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium"
           >
             {unreadCount > 9 ? '9+' : unreadCount}
           </motion.div>
@@ -101,17 +101,17 @@ export default function NotificationButton() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 z-50 max-h-96 overflow-hidden"
+            className="absolute right-0 mt-2 w-80 bg-card rounded-lg shadow-xl border border-border z-50 max-h-96 overflow-hidden"
           >
             {/* Header */}
-            <div className="px-4 py-3 border-b border-gray-200 bg-gray-50">
+            <div className="px-4 py-3 border-b border-border bg-muted">
               <div className="flex items-center justify-between">
-                <h3 className="text-lg font-semibold text-gray-800">Notifications</h3>
+                <h3 className="text-lg font-semibold text-card-foreground">Notifications</h3>
                 <div className="flex items-center space-x-2">
                   {unreadCount > 0 && (
                     <button
                       onClick={markAllAsRead}
-                      className="text-sm text-blue-600 hover:text-blue-800 font-medium"
+                      className="text-sm text-primary hover:text-primary/80 font-medium"
                     >
                       Mark all read
                     </button>
@@ -119,7 +119,7 @@ export default function NotificationButton() {
                   <Link
                     href="/notifications"
                     onClick={() => setIsOpen(false)}
-                    className="text-sm text-gray-600 hover:text-gray-800 font-medium"
+                    className="text-sm text-muted-foreground hover:text-foreground font-medium"
                   >
                     View all
                   </Link>
@@ -130,8 +130,8 @@ export default function NotificationButton() {
             {/* Notifications List */}
             <div className="max-h-80 overflow-y-auto">
               {notifications.length === 0 ? (
-                <div className="px-4 py-8 text-center text-gray-500">
-                  <svg className="w-12 h-12 mx-auto mb-3 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="px-4 py-8 text-center text-muted-foreground">
+                  <svg className="w-12 h-12 mx-auto mb-3 text-muted-foreground/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-5 5v-5zM4.5 19.5h15a2 2 0 002-2v-6.5a7.5 7.5 0 00-15 0v6.5a2 2 0 002 2z" />
                   </svg>
                   <p>No notifications yet</p>
@@ -142,8 +142,8 @@ export default function NotificationButton() {
                     key={notification.id}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className={`px-4 py-3 border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 ${
-                      !notification.read ? 'bg-blue-50' : ''
+                    className={`px-4 py-3 border-b border-border hover:bg-muted transition-colors duration-200 ${
+                      !notification.read ? 'bg-primary/5' : ''
                     }`}
                   >
                     <div className="flex items-start space-x-3">
@@ -154,15 +154,15 @@ export default function NotificationButton() {
                         <div className="flex items-start justify-between">
                           <div className="flex-1">
                             <p className={`text-sm font-medium ${
-                              !notification.read ? 'text-gray-900' : 'text-gray-700'
+                              !notification.read ? 'text-foreground' : 'text-muted-foreground'
                             }`}>
                               {notification.title}
                             </p>
-                            <p className="text-sm text-gray-600 mt-1 line-clamp-2">
+                            <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
                               {notification.message}
                             </p>
                             <div className="flex items-center justify-between mt-2">
-                              <span className="text-xs text-gray-500">
+                              <span className="text-xs text-muted-foreground/70">
                                 {formatTimeAgo(notification.timestamp)}
                               </span>
                               <span className={`px-2 py-1 text-xs rounded-full ${getNotificationColor(notification.type)}`}>
@@ -174,7 +174,7 @@ export default function NotificationButton() {
                             {!notification.read && (
                               <button
                                 onClick={() => markAsRead(notification.id)}
-                                className="p-1 text-gray-400 hover:text-blue-600 transition-colors"
+                                className="p-1 text-muted-foreground hover:text-primary transition-colors"
                                 title="Mark as read"
                               >
                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -184,7 +184,7 @@ export default function NotificationButton() {
                             )}
                             <button
                               onClick={() => deleteNotification(notification.id)}
-                              className="p-1 text-gray-400 hover:text-red-600 transition-colors"
+                              className="p-1 text-muted-foreground hover:text-destructive transition-colors"
                               title="Delete notification"
                             >
                               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -202,11 +202,11 @@ export default function NotificationButton() {
 
             {/* Footer */}
             {notifications.length > 5 && (
-              <div className="px-4 py-3 border-t border-gray-200 bg-gray-50">
+              <div className="px-4 py-3 border-t border-border bg-muted">
                 <Link
                   href="/notifications"
                   onClick={() => setIsOpen(false)}
-                  className="block text-center text-sm text-blue-600 hover:text-blue-800 font-medium"
+                  className="block text-center text-sm text-primary hover:text-primary/80 font-medium"
                 >
                   View all {notifications.length} notifications
                 </Link>

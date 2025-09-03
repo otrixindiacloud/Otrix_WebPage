@@ -6,10 +6,10 @@ export default function GratitudeSection() {
       id: 1,
       title: "GRATITUDE GIFTS FOR CLIENTS",
       icon: (
-        <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center border-2 border-gray-200 mb-6">
+        <div className="w-20 h-20 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center border-2 border-gray-300 shadow-lg">
           <div className="text-center">
-            <div className="w-8 h-8 bg-gray-300 rounded-full mb-1"></div>
-            <div className="w-4 h-2 bg-gray-300 rounded mx-auto"></div>
+            <div className="w-8 h-8 bg-gray-400 rounded-full mb-1"></div>
+            <div className="w-4 h-2 bg-gray-400 rounded mx-auto"></div>
           </div>
         </div>
       ),
@@ -19,10 +19,10 @@ export default function GratitudeSection() {
       id: 2,
       title: "EMPLOYEE APPRECIATION GIFTS",
       icon: (
-        <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center border-2 border-gray-200 mb-6">
+        <div className="w-20 h-20 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center border-2 border-gray-300 shadow-lg">
           <div className="text-center">
-            <div className="w-12 h-8 bg-gray-300 rounded mb-1"></div>
-            <div className="w-8 h-2 bg-gray-300 rounded mx-auto"></div>
+            <div className="w-12 h-8 bg-gray-400 rounded mb-1"></div>
+            <div className="w-8 h-2 bg-gray-400 rounded mx-auto"></div>
           </div>
         </div>
       ),
@@ -32,10 +32,10 @@ export default function GratitudeSection() {
       id: 3,
       title: "TOKENS FOR EVENTS OR PARTNERS",
       icon: (
-        <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center border-2 border-gray-200 mb-6">
+        <div className="w-20 h-20 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center border-2 border-gray-300 shadow-lg">
           <div className="text-center">
-            <div className="w-10 h-10 bg-gray-300 rounded-full mb-1"></div>
-            <div className="w-6 h-2 bg-gray-300 rounded mx-auto"></div>
+            <div className="w-10 h-10 bg-gray-400 rounded-full mb-1"></div>
+            <div className="w-6 h-2 bg-gray-400 rounded mx-auto"></div>
           </div>
         </div>
       ),
@@ -46,34 +46,55 @@ export default function GratitudeSection() {
   return (
     <section className="golden-tag-section bg-white">
       <div className="golden-tag-container">
-        {/* Section Divider */}
+        {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="flex justify-center mb-6">
-            <div className="text-3xl font-bold text-amber-600">
+          <div className="flex justify-center mb-4">
+            <div className="text-2xl font-bold text-amber-600 tracking-wider">
               STORE
             </div>
           </div>
-          <div className="w-32 h-px bg-amber-300 mx-auto mb-4"></div>
-          <h2 className="golden-tag-heading">A LITTLE GRATITUDE GOES A LONG WAY</h2>
-          <p className="text-amber-600 font-semibold text-lg">Our Approach to Meaningful Corporate Gifting</p>
+          <div className="w-24 h-1 bg-amber-500 mx-auto mb-6"></div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+            A LITTLE GRATITUDE GOES A LONG WAY
+          </h2>
+          <p className="text-amber-600 font-medium text-lg">
+            Our Approach to Meaningful Corporate Gifting
+          </p>
         </div>
 
         {/* Three Column Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {gratitudeTypes.map((type) => (
-            <div key={type.id} className="text-center group hover:bg-amber-50 p-6 rounded-lg transition-colors duration-200">
-              <div className="flex justify-center relative">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {gratitudeTypes.map((type, index) => (
+            <div 
+              key={type.id} 
+              className="text-center group p-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-gray-200 bg-white relative overflow-hidden"
+            >
+              {/* Background Pattern */}
+              <div className="absolute inset-0 opacity-5">
+                <div className="absolute top-4 right-4 w-16 h-16 bg-current rounded-full"></div>
+                <div className="absolute bottom-4 left-4 w-12 h-12 bg-current rounded-full"></div>
+              </div>
+              
+              <div className="flex justify-center relative z-10 mb-6">
                 {type.icon}
-                <div className="absolute -top-2 -right-2 bg-amber-600 text-white text-xs px-2 py-1 rounded-full font-bold">
+                <div className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs px-2 py-1 rounded-full font-bold transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg">
                   GT
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-amber-600 transition-colors">
+              
+              <h3 className="text-lg font-bold mb-4 transition-all duration-500 transform group-hover:scale-105 text-gray-800 group-hover:text-gray-900">
                 {type.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              
+              <p className="text-sm leading-relaxed transition-colors duration-500 text-gray-600 group-hover:text-gray-700">
                 {type.description}
               </p>
+              
+              {/* Hover Effect Overlay */}
+              <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none bg-gradient-to-br from-gray-100/20 to-gray-200/20"></div>
+              
+              {/* Bottom Accent Line */}
+              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 rounded-full transition-all duration-500 bg-transparent group-hover:bg-gray-300"></div>
             </div>
           ))}
         </div>

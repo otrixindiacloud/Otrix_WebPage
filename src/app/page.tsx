@@ -4,7 +4,6 @@ import StoreBanner from "../components/StoreBanner";
 import HeroSection from "../components/HeroSection";
 import IndustriesSection from "../components/IndustriesSection";
 import GratitudeSection from "../components/GratitudeSection";
-import QualityBanner from "../components/QualityBanner";
 
 
 export default function Home() {
@@ -15,7 +14,6 @@ export default function Home() {
       <HeroSection />
       <IndustriesSection />
       <GratitudeSection />
-      <QualityBanner />
     </main>
   );
 }

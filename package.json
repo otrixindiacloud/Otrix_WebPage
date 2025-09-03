@@ -29,6 +29,7 @@
     "@wix/reviews": "^1.0.36",
     "@wix/sdk": "^1.12.12",
     "@wix/stores": "^1.0.214",
+    "canvas": "^3.2.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "date-fns": "^3.6.0",

@@ -102,7 +102,7 @@ export default function StoreBanner() {
 
   return (
     <motion.div 
-      className="relative w-full h-96 md:h-[32rem] lg:h-[36rem] overflow-hidden"
+      className="relative w-full h-96 md:h-[32rem] lg:h-[36rem] overflow-hidden mb-16 md:mb-20 lg:mb-24"
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -367,8 +367,8 @@ export default function StoreBanner() {
 
       {/* Enhanced Slide Indicators */}
       <motion.div 
-        className="absolute top-20 left-1/2 transform -translate-x-1/2 flex space-x-4 z-20"
-        initial={{ y: -20, opacity: 0 }}
+        className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex space-x-4 z-20"
+        initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 2.2 }}
       >
