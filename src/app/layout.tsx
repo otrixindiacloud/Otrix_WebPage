@@ -5,6 +5,7 @@ import { CartProvider } from "../contexts/CartContext";
 import { ThemeProvider } from "../contexts/ThemeContext";
 import { AuthProvider } from "../contexts/AuthContext";
 import { NotificationProvider } from "../contexts/NotificationContext";
+import { WishlistProvider } from "../contexts/WishlistContext";
 
 import Header from "../components/Header";
 import SecondaryHeader from "../components/SecondaryHeader";
@@ -94,10 +95,12 @@ export default function RootLayout({
           <AuthProvider>
             <NotificationProvider>
               <CartProvider>
-                <Header />
-                <SecondaryHeader />
-                {children}
-                <Footer />
+                <WishlistProvider>
+                  <Header />
+                  <SecondaryHeader />
+                  {children}
+                  <Footer />
+                </WishlistProvider>
               </CartProvider>
             </NotificationProvider>
           </AuthProvider>

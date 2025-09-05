@@ -387,7 +387,7 @@ export default function ECatalogPage() {
               </div>
             </div>
 
-            {/* Project Details Section */}
+            {/* Product Details Section */}
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
                 <motion.span 
@@ -398,7 +398,7 @@ export default function ECatalogPage() {
                 >
                   <span className="text-white font-bold">2</span>
                 </motion.span>
-                Project Details
+                Product Details
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

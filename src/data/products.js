@@ -16,7 +16,7 @@ const products = [
     category: "Electronics",
     price: 11499,
     description: "5G, 6000mAh battery, 90Hz display",
-    image: "/images/Samsung Galaxy M14.jpg",
+    image: "/images/Laptop Sleeve.jpg",
   },
   {
     id: 3,

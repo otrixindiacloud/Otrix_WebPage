@@ -624,7 +624,12 @@ export default function Products() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
               {filteredProducts.map((product) => (
-                <div key={product.id} className="bg-white border-2 border-gray-100 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 group hover:border-amber-200 hover:-translate-y-2">
+                <a
+                  key={product.id}
+                  href={`/products/productpage?id=${product.id}`}
+                  className="block bg-white border-2 border-gray-100 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 group hover:border-amber-200 hover:-translate-y-2"
+                  style={{ textDecoration: 'none' }}
+                >
                   {/* Product Image */}
                   <div className="aspect-square bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center relative overflow-hidden">
                     <img 
@@ -659,7 +664,6 @@ export default function Products() {
                     </div>
                     <h3 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-amber-600 transition-colors line-clamp-2">{product.name}</h3>
                     <p className="text-gray-600 text-sm mb-4 line-clamp-2">{product.description}</p>
-                    
                     {/* Rating */}
                     <div className="flex items-center mb-4">
                       <div className="flex mr-2">
@@ -667,7 +671,6 @@ export default function Products() {
                       </div>
                       <span className="text-sm text-gray-500">({product.reviews} reviews)</span>
                     </div>
-
                     {/* Price and Stock */}
                     <div className="flex items-center justify-between mb-4">
                       <span className="text-2xl font-bold text-amber-600">${product.price}</span>
@@ -679,21 +682,9 @@ export default function Products() {
                         {product.inStock ? '✓ In Stock' : '✗ Out of Stock'}
                       </span>
                     </div>
-
-                    {/* Add to Cart Button */}
-                    <button
-                      onClick={() => addToCart(product, 1)}
-                      disabled={!product.inStock}
-                      className={`w-full py-3 px-4 rounded-xl font-semibold transition-all duration-200 transform ${
-                        product.inStock
-                          ? 'bg-gradient-to-r from-amber-500 to-orange-600 text-white hover:from-amber-600 hover:to-orange-700 hover:scale-105 shadow-lg hover:shadow-xl'
-                          : 'bg-gray-200 text-gray-500 cursor-not-allowed'
-                      }`}
-                    >
-                      {product.inStock ? '🛒 Add to Cart' : 'Out of Stock'}
-                    </button>
+                    {/* Add to Cart Button (optional, can remove from grid) */}
                   </div>
-                </div>
+                </a>
               ))}
               </div>
             </>
