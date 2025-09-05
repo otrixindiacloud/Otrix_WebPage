@@ -6,7 +6,10 @@ import { ThemeProvider } from "../contexts/ThemeContext";
 import { AuthProvider } from "../contexts/AuthContext";
 import { NotificationProvider } from "../contexts/NotificationContext";
 import { WishlistProvider } from "../contexts/WishlistContext";
+<<<<<<< HEAD
 import { OTPProvider } from "../contexts/OTPContext";
+=======
+>>>>>>> e9f79555f4ad0fccccd148a2507f1e2075988545
 
 import Header from "../components/Header";
 import SecondaryHeader from "../components/SecondaryHeader";
@@ -94,6 +97,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider>
           <AuthProvider>
+<<<<<<< HEAD
             <OTPProvider>
               <NotificationProvider>
                 <CartProvider>
@@ -106,6 +110,18 @@ export default function RootLayout({
                 </CartProvider>
               </NotificationProvider>
             </OTPProvider>
+=======
+            <NotificationProvider>
+              <CartProvider>
+                <WishlistProvider>
+                  <Header />
+                  <SecondaryHeader />
+                  {children}
+                  <Footer />
+                </WishlistProvider>
+              </CartProvider>
+            </NotificationProvider>
+>>>>>>> e9f79555f4ad0fccccd148a2507f1e2075988545
           </AuthProvider>
         </ThemeProvider>
       </body>

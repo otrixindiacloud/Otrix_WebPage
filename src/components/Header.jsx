@@ -271,9 +271,18 @@ export default function Header() {
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
+<<<<<<< HEAD
                   <Link href="/login" className="hidden sm:inline-block px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors duration-200 font-medium text-sm">
                     Sign In
                   </Link>
+=======
+                  <Link href="/login" className="hidden sm:inline-block px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors duration-200 font-medium text-sm mr-2">
+                    Sign In
+                  </Link>
+                  <Link href="/register" className="hidden sm:inline-block px-4 py-2 bg-gradient-to-r from-orange-500 to-yellow-500 text-white rounded-md hover:from-orange-600 hover:to-yellow-600 transition-colors duration-200 font-medium text-sm">
+                    Sign Up
+                  </Link>
+>>>>>>> e9f79555f4ad0fccccd148a2507f1e2075988545
                 </motion.div>
               )}
             </AnimatePresence>
@@ -375,11 +384,25 @@ export default function Header() {
                 <div>
                   <Link 
                     href="/login" 
+<<<<<<< HEAD
                     className="block w-full text-center px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors duration-200 font-medium"
+=======
+                    className="block w-full text-center px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors duration-200 font-medium mb-2"
+>>>>>>> e9f79555f4ad0fccccd148a2507f1e2075988545
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Login
                   </Link>
+<<<<<<< HEAD
+=======
+                  <Link 
+                    href="/register" 
+                    className="block w-full text-center px-4 py-2 bg-gradient-to-r from-orange-500 to-yellow-500 text-white rounded-md hover:from-orange-600 hover:to-yellow-600 transition-colors duration-200 font-medium"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Sign In
+                  </Link>
+>>>>>>> e9f79555f4ad0fccccd148a2507f1e2075988545
                 </div>
               )}
             </div>
