@@ -23,27 +23,24 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row md:space-x-12">
-          {/* Left Column - Free Consultation Form */}
-          <motion.div
-            className="flex-1 bg-white rounded-3xl p-8 shadow-xl"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <motion.h2
-              className="text-4xl md:text-5xl font-bold text-gray-800 mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              Free Consultation
-            </motion.h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
+    <motion.div
+      className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      whileHover={{ y: -4 }}
+    >
+      <motion.h2
+        className="text-3xl font-bold text-red-600 mb-8"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        Free Consultation
+      </motion.h2>
+      <form onSubmit={handleSubmit} className="space-y-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -136,26 +133,6 @@ export default function ContactSection() {
                 Send Message
               </motion.button>
             </form>
-          </motion.div>
-
-          {/* Map Section */}
-          <motion.div
-            className="flex-1 mt-12 md:mt-0"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="text-center mb-8">
-              <h3 className="text-3xl font-bold text-gray-800 mb-4">Find Us</h3>
-              <p className="text-gray-600 text-lg">Visit our office in Dewas, Madhya Pradesh</p>
-            </div>
-            <div className="max-w-4xl mx-auto">
-              <MapComponent className="shadow-2xl" />
-            </div>
-          </motion.div>
-        </div>
-      </div>
-    </section>
+    </motion.div>
   );
 }

@@ -295,7 +295,7 @@ export default function Contact() {
             </motion.h3>
           </motion.div>
 
-          <div className="space-y-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Contact Form Card */}
             <motion.div 
               className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group"
@@ -642,142 +642,10 @@ export default function Contact() {
             viewport={{ once: true }}
           >
             <MapComponent className="border border-gray-300 shadow-2xl rounded-2xl" />
-            <motion.div 
-              className="mt-6 text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
-              viewport={{ once: true }}
-            >
-                <p className="text-lg text-gray-700 mb-4">
-                <strong className="text-gray-800">Otrix India Tech</strong><br />
-                  159 LIG Vikas Nagar, Ganga Nagar<br />
-                  Dewas, Madhya Pradesh 455001
-                </p>
-              <motion.a 
-                  href="https://www.google.com/maps/dir//Otrix+Online+159+LIG+Vikas+Nagar,+Ganga+Nagar+Dewas,+Madhya+Pradesh+455001/@22.9528705,76.0292178,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x39631782832fffff:0xe90e0a24a71cfa0e!2m2!1d76.0292178!2d22.9528705?entry=ttu&g_ep=EgoyMDI1MDkwMi4wIKXMDSoASAFQAw%3D%3D"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                >
-                  <span className="mr-2">📍</span>
-                  Get Directions
-              </motion.a>
-            </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-white relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-10 w-40 h-40 bg-red-400 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-red-600 rounded-full blur-2xl"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <motion.div 
-            className="text-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <motion.div 
-              className="flex justify-center mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <div className="text-5xl font-bold text-red-600 animate-bounce">
-                OTRIX INDIA TECH
-              </div>
-            </motion.div>
-            <motion.h3 
-              className="text-4xl md:text-5xl font-bold text-gray-800 mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              Ready to Get Started?
-            </motion.h3>
-            <motion.p 
-              className="text-gray-700 text-xl mb-12 max-w-3xl mx-auto leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              viewport={{ once: true }}
-            >
-              We provide ERP/CRM software solutions in Oracle Apex, AI, Python, Django, OCI, Power BI, Azure, Google Cloud, React Native, and Flutter.
-            </motion.p>
-            
-            <motion.div 
-              className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              viewport={{ once: true }}
-            >
-              {/* Call Us Card */}
-              <motion.div 
-                className="group"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.0 }}
-                viewport={{ once: true }}
-              >
-                <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:bg-gray-50">
-                  <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:rotate-12 transition-transform duration-300">
-                    <span className="text-white text-3xl">📞</span>
-                  </div>
-                  <h4 className="font-bold text-gray-800 text-xl mb-3">Call Us</h4>
-                  <p className="text-gray-800 text-lg font-semibold">+91 9893377444</p>
-                </div>
-              </motion.div>
-
-              {/* Email Us Card */}
-              <motion.div 
-                className="group"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.2 }}
-                viewport={{ once: true }}
-              >
-                <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:bg-gray-50">
-                  <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:rotate-12 transition-transform duration-300">
-                    <span className="text-white text-3xl">✉️</span>
-                  </div>
-                  <h4 className="font-bold text-gray-800 text-xl mb-3">Email Us</h4>
-                  <p className="text-gray-800 text-lg font-semibold">info@otrix.com</p>
-                </div>
-              </motion.div>
-
-              {/* Visit Us Card */}
-              <motion.div 
-                className="group"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.4 }}
-                viewport={{ once: true }}
-              >
-                <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:bg-gray-50">
-                  <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:rotate-12 transition-transform duration-300">
-                    <span className="text-white text-3xl">🌐</span>
-                  </div>
-                  <h4 className="font-bold text-gray-800 text-xl mb-3">Visit Us</h4>
-                  <p className="text-gray-800 text-lg font-semibold">www.otrix.com</p>
-                </div>
-              </motion.div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
     </main>
   );
 }
