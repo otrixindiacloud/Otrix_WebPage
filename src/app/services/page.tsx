@@ -252,7 +252,7 @@ export default function ServicesPage() {
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-10 right-10 w-40 h-40 bg-blue-400 rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-red-600 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-[#2e95b7] rounded-full blur-2xl"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -263,7 +263,7 @@ export default function ServicesPage() {
             transition={{ duration: 0.8 }}
           >
             <motion.h1 
-              className="text-6xl font-bold text-red-600 mb-6"
+              className="text-6xl font-bold text-[#2e95b7] mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -287,21 +287,21 @@ export default function ServicesPage() {
               We specialize in Web and Mobile Apps Development, offering customized solutions in Oracle Apex, Data Analytics & AI, Python for Data Science, Django Python, OCI, Power BI, Microsoft Azure, Google Cloud, React Native, and Flutter.
             </motion.p>
             <motion.div 
-              className="bg-gradient-to-r from-red-50 to-orange-50 border border-red-200 rounded-xl p-6 max-w-4xl mx-auto mb-8"
+              className="bg-gradient-to-r from-blue-50 to-blue-100 border border-[#2e95b7] rounded-xl p-6 max-w-4xl mx-auto mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <h3 className="text-lg font-bold text-red-700 mb-3 text-center">🌍 Our Services Available In:</h3>
+              <h3 className="text-lg font-bold text-[#2e95b7] mb-3 text-center">🌍 Our Services Available In:</h3>
               <div className="flex flex-wrap justify-center gap-3">
                 {["India", "Dubai", "Qatar", "UAE", "Saudi Arabia", "Bahrain", "Kuwait", "Oman"].map((country, index) => (
                   <motion.span
                     key={country}
-                    className="bg-white px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-red-200 shadow-sm"
+                    className="bg-white px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-[#2e95b7] shadow-sm"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.3, delay: 0.9 + index * 0.1 }}
-                    whileHover={{ scale: 1.05, backgroundColor: "#fef2f2" }}
+                    whileHover={{ scale: 1.05, backgroundColor: "#f0f8ff" }}
                   >
                     {country}
                   </motion.span>
@@ -328,7 +328,7 @@ export default function ServicesPage() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="text-3xl font-bold text-red-600 mb-2">
+                  <div className="text-3xl font-bold text-[#2e95b7] mb-2">
                     <CountUp end={stat.number} duration={2} delay={1.0 + index * 0.2} />
                     {stat.suffix}
                   </div>
@@ -346,7 +346,7 @@ export default function ServicesPage() {
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-10 right-10 w-40 h-40 bg-blue-400 rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-red-600 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-[#2e95b7] rounded-full blur-2xl"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -365,7 +365,7 @@ export default function ServicesPage() {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                <span className="text-red-600">Services</span>{" "}
+                <span className="text-[#2e95b7]">Services</span>{" "}
                 <span className="text-gray-800">We are Providing</span>
               </motion.h2>
               
@@ -380,8 +380,8 @@ export default function ServicesPage() {
                     viewport={{ once: true }}
                     whileHover={{ x: 10 }}
                   >
-                    <div className="w-3 h-3 bg-gray-800 rounded-sm flex-shrink-0 group-hover:bg-red-600 transition-colors duration-300"></div>
-                    <span className="text-lg text-gray-800 font-medium group-hover:text-red-600 transition-colors duration-300">
+                    <div className="w-3 h-3 bg-gray-800 rounded-sm flex-shrink-0 group-hover:bg-[#2e95b7] transition-colors duration-300"></div>
+                    <span className="text-lg text-gray-800 font-medium group-hover:text-[#2e95b7] transition-colors duration-300">
                       {service}
                     </span>
                   </motion.div>
@@ -417,7 +417,7 @@ export default function ServicesPage() {
                 >
                   {/* Hover Background Effect */}
                   <motion.div 
-                    className="absolute inset-0 bg-gradient-to-br from-red-50 to-red-100 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    className="absolute inset-0 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                     initial={{ opacity: 0 }}
                     whileHover={{ opacity: 1 }}
                   />
@@ -425,7 +425,7 @@ export default function ServicesPage() {
                   <div className="relative z-10 flex items-center space-x-4">
                     {/* Service Icon */}
                     <motion.div 
-                      className="text-gray-700 group-hover:text-red-600 transition-colors duration-300"
+                      className="text-gray-700 group-hover:text-[#2e95b7] transition-colors duration-300"
                       whileHover={{ 
                         scale: 1.2,
                         rotate: [0, -5, 5, 0],
@@ -437,7 +437,7 @@ export default function ServicesPage() {
                     
                     {/* Service Name */}
                     <motion.h4 
-                      className="text-lg font-bold text-gray-800 group-hover:text-red-600 transition-colors duration-300 flex-1"
+                      className="text-lg font-bold text-gray-800 group-hover:text-[#2e95b7] transition-colors duration-300 flex-1"
                       whileHover={{ scale: 1.05 }}
                     >
                       {service.name}
@@ -445,7 +445,7 @@ export default function ServicesPage() {
                     
                     {/* Checkmark Icon */}
                     <motion.div 
-                      className="text-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      className="text-[#2e95b7] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       whileHover={{ scale: 1.2 }}
                     >
                       <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -456,7 +456,7 @@ export default function ServicesPage() {
 
                   {/* Animated Border on Hover */}
                   <motion.div 
-                    className="absolute inset-0 rounded-2xl border-2 border-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    className="absolute inset-0 rounded-2xl border-2 border-[#2e95b7] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                     initial={{ opacity: 0 }}
                     whileHover={{ opacity: 1 }}
                   />
@@ -477,7 +477,7 @@ export default function ServicesPage() {
             className="text-center mb-16"
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl font-bold text-red-600 mb-6">All Services</h2>
+            <h2 className="text-5xl font-bold text-[#2e95b7] mb-6">All Services</h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               Comprehensive IT solutions to drive your business forward
             </p>
@@ -514,7 +514,7 @@ export default function ServicesPage() {
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-10 right-10 w-40 h-40 bg-blue-400 rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-red-600 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-[#2e95b7] rounded-full blur-2xl"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -527,7 +527,7 @@ export default function ServicesPage() {
             viewport={{ once: true }}
           >
             <motion.h2 
-              className="text-5xl font-bold text-red-600 mb-6"
+              className="text-5xl font-bold text-[#2e95b7] mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -613,7 +613,7 @@ export default function ServicesPage() {
                           transition: { duration: 0.2 }
                         }}
                       >
-                        <div className="relative bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-300 group-hover:border-red-300 group-hover:bg-red-50">
+                        <div className="relative bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-300 group-hover:border-[#2e95b7] group-hover:bg-blue-50">
                           {/* Technology Icon */}
                           <div className="mb-3 flex justify-center">
                             <TechnologyIcon 
@@ -625,7 +625,7 @@ export default function ServicesPage() {
                           
                           {/* Technology Name */}
                           <motion.h5 
-                            className="text-xs font-semibold text-gray-800 text-center group-hover:text-red-600 transition-colors duration-300"
+                            className="text-xs font-semibold text-gray-800 text-center group-hover:text-[#2e95b7] transition-colors duration-300"
                             whileHover={{ scale: 1.05 }}
                           >
                             {tech}
@@ -666,7 +666,7 @@ export default function ServicesPage() {
                     transition: { duration: 0.2 }
                   }}
                 >
-                  <div className="relative bg-white border border-gray-200 rounded-lg p-3 shadow-sm hover:shadow-md transition-all duration-300 group-hover:border-red-300 group-hover:bg-red-50">
+                  <div className="relative bg-white border border-gray-200 rounded-lg p-3 shadow-sm hover:shadow-md transition-all duration-300 group-hover:border-[#2e95b7] group-hover:bg-blue-50">
                     {/* Technology Icon */}
                     <div className="mb-2 flex justify-center">
                       <TechnologyIcon 
@@ -678,7 +678,7 @@ export default function ServicesPage() {
                     
                     {/* Technology Name */}
                     <motion.h5 
-                      className="text-xs font-semibold text-gray-800 text-center group-hover:text-red-600 transition-colors duration-300"
+                      className="text-xs font-semibold text-gray-800 text-center group-hover:text-[#2e95b7] transition-colors duration-300"
                       whileHover={{ scale: 1.05 }}
                     >
                       {tech}
@@ -702,7 +702,7 @@ export default function ServicesPage() {
             viewport={{ once: true }}
           >
             <div className="flex items-center justify-center mb-6">
-              <div className="w-1 h-12 bg-red-500 mr-4"></div>
+              <div className="w-1 h-12 bg-[#2e95b7] mr-4"></div>
               <h2 className="text-4xl font-bold text-gray-800">Intelligent Automation</h2>
             </div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -741,7 +741,7 @@ export default function ServicesPage() {
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-10 right-10 w-40 h-40 bg-blue-400 rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-red-600 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-[#2e95b7] rounded-full blur-2xl"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -752,7 +752,7 @@ export default function ServicesPage() {
             className="text-center mb-16"
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl font-bold text-red-600 mb-6">Global Presence</h2>
+            <h2 className="text-5xl font-bold text-[#2e95b7] mb-6">Global Presence</h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-8">
               Otrix India Tech operates globally with offices and partnerships across multiple continents
             </p>
@@ -787,7 +787,7 @@ export default function ServicesPage() {
                       {region.countries.map((country, countryIndex) => (
                         <span
                           key={countryIndex}
-                          className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium"
+                          className="bg-blue-100 text-[#2e95b7] px-3 py-1 rounded-full text-sm font-medium"
                         >
                           {country}
                         </span>
@@ -814,14 +814,14 @@ export default function ServicesPage() {
                   {["India", "Dubai", "Qatar", "UAE", "Saudi Arabia", "Bahrain", "Kuwait", "Oman"].map((country, index) => (
                     <motion.div
                       key={index}
-                      className="flex items-center space-x-3 p-3 bg-gradient-to-r from-red-50 to-orange-50 rounded-lg border border-red-200"
+                      className="flex items-center space-x-3 p-3 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg border border-[#2e95b7]"
                       initial={{ opacity: 0, scale: 0.9 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.3, delay: index * 0.1 }}
                       viewport={{ once: true }}
                       whileHover={{ scale: 1.05 }}
                     >
-                      <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                      <div className="w-2 h-2 bg-[#2e95b7] rounded-full"></div>
                       <span className="text-gray-700 font-medium">{country}</span>
                     </motion.div>
                   ))}
@@ -841,7 +841,7 @@ export default function ServicesPage() {
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-10 right-10 w-40 h-40 bg-blue-400 rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-red-600 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-[#2e95b7] rounded-full blur-2xl"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -852,7 +852,7 @@ export default function ServicesPage() {
             className="text-center mb-16"
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl font-bold text-red-600 mb-6">Why Choose Otrix India Tech?</h2>
+            <h2 className="text-5xl font-bold text-[#2e95b7] mb-6">Why Choose Otrix India Tech?</h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               We deliver exceptional results through our proven expertise and commitment to excellence
             </p>
@@ -899,7 +899,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Call to Action Footer */}
-      <section className="py-16 bg-red-600">
+      <section className="py-16 bg-[#2e95b7]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center">
             <motion.div
@@ -912,7 +912,7 @@ export default function ServicesPage() {
               <h3 className="text-3xl font-bold text-white mb-4">
                 Get Quote And Get Free Estimation
               </h3>
-              <p className="text-xl text-red-100">
+              <p className="text-xl text-blue-100">
                 Ready to transform your business with our expert services?
               </p>
             </motion.div>
@@ -925,14 +925,14 @@ export default function ServicesPage() {
               viewport={{ once: true }}
             >
               <motion.button 
-                className="bg-white text-red-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all duration-300 hover:scale-105"
+                className="bg-white text-[#2e95b7] px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all duration-300 hover:scale-105"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Get Quote
               </motion.button>
               <motion.button 
-                className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-red-600 transition-all duration-300 hover:scale-105"
+                className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-[#2e95b7] transition-all duration-300 hover:scale-105"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

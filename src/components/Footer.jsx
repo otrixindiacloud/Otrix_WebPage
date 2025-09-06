@@ -55,7 +55,7 @@ export default function Footer() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="bg-secondary text-secondary-foreground relative"
+  className="bg-black/80 text-white relative"
     >
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -64,25 +64,25 @@ export default function Footer() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Company Info */}
             <div>
-              <h3 className="text-2xl font-bold text-black mb-4">Otrix India Tech</h3>
-              <p className="text-black mb-4">Leading IT solutions provider specializing in software development, web applications, and technology consulting.</p>
-              <div className="space-y-2 text-black">
+              <h3 className="text-2xl font-bold text-white mb-4">Otrix India Tech</h3>
+              <p className="text-white mb-4">Leading IT solutions provider specializing in software development, web applications, and technology consulting.</p>
+              <div className="space-y-2 text-white">
                 <p className="flex items-center">
-                  <svg className="w-5 h-5 mr-3 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 mr-3 text-[#2e95b7]" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                   </svg>
                   159 LIG Vikas Nagar, Ganga Nagar<br />
                   Dewas, Madhya Pradesh 455001, India
                 </p>
                 <p className="flex items-center">
-                  <svg className="w-5 h-5 mr-3 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 mr-3 text-[#2e95b7]" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                   </svg>
                   info@otrixindia.com
                 </p>
                 <p className="flex items-center">
-                  <svg className="w-5 h-5 mr-3 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 mr-3 text-[#2e95b7]" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                   </svg>
                   +91 98765 43210
@@ -92,15 +92,15 @@ export default function Footer() {
             
             {/* Contact Information */}
             <div>
-              <h4 className="text-lg font-semibold text-black mb-4">Get in Touch</h4>
+              <h4 className="text-lg font-semibold text-white mb-4">Get in Touch</h4>
               <div className="space-y-3">
-                <p className="text-gray-300 text-sm">
+                <p className="text-white text-sm">
                   Ready to start your next project? Contact us today for a consultation.
                 </p>
                 <div className="mt-4">
                   <HoverLink
                     href="/contact"
-                    className="inline-flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-black rounded-lg transition-colors duration-200"
+                    className="inline-flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors duration-200"
                     hoverDelay={600}
                   >
                     <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -162,7 +162,7 @@ export default function Footer() {
                         case "Instagram":
                           return "hover:text-pink-400";
                         default:
-                          return "hover:text-black";
+                          return "hover:bg-gradient-to-r hover:from-[#6BA464] hover:to-[#3290AE] hover:text-transparent hover:bg-clip-text";
                       }
                     };
 
@@ -194,7 +194,7 @@ export default function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-black hover:text-red-600 transition-colors duration-200 text-sm"
+                        className="text-white hover:bg-gradient-to-r hover:from-[#6BA464] hover:to-[#3290AE] hover:text-transparent hover:bg-clip-text transition-colors duration-200 text-sm"
                         whileHover={{ x: 5 }}
                         transition={{ duration: 0.2 }}
                       >
@@ -207,7 +207,7 @@ export default function Footer() {
                       >
                         <HoverLink 
                           href={link.href}
-                          className="text-black hover:text-red-600 transition-colors duration-200 text-sm"
+                          className="text-white hover:bg-gradient-to-r hover:from-[#6BA464] hover:to-[#3290AE] hover:text-transparent hover:bg-clip-text transition-colors duration-200 text-sm"
                           hoverDelay={500}
                         >
                           {link.name}
@@ -235,11 +235,11 @@ export default function Footer() {
           {/* Center - Copyright */}
           <div className="text-center">
             <div className="flex items-center justify-center mb-3">
-              <div className="w-2 h-2 bg-gradient-to-r from-red-500 to-blue-500 rounded-full"></div>
-              <div className="mx-2 w-2 h-2 bg-gradient-to-r from-red-500 to-blue-500 rounded-full"></div>
+              <div className="w-2 h-2 bg-gradient-to-r from-[#2e95b7] to-blue-500 rounded-full"></div>
+              <div className="mx-2 w-2 h-2 bg-gradient-to-r from-[#2e95b7] to-blue-500 rounded-full"></div>
             </div>
             
-            <p className="text-black text-sm font-medium">
+            <p className="text-white text-sm font-medium">
               Copyright 2025 © Otrix India Tech. All rights reserved.
             </p>
           </div>
@@ -257,7 +257,7 @@ export default function Footer() {
               transition={{ duration: 0.3, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              <svg className="w-5 h-5 text-black group-hover:text-black transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-white group-hover:bg-gradient-to-r group-hover:from-[#6BA464] group-hover:to-[#3290AE] group-hover:text-transparent group-hover:bg-clip-text transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
               </svg>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/20 to-orange-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

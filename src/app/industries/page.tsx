@@ -72,9 +72,9 @@ export default function IndustriesPage() {
       <section className="py-20 bg-white relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-10 w-40 h-40 bg-red-400 rounded-full blur-3xl"></div>
+          <div className="absolute top-10 right-10 w-40 h-40 bg-[#2e95b7] rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-red-600 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-[#2e95b7] rounded-full blur-2xl"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -85,7 +85,7 @@ export default function IndustriesPage() {
             transition={{ duration: 0.8 }}
           >
             <motion.h1 
-              className="text-5xl md:text-6xl font-bold text-red-600 mb-6"
+              className="text-5xl md:text-6xl font-bold text-[#2e95b7] mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -122,7 +122,7 @@ export default function IndustriesPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.0 }}
             >
-              <span className="bg-red-600 text-white px-8 py-3 rounded-full text-sm font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              <span className="bg-[#2e95b7] text-white px-8 py-3 rounded-full text-sm font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 With over 12 years of experience
               </span>
             </motion.div>
@@ -134,9 +134,9 @@ export default function IndustriesPage() {
       <section className="py-20 bg-gray-50 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-10 w-40 h-40 bg-red-400 rounded-full blur-3xl"></div>
+          <div className="absolute top-10 right-10 w-40 h-40 bg-[#2e95b7] rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-red-600 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-[#2e95b7] rounded-full blur-2xl"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -148,7 +148,7 @@ export default function IndustriesPage() {
             viewport={{ once: true }}
           >
             <motion.h2 
-              className="text-4xl font-bold text-red-600 mb-6"
+              className="text-4xl font-bold text-[#2e95b7] mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -189,10 +189,10 @@ export default function IndustriesPage() {
                 onHoverStart={() => setHoveredIndustry(index)}
                 onHoverEnd={() => setHoveredIndustry(null)}
               >
-                <div className="relative bg-white border border-gray-200 rounded-xl p-4 shadow-md hover:shadow-xl transition-all duration-300 group-hover:border-red-300 group-hover:bg-red-50">
+                <div className="relative bg-white border border-gray-200 rounded-xl p-4 shadow-md hover:shadow-xl transition-all duration-300 group-hover:border-[#2e95b7] group-hover:bg-blue-50">
                   {/* Checkmark Icon */}
                   <motion.div 
-                    className="absolute top-2 right-2 w-5 h-5 bg-red-600 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    className="absolute top-2 right-2 w-5 h-5 bg-[#2e95b7] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     whileHover={{ scale: 1.2 }}
                   >
                     <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -202,7 +202,7 @@ export default function IndustriesPage() {
                   
                   {/* Industry Name */}
                   <motion.h4 
-                    className="text-sm font-semibold text-gray-800 text-center group-hover:text-red-600 transition-colors duration-300 pr-6"
+                    className="text-sm font-semibold text-gray-800 text-center group-hover:text-[#2e95b7] transition-colors duration-300 pr-6"
                     whileHover={{ scale: 1.05 }}
                   >
                     {industry}
@@ -218,9 +218,9 @@ export default function IndustriesPage() {
       <section className="py-20 bg-white relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-10 w-40 h-40 bg-red-400 rounded-full blur-3xl"></div>
+          <div className="absolute top-10 right-10 w-40 h-40 bg-[#2e95b7] rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-red-600 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-[#2e95b7] rounded-full blur-2xl"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -232,7 +232,7 @@ export default function IndustriesPage() {
             viewport={{ once: true }}
           >
             <motion.h2 
-              className="text-4xl font-bold text-red-600 mb-6"
+              className="text-4xl font-bold text-[#2e95b7] mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -267,7 +267,7 @@ export default function IndustriesPage() {
               viewport={{ once: true }}
             >
               <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                <div className="w-16 h-16 bg-[#2e95b7] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300">
                   <span className="text-white text-2xl font-bold">
                     <CountUp end={200} duration={2} delay={1.0} />
                   </span>
@@ -286,7 +286,7 @@ export default function IndustriesPage() {
               viewport={{ once: true }}
             >
               <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                <div className="w-16 h-16 bg-[#2e95b7] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300">
                   <span className="text-white text-2xl font-bold">
                     <CountUp end={55} duration={2} delay={1.2} />
                   </span>
@@ -305,7 +305,7 @@ export default function IndustriesPage() {
               viewport={{ once: true }}
             >
               <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                <div className="w-16 h-16 bg-[#2e95b7] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300">
                   <span className="text-white text-2xl font-bold">
                     <CountUp end={12} duration={2} delay={1.4} />
                   </span>
@@ -324,7 +324,7 @@ export default function IndustriesPage() {
               viewport={{ once: true }}
             >
               <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                <div className="w-16 h-16 bg-[#2e95b7] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300">
                   <span className="text-white text-2xl font-bold">
                     <CountUp end={30} duration={2} delay={1.6} />
                   </span>
@@ -341,9 +341,9 @@ export default function IndustriesPage() {
       <section className="py-20 bg-white relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-10 w-40 h-40 bg-red-400 rounded-full blur-3xl"></div>
+          <div className="absolute top-10 right-10 w-40 h-40 bg-[#2e95b7] rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-red-600 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-[#2e95b7] rounded-full blur-2xl"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -361,7 +361,7 @@ export default function IndustriesPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="text-5xl font-bold text-red-600 animate-bounce">
+              <div className="text-5xl font-bold text-[#2e95b7] animate-bounce">
                 OTRIX INDIA TECH
               </div>
             </motion.div>
@@ -392,14 +392,14 @@ export default function IndustriesPage() {
               viewport={{ once: true }}
             >
               <motion.button 
-                className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="bg-[#2e95b7] hover:bg-[#236f8a] text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Get Free Consultation
               </motion.button>
               <motion.button 
-                className="bg-transparent border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+                className="bg-transparent border-2 border-[#2e95b7] text-[#2e95b7] hover:bg-[#2e95b7] hover:text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

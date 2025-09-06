@@ -90,15 +90,15 @@ export default function BlogPage() {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-10 w-40 h-40 bg-red-400 rounded-full blur-3xl"></div>
+          <div className="absolute top-10 right-10 w-40 h-40 bg-[#2e95b7] rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-red-600 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-[#2e95b7] rounded-full blur-2xl"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <FadeInUp className="text-center">
             <motion.h1 
-              className="text-5xl md:text-6xl font-bold text-red-600 mb-6"
+              className="text-5xl md:text-6xl font-bold text-[#2e95b7] mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -127,7 +127,7 @@ export default function BlogPage() {
                   placeholder="Search articles..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-6 py-4 rounded-xl text-gray-800 font-semibold focus:outline-none focus:ring-2 focus:ring-red-500 border-2 border-gray-300 hover:border-gray-400 transition-all duration-300 group-hover:shadow-lg"
+                  className="w-full px-6 py-4 rounded-xl text-gray-800 font-semibold focus:outline-none focus:ring-2 focus:ring-[#2e95b7] border-2 border-gray-300 hover:border-gray-400 transition-all duration-300 group-hover:shadow-lg"
                 />
                 <motion.div 
                   className="absolute right-4 top-4 text-gray-600"
@@ -151,7 +151,7 @@ export default function BlogPage() {
               <StaggerItem key={category}>
                 <HoverScale>
                   <motion.button
-                    className="px-6 py-3 rounded-full bg-white shadow-lg hover:shadow-xl transition-all duration-300 text-gray-700 hover:text-red-600 border-2 border-gray-200 hover:border-red-300 font-medium"
+                    className="px-6 py-3 rounded-full bg-white shadow-lg hover:shadow-xl transition-all duration-300 text-gray-700 hover:text-[#2e95b7] border-2 border-gray-200 hover:border-[#2e95b7] font-medium"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -176,23 +176,23 @@ export default function BlogPage() {
                     whileHover={{ y: -8 }}
                   >
                     <motion.div 
-                      className="h-48 bg-gradient-to-br from-red-100 to-red-200 flex items-center justify-center relative overflow-hidden"
+                      className="h-48 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center relative overflow-hidden"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.3 }}
                     >
                       <motion.span 
-                        className="text-red-600 text-6xl font-bold"
+                        className="text-[#2e95b7] text-6xl font-bold"
                         whileHover={{ scale: 1.2, rotate: 5 }}
                       >
                         {post.title.charAt(0)}
                       </motion.span>
-                      <div className="absolute inset-0 bg-gradient-to-t from-red-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#2e95b7]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </motion.div>
                     
                     <div className="p-6">
                       <div className="flex items-center gap-4 mb-4">
                         <motion.span 
-                          className="px-4 py-2 bg-red-100 text-red-700 text-sm rounded-full font-medium"
+                          className="px-4 py-2 bg-blue-100 text-[#2e95b7] text-sm rounded-full font-medium"
                           whileHover={{ scale: 1.05 }}
                         >
                           {post.category}
@@ -201,7 +201,7 @@ export default function BlogPage() {
                       </div>
                       
                       <motion.h3 
-                        className="text-xl font-bold mb-3 text-gray-800 group-hover:text-red-600 cursor-pointer transition-colors duration-300"
+                        className="text-xl font-bold mb-3 text-gray-800 group-hover:text-[#2e95b7] cursor-pointer transition-colors duration-300"
                         whileHover={{ scale: 1.02 }}
                       >
                         {post.title}
@@ -214,7 +214,7 @@ export default function BlogPage() {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
                           <motion.div 
-                            className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center"
+                            className="w-10 h-10 bg-[#2e95b7] rounded-full flex items-center justify-center"
                             whileHover={{ scale: 1.1, rotate: 5 }}
                           >
                             <span className="text-white font-bold text-sm">
@@ -228,7 +228,7 @@ export default function BlogPage() {
                         </div>
                         
                         <motion.button
-                          className="text-red-600 hover:text-red-700 font-medium text-sm"
+                          className="text-[#2e95b7] hover:text-[#236f8a] font-medium text-sm"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                         >
@@ -250,7 +250,7 @@ export default function BlogPage() {
           <FadeInUp>
             <HoverScale>
               <motion.button 
-                className="px-8 py-4 bg-red-600 text-white rounded-xl hover:bg-red-700 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl"
+                className="px-8 py-4 bg-[#2e95b7] text-white rounded-xl hover:bg-[#236f8a] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -265,15 +265,15 @@ export default function BlogPage() {
       <section className="py-20 bg-white relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-10 w-40 h-40 bg-red-400 rounded-full blur-3xl"></div>
+          <div className="absolute top-10 right-10 w-40 h-40 bg-[#2e95b7] rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-red-600 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-[#2e95b7] rounded-full blur-2xl"></div>
         </div>
 
         <div className="max-w-4xl mx-auto px-4 relative z-10">
           <FadeInUp className="text-center">
             <motion.h2 
-              className="text-4xl md:text-5xl font-bold text-red-600 mb-6"
+              className="text-4xl md:text-5xl font-bold text-[#2e95b7] mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -301,12 +301,12 @@ export default function BlogPage() {
               <motion.input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-6 py-4 rounded-xl border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300"
+                className="flex-1 px-6 py-4 rounded-xl border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#2e95b7] focus:border-[#2e95b7] transition-all duration-300"
                 whileFocus={{ scale: 1.02 }}
               />
               <HoverScale>
                 <motion.button 
-                  className="px-8 py-4 bg-red-600 text-white rounded-xl hover:bg-red-700 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl"
+                  className="px-8 py-4 bg-[#2e95b7] text-white rounded-xl hover:bg-[#236f8a] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

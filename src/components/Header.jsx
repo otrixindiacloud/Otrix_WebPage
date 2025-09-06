@@ -36,7 +36,7 @@ export default function Header() {
           <div className="flex items-center h-20">
             {/* Logo placeholder */}
             <div className="flex-shrink-0">
-              <div className="h-20 w-64 bg-gray-200 animate-pulse rounded"></div>
+              <div className="h-30 w-64 bg-gray-200 animate-pulse rounded"></div>
             </div>
             {/* Search bar placeholder */}
             <div className="hidden sm:flex flex-1 max-w-4xl mx-auto px-4">
@@ -65,7 +65,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-2" >
         {/* Main Header Content */}
         <motion.div 
-          className="flex items-center h-20"
+          className="flex items-center h-50"
         >
           {/* Logo - Left Corner */}
           <motion.div 
@@ -88,7 +88,7 @@ export default function Header() {
                     </svg>
                   </div>
                   <div>
-                    <h1 className="text-2xl font-bold text-gray-900">Otrix India Tech</h1>
+                    <h1 className="text-8xl font-bold text-gray-900">Otrix India Tech</h1>
                     <p className="text-sm text-gray-600">Let's make it perfect!</p>
                   </div>
                 </div>

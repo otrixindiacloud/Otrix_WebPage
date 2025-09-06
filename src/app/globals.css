@@ -14,10 +14,10 @@
     --card-foreground: 0 0% 0%; /* Black */
     --popover: 0 0% 100%; /* White */
     --popover-foreground: 0 0% 0%; /* Black */
-    --primary: 195 60% 46%; /* Blue #3E99AE */
-    --primary-foreground: 0 0% 100%; /* White */
-    --secondary: 214 95% 93%; /* Light Blue */
-    --secondary-foreground: 0 0% 0%; /* Black */
+  --primary: 133 33% 55%; /* Green #6BA464 */
+  --primary-foreground: 0 0% 100%; /* White */
+  --secondary: 197 56% 43%; /* Blue #3290AE */
+  --secondary-foreground: 0 0% 100%; /* White */
     --muted: 214 95% 93%; /* Light Blue */
     --muted-foreground: 0 0% 50%; /* Medium Gray */
     --accent: 214 95% 93%; /* Light Blue */
@@ -52,10 +52,10 @@
     --card-foreground: 0 0% 100%; /* White */
     --popover: 0 0% 0%; /* Black */
     --popover-foreground: 0 0% 100%; /* White */
-    --primary: 195 60% 46%; /* Blue #3E99AE */
-    --primary-foreground: 0 0% 100%; /* White */
-    --secondary: 214 95% 20%; /* Dark Blue */
-    --secondary-foreground: 0 0% 100%; /* White */
+  --primary: 133 33% 55%; /* Green #6BA464 */
+  --primary-foreground: 0 0% 100%; /* White */
+  --secondary: 197 56% 43%; /* Blue #3290AE */
+  --secondary-foreground: 0 0% 100%; /* White */
     --muted: 214 95% 20%; /* Dark Blue */
     --muted-foreground: 0 0% 70%; /* Light Gray */
     --accent: 214 95% 20%; /* Dark Blue */

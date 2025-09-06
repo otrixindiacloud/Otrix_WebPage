@@ -12,7 +12,7 @@ export default function HeroSection() {
       <div className="absolute inset-0">
         {/* Floating Dots */}
         <motion.div 
-          className="absolute top-20 left-20 w-3 h-3 bg-red-500 rounded-full opacity-60"
+          className="absolute top-20 left-20 w-3 h-3 bg-[#2e95b7] rounded-full opacity-60"
           animate={{ 
             y: [0, -20, 0],
             opacity: [0.6, 1, 0.6]
@@ -67,7 +67,7 @@ export default function HeroSection() {
       {/* Geometric Shapes */}
       <div className="absolute right-0 top-0 w-1/2 h-full opacity-20">
         <motion.div 
-          className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-red-500 to-blue-500 rounded-lg"
+          className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-[#2e95b7] to-blue-500 rounded-lg"
           animate={{ 
             rotate: [0, 5, -5, 0],
             scale: [1, 1.05, 1]
@@ -92,7 +92,7 @@ export default function HeroSection() {
           }}
         />
         <motion.div 
-          className="absolute top-60 right-60 w-20 h-20 bg-gradient-to-br from-red-500 to-black rounded-lg"
+          className="absolute top-60 right-60 w-20 h-20 bg-gradient-to-br from-[#2e95b7] to-black rounded-lg"
           animate={{ 
             rotate: [0, 4, -4, 0],
             scale: [1, 1.08, 1]
@@ -185,7 +185,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
         >
           <motion.div 
-            className="text-red-500 font-semibold text-lg mb-4"
+            className="text-[#2e95b7] font-semibold text-lg mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -204,7 +204,7 @@ export default function HeroSection() {
               text="Web Development & IT Solutions" 
               speed={100}
               delay={1.2}
-              className="text-red-400"
+              className="text-[#2e95b7]"
             />
           </motion.h1>
           
@@ -225,7 +225,7 @@ export default function HeroSection() {
           >
             <HoverLink 
               href="/contact" 
-              className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-center"
+              className="bg-[#2e95b7] hover:bg-[#236f8a] text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-center"
               hoverDelay={700}
             >
               FREE CONSULTATION
@@ -259,7 +259,7 @@ export default function HeroSection() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 1.2 + index * 0.1 }}
               >
-                <div className="text-3xl md:text-4xl font-bold text-red-400 mb-2">
+                <div className="text-3xl md:text-4xl font-bold text-[#2e95b7] mb-2">
                   <CountUp end={stat.number} duration={2} delay={1.5 + index * 0.2} />
                   {stat.suffix}
                 </div>

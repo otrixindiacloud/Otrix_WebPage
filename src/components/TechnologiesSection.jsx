@@ -46,9 +46,9 @@ export default function TechnologiesSection() {
     <section className="py-20 bg-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-10 right-10 w-40 h-40 bg-red-400 rounded-full blur-3xl"></div>
+        <div className="absolute top-10 right-10 w-40 h-40 bg-[#2e95b7] rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-red-600 rounded-full blur-2xl"></div>
+        <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-[#2e95b7] rounded-full blur-2xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -61,7 +61,7 @@ export default function TechnologiesSection() {
           viewport={{ once: true }}
         >
           <motion.h2 
-            className="text-5xl font-bold text-red-600 mb-6"
+            className="text-5xl font-bold text-[#2e95b7] mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -111,7 +111,7 @@ export default function TechnologiesSection() {
               onHoverStart={() => setHoveredTech(index)}
               onHoverEnd={() => setHoveredTech(null)}
             >
-              <div className="relative bg-white border border-gray-200 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 group-hover:border-red-300">
+              <div className="relative bg-white border border-gray-200 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 group-hover:border-[#2e95b7]">
                 {/* Technology Icon */}
                 <div className="mb-4 flex justify-center">
                   <TechnologyIcon 
@@ -123,7 +123,7 @@ export default function TechnologiesSection() {
                 
                 {/* Technology Name */}
                 <motion.h4 
-                  className="text-sm font-semibold text-gray-800 text-center group-hover:text-red-600 transition-colors duration-300"
+                  className="text-sm font-semibold text-gray-800 text-center group-hover:text-[#2e95b7] transition-colors duration-300"
                   whileHover={{ scale: 1.05 }}
                 >
                   {tech}
@@ -142,7 +142,7 @@ export default function TechnologiesSection() {
           viewport={{ once: true }}
         >
           <motion.button 
-            className="px-8 py-4 bg-gradient-to-r from-red-600 to-red-700 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            className="px-8 py-4 bg-gradient-to-r from-[#2e95b7] to-[#236f8a] text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

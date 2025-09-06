@@ -131,7 +131,7 @@ export default function MapComponent({ className = "" }) {
     return (
       <div className={`w-full h-96 rounded-xl overflow-hidden shadow-2xl ${className} flex items-center justify-center bg-gray-100`}>
         <div className="text-center p-8">
-          <div className="text-red-500 text-6xl mb-4">🗺️</div>
+          <div className="text-[#2e95b7] text-6xl mb-4">🗺️</div>
           <h3 className="text-xl font-semibold text-gray-800 mb-2">Map Unavailable</h3>
           <p className="text-gray-600 mb-4">{error}</p>
           
@@ -159,7 +159,7 @@ export default function MapComponent({ className = "" }) {
             href="https://www.google.com/maps/dir/?api=1&destination=22.9528705,76.0292178"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 mt-4 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors duration-200"
+            className="inline-flex items-center px-6 py-3 mt-4 bg-[#2e95b7] text-white font-semibold rounded-lg hover:bg-[#236f8a] transition-colors duration-200"
           >
             <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>

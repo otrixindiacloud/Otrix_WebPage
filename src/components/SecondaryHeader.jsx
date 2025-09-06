@@ -18,7 +18,7 @@ export default function SecondaryHeader() {
     { href: "/", label: "HOME" },
     { href: "/about", label: "ABOUT" },
     { href: "/services", label: "SERVICES" },
-    { href: "/industries", label: "INDUSTRIES" },
+    // { href: "/industries", label: "INDUSTRIES" },
     { href: "/careers", label: "CAREERS" },
     { href: "/contact", label: "CONTACT" }
   ];
@@ -68,12 +68,12 @@ export default function SecondaryHeader() {
             <HoverLink href="/" className="flex items-center space-x-3 group" hoverDelay={300}>
               <AppIcon size="w-10 h-10" />
               <div className="hidden sm:block">
-                <h1 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                <h1 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
                   Otrix India Tech
                 </h1>
-                <p className="text-xs text-muted-foreground group-hover:text-primary/70 transition-colors">
+                {/* <p className="text-xs text-muted-foreground group-hover:text-primary/70 transition-colors">
                   Let's make it perfect!
-                </p>
+                </p> */}
               </div>
             </HoverLink>
           </motion.div>

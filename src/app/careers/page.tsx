@@ -251,9 +251,9 @@ export default function CareersPage() {
       <section className="py-20 bg-white relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-10 w-40 h-40 bg-blue-400 rounded-full blur-3xl"></div>
+          <div className="absolute top-10 right-10 w-40 h-40 bg-[#2e95b7] rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-blue-600 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-[#2e95b7] rounded-full blur-2xl"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -264,7 +264,7 @@ export default function CareersPage() {
             transition={{ duration: 0.8 }}
           >
             <motion.h1 
-              className="text-5xl md:text-6xl font-bold text-blue-600 mb-6"
+              className="text-5xl md:text-6xl font-bold text-[#2e95b7] mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -304,7 +304,7 @@ export default function CareersPage() {
             >
               <motion.button 
                 onClick={() => setShowApplicationForm(true)}
-                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="bg-gradient-to-r from-[#2e95b7] to-[#236f8a] hover:from-[#236f8a] hover:to-[#1e5a70] text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -315,7 +315,7 @@ export default function CareersPage() {
                   const element = document.getElementById('job-listings');
                   element?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="bg-transparent border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+                className="bg-transparent border-2 border-[#2e95b7] text-[#2e95b7] hover:bg-[#2e95b7] hover:text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -330,9 +330,9 @@ export default function CareersPage() {
       <section id="why-work-with-us" className="py-20 bg-white relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-10 w-40 h-40 bg-blue-400 rounded-full blur-3xl"></div>
+          <div className="absolute top-10 right-10 w-40 h-40 bg-[#2e95b7] rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-blue-600 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-[#2e95b7] rounded-full blur-2xl"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -344,7 +344,7 @@ export default function CareersPage() {
             viewport={{ once: true }}
           >
             <motion.h2 
-              className="text-4xl font-bold text-blue-600 mb-6"
+              className="text-4xl font-bold text-[#2e95b7] mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -411,10 +411,10 @@ export default function CareersPage() {
                 viewport={{ once: true }}
                 whileHover={{ y: -8 }}
               >
-                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-transform duration-300">
+                <div className="w-16 h-16 bg-[#2e95b7] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-transform duration-300">
                   <span className="text-white text-2xl">{benefit.icon}</span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-4 text-center group-hover:text-blue-600 transition-colors duration-300">
+                <h3 className="text-xl font-bold text-gray-800 mb-4 text-center group-hover:text-[#2e95b7] transition-colors duration-300">
                   {benefit.title}
                 </h3>
                 <p className="text-gray-600 text-center leading-relaxed">
@@ -430,9 +430,9 @@ export default function CareersPage() {
       <section id="job-listings" className="py-20 bg-white relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-10 w-40 h-40 bg-blue-400 rounded-full blur-3xl"></div>
+          <div className="absolute top-10 right-10 w-40 h-40 bg-[#2e95b7] rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-blue-600 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-[#2e95b7] rounded-full blur-2xl"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -444,7 +444,7 @@ export default function CareersPage() {
             viewport={{ once: true }}
           >
             <motion.h2 
-              className="text-4xl font-bold text-blue-600 mb-6"
+              className="text-4xl font-bold text-[#2e95b7] mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
