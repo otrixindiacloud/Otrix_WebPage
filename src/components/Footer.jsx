@@ -2,50 +2,47 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { HoverLink } from "./ui/hover-link";
 
 export default function Footer() {
 
   const footerSections = [
     {
-      title: "Get to Know Us",
+      title: "Company",
       links: [
-        { name: "About Golden Tag", href: "/about" },
+        { name: "About Otrix India Tech", href: "/about" },
         { name: "Careers", href: "/careers" },
-        { name: "Press Releases", href: "/press" },
-        { name: "Golden Tag Science", href: "/science" }
+        { name: "Industries", href: "/industries" },
+        { name: "Contact Us", href: "/contact" }
+      ]
+    },
+    {
+      title: "Services",
+      links: [
+        { name: "Web Development", href: "/services/web-development" },
+        { name: "Mobile Apps", href: "/services/mobile-apps" },
+        { name: "Software Solutions", href: "/services/software" },
+        { name: "IT Consulting", href: "/services/consulting" },
+        { name: "Cloud Solutions", href: "/services/cloud" },
+        { name: "Digital Marketing", href: "/services/digital-marketing" }
       ]
     },
     {
       title: "Connect with Us",
       links: [
         { name: "Facebook", href: "https://www.facebook.com", external: true },
-        { name: "Twitter", href: "https://www.twitter.com", external: true },
-        { name: "Instagram", href: "https://www.instagram.com", external: true }
+        { name: "LinkedIn", href: "https://www.linkedin.com", external: true },
+        { name: "Instagram", href: "https://www.instagram.com", external: true },
+        { name: "Twitter", href: "https://www.twitter.com", external: true }
       ]
     },
     {
-      title: "Make Money with Us",
+      title: "Support",
       links: [
-        { name: "Sell on Golden Tag", href: "/sell" },
-        { name: "Sell under Golden Tag Accelerator", href: "/accelerator" },
-        { name: "Protect and Build Your Brand", href: "/brand-protection" },
-        { name: "Golden Tag Global Selling", href: "/global-selling" },
-        { name: "Supply to Golden Tag", href: "/supply" },
-        { name: "Become an Affiliate", href: "/affiliate" },
-        { name: "Fulfilment by Golden Tag", href: "/fulfillment" },
-        { name: "Advertise Your Products", href: "/advertise" },
-        { name: "Golden Tag Pay on Merchants", href: "/pay-merchants" }
-      ]
-    },
-    {
-      title: "Let Us Help You",
-      links: [
-        { name: "Your Account", href: "/account" },
-        { name: "Returns Centre", href: "/returns" },
-        { name: "Recalls and Product Safety Alerts", href: "/safety" },
-        { name: "100% Purchase Protection", href: "/protection" },
-        { name: "Golden Tag App Download", href: "/app" },
-        { name: "Help", href: "/help" }
+        { name: "Help Center", href: "/help" },
+        { name: "Documentation", href: "/docs" },
+        { name: "Privacy Policy", href: "/privacy" },
+        { name: "Terms of Service", href: "/terms" }
       ]
     }
   ];
@@ -62,6 +59,62 @@ export default function Footer() {
     >
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        {/* Company Address and Map Section */}
+        <div className="mb-8 pb-8 border-b border-blue-200">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Company Info */}
+            <div>
+              <h3 className="text-2xl font-bold text-black mb-4">Otrix India Tech</h3>
+              <p className="text-black mb-4">Leading IT solutions provider specializing in software development, web applications, and technology consulting.</p>
+              <div className="space-y-2 text-black">
+                <p className="flex items-center">
+                  <svg className="w-5 h-5 mr-3 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                  </svg>
+                  159 LIG Vikas Nagar, Ganga Nagar<br />
+                  Dewas, Madhya Pradesh 455001, India
+                </p>
+                <p className="flex items-center">
+                  <svg className="w-5 h-5 mr-3 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                  </svg>
+                  info@otrixindia.com
+                </p>
+                <p className="flex items-center">
+                  <svg className="w-5 h-5 mr-3 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                  </svg>
+                  +91 98765 43210
+                </p>
+              </div>
+            </div>
+            
+            {/* Contact Information */}
+            <div>
+              <h4 className="text-lg font-semibold text-black mb-4">Get in Touch</h4>
+              <div className="space-y-3">
+                <p className="text-gray-300 text-sm">
+                  Ready to start your next project? Contact us today for a consultation.
+                </p>
+                <div className="mt-4">
+                  <HoverLink
+                    href="/contact"
+                    className="inline-flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-black rounded-lg transition-colors duration-200"
+                    hoverDelay={600}
+                  >
+                    <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    </svg>
+                    Contact Us
+                  </HoverLink>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {footerSections.map((section, index) => (
             <motion.div
@@ -109,7 +162,7 @@ export default function Footer() {
                         case "Instagram":
                           return "hover:text-pink-400";
                         default:
-                          return "hover:text-white";
+                          return "hover:text-black";
                       }
                     };
 
@@ -141,7 +194,7 @@ export default function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-300 hover:text-white transition-colors duration-200 text-sm"
+                        className="text-black hover:text-red-600 transition-colors duration-200 text-sm"
                         whileHover={{ x: 5 }}
                         transition={{ duration: 0.2 }}
                       >
@@ -152,12 +205,13 @@ export default function Footer() {
                         whileHover={{ x: 5 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <Link 
+                        <HoverLink 
                           href={link.href}
-                          className="text-gray-300 hover:text-white transition-colors duration-200 text-sm"
+                          className="text-black hover:text-red-600 transition-colors duration-200 text-sm"
+                          hoverDelay={500}
                         >
                           {link.name}
-                        </Link>
+                        </HoverLink>
                       </motion.div>
                     )}
                   </li>
@@ -181,12 +235,12 @@ export default function Footer() {
           {/* Center - Copyright */}
           <div className="text-center">
             <div className="flex items-center justify-center mb-3">
-              <div className="w-2 h-2 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
-              <div className="mx-2 w-2 h-2 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
+              <div className="w-2 h-2 bg-gradient-to-r from-red-500 to-blue-500 rounded-full"></div>
+              <div className="mx-2 w-2 h-2 bg-gradient-to-r from-red-500 to-blue-500 rounded-full"></div>
             </div>
             
-            <p className="text-gray-400 text-sm font-medium">
-              Copyright 2025 © Golden Tag Corporate Gifts. All rights reserved.
+            <p className="text-black text-sm font-medium">
+              Copyright 2025 © Otrix India Tech. All rights reserved.
             </p>
           </div>
 
@@ -203,7 +257,7 @@ export default function Footer() {
               transition={{ duration: 0.3, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              <svg className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-black group-hover:text-black transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
               </svg>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/20 to-orange-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

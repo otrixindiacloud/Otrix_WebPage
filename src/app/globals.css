@@ -2,69 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import performance-optimized animations */
+@import '../styles/animations.css';
+
 @layer base {
   :root {
-    /* GOLDENTAG Color Scheme - Light Theme */
+    /* BLUE WHITE BLACK Color Scheme - Light Theme */
     --background: 0 0% 100%; /* White */
-    --foreground: 0 0% 10%; /* Very Dark Grey - Better contrast */
+    --foreground: 0 0% 0%; /* Black */
     --card: 0 0% 100%; /* White */
-    --card-foreground: 0 0% 10%; /* Very Dark Grey */
+    --card-foreground: 0 0% 0%; /* Black */
     --popover: 0 0% 100%; /* White */
-    --popover-foreground: 0 0% 10%; /* Very Dark Grey */
-    --primary: 220 100% 51%; /* Blue */
+    --popover-foreground: 0 0% 0%; /* Black */
+    --primary: 195 60% 46%; /* Blue #3E99AE */
     --primary-foreground: 0 0% 100%; /* White */
-    --secondary: 0 0% 15%; /* Dark Grey */
-    --secondary-foreground: 0 0% 100%; /* White */
-    --muted: 0 0% 95%; /* Light Grey */
-    --muted-foreground: 0 0% 45%; /* Medium Grey */
-    --accent: 220 100% 51%; /* Blue */
-    --accent-foreground: 0 0% 100%; /* White */
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 90%; /* Light Grey */
-    --input: 0 0% 90%; /* Light Grey */
-    --ring: 220 100% 51%; /* Blue */
+    --secondary: 214 95% 93%; /* Light Blue */
+    --secondary-foreground: 0 0% 0%; /* Black */
+    --muted: 214 95% 93%; /* Light Blue */
+    --muted-foreground: 0 0% 50%; /* Medium Gray */
+    --accent: 214 95% 93%; /* Light Blue */
+    --accent-foreground: 0 0% 0%; /* Black */
+    --destructive: 195 60% 46%; /* Blue #3E99AE */
+    --destructive-foreground: 0 0% 100%; /* White */
+    --border: 214 95% 93%; /* Light Blue */
+    --input: 214 95% 93%; /* Light Blue */
+    --ring: 195 60% 46%; /* Blue #3E99AE */
     --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --chart-1: 195 60% 46%; /* Blue #3E99AE */
+    --chart-2: 214 95% 50%; /* Blue */
+    --chart-3: 0 0% 0%; /* Black */
+    --chart-4: 0 0% 100%; /* White */
+    --chart-5: 0 0% 50%; /* Gray */
     
-    /* GOLDENTAG Specific Colors */
-    --golden-tag-gold: 220 100% 51%;
-    --golden-tag-dark: 0 0% 15%;
-    --golden-tag-light: 0 0% 95%;
-    --golden-tag-text: 0 0% 10%;
-    --golden-tag-white: 0 0% 100%;
+    /* ORIX Specific Colors */
+    --otrix-primary: 195 60% 46%; /* Blue #3E99AE */
+    --otrix-blue: 214 95% 50%; /* Blue */
+    --otrix-white: 0 0% 100%; /* White */
+    --otrix-black: 0 0% 0%; /* Black */
+    --otrix-light-blue: 214 95% 93%; /* Light Blue */
+    --otrix-dark-blue: 214 95% 20%; /* Dark Blue */
+    --otrix-gray: 0 0% 50%; /* Gray */
   }
 
   .dark {
-    /* GOLDENTAG Color Scheme - Dark Theme */
-    --background: 0 0% 8%; /* Very Dark Grey - Better contrast */
-    --foreground: 0 0% 98%; /* Very Light Grey - Better contrast */
-    --card: 0 0% 12%; /* Dark Grey */
-    --card-foreground: 0 0% 98%; /* Very Light Grey */
-    --popover: 0 0% 12%; /* Dark Grey */
-    --popover-foreground: 0 0% 98%; /* Very Light Grey */
-    --primary: 220 100% 51%; /* Blue */
+    /* BLUE WHITE BLACK Color Scheme - Dark Theme */
+    --background: 0 0% 0%; /* Black */
+    --foreground: 0 0% 100%; /* White */
+    --card: 0 0% 0%; /* Black */
+    --card-foreground: 0 0% 100%; /* White */
+    --popover: 0 0% 0%; /* Black */
+    --popover-foreground: 0 0% 100%; /* White */
+    --primary: 195 60% 46%; /* Blue #3E99AE */
     --primary-foreground: 0 0% 100%; /* White */
-    --secondary: 0 0% 20%; /* Dark Grey */
+    --secondary: 214 95% 20%; /* Dark Blue */
     --secondary-foreground: 0 0% 100%; /* White */
-    --muted: 0 0% 15%; /* Dark Grey */
-    --muted-foreground: 0 0% 75%; /* Light Grey - Better contrast */
-    --accent: 220 100% 51%; /* Blue */
+    --muted: 214 95% 20%; /* Dark Blue */
+    --muted-foreground: 0 0% 70%; /* Light Gray */
+    --accent: 214 95% 20%; /* Dark Blue */
     --accent-foreground: 0 0% 100%; /* White */
-    --destructive: 0 72.2% 50.6%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 25%; /* Dark Grey - Better contrast */
-    --input: 0 0% 25%; /* Dark Grey - Better contrast */
-    --ring: 220 100% 51%; /* Blue */
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --destructive: 195 60% 46%; /* Blue #3E99AE */
+    --destructive-foreground: 0 0% 100%; /* White */
+    --border: 214 95% 20%; /* Dark Blue */
+    --input: 214 95% 20%; /* Dark Blue */
+    --ring: 195 60% 46%; /* Blue #3E99AE */
+    --chart-1: 195 60% 46%; /* Blue #3E99AE */
+    --chart-2: 214 95% 50%; /* Blue */
+    --chart-3: 0 0% 0%; /* Black */
+    --chart-4: 0 0% 100%; /* White */
+    --chart-5: 0 0% 50%; /* Gray */
   }
 }
 
@@ -91,11 +96,11 @@
 }
 
 @layer components {
-  .golden-tag-button {
+  .otrix-button {
     @apply bg-primary text-primary-foreground px-6 py-3 rounded-md font-semibold hover:bg-primary/90 transition-colors duration-200;
   }
   
-  .golden-tag-section {
+  .otrix-section {
     @apply py-16 px-4;
   }
 
@@ -325,15 +330,15 @@ html {
   outline-offset: 2px;
 }
   
-  .golden-tag-container {
+  .otrix-container {
     @apply max-w-7xl mx-auto;
   }
   
-  .golden-tag-heading {
+  .otrix-heading {
     @apply text-3xl md:text-4xl font-bold text-center mb-12 text-foreground;
   }
   
-  .golden-tag-subheading {
+  .otrix-subheading {
     @apply text-xl font-semibold text-center mb-8 text-foreground;
   }
   
@@ -346,6 +351,43 @@ html {
   .scrollbar-hide::-webkit-scrollbar {
     display: none;  /* Safari and Chrome */
   }
+
+  /* Enhanced scrollbar styling with increased height */
+  ::-webkit-scrollbar {
+    width: 24px;  /* Further increased width for better visibility */
+    height: 24px; /* Further increased height for horizontal scrollbars */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 12px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 12px;
+    border: 3px solid hsl(var(--muted));
+    min-height: 60px; /* Further increased minimum height */
+    min-width: 60px;  /* Added minimum width for horizontal scrollbars */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.8);
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background: hsl(var(--primary) / 0.9);
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: hsl(var(--muted));
+  }
+
+  /* Firefox scrollbar styling */
+  * {
+    scrollbar-width: auto; /* Use auto for maximum thickness in Firefox */
+    scrollbar-color: hsl(var(--primary)) hsl(var(--muted));
+  }
   
   /* Smooth scrolling for horizontal containers - removed to fix continuous scrolling issue */
   /* .overflow-x-auto {
@@ -353,11 +395,11 @@ html {
   } */
   
   /* Dark mode specific utilities */
-  .dark .golden-tag-container {
+  .dark .otrix-container {
     @apply bg-background;
   }
   
-  .dark .golden-tag-section {
+  .dark .otrix-section {
     @apply bg-background;
   }
   

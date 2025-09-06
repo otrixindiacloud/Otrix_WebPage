@@ -47,8 +47,8 @@ export default function GratitudeSection() {
   ];
 
   return (
-    <section className="golden-tag-section bg-white">
-      <div className="golden-tag-container">
+    <section className="otrix-section bg-white">
+      <div className="otrix-container">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="flex justify-center mb-4">

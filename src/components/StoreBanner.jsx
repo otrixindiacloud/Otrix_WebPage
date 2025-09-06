@@ -12,57 +12,57 @@ export default function StoreBanner() {
   const bannerSlides = [
     {
       id: 1,
-      title: "Request Your Catalog",
-      subtitle: "Get a personalized catalog tailored to your corporate gift needs",
-      description: "Discover our comprehensive collection of premium corporate gifts and promotional items. Request your personalized catalog today and explore our curated selection designed for your business needs.",
-      background: "linear-gradient(135deg, #ff6b35 0%, #ffffff 25%, #ffd23f 50%, #ff6b35 75%, #e55a2b 100%)",
-      accent: "from-orange-500 via-white to-orange-600",
-      cta: "Request Catalog"
+      title: "Professional IT Solutions",
+      subtitle: "Excellence Since 2012",
+      description: "We provide ERP/CRM software solutions in Oracle Apex, AI, Python, Django, OCI, Power BI, Azure, Google Cloud, React Native, and Flutter.",
+      background: "linear-gradient(135deg, #1e3a8a 0%, #3b82f6 25%, #60a5fa 50%, #1e40af 75%, #1e3a8a 100%)",
+      accent: "from-blue-600 via-blue-400 to-blue-800",
+      cta: "Get Free Consultation"
     },
     {
       id: 2,
-      title: "Premium Corporate Gifts",
-      subtitle: "Excellence Since 2015",
-      description: "Serving leading multinational companies in Bahrain with premium quality gifts that make lasting impressions on your clients and employees.",
-      background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 25%, #ffff00 50%, #000000 75%, #333333 100%)",
-      accent: "from-black via-yellow-400 to-gray-800",
-      cta: "View Products"
+      title: "Data Analytics & AI",
+      subtitle: "Transform Your Business",
+      description: "Advanced data analytics and artificial intelligence solutions to help you make data-driven decisions and automate your business processes.",
+      background: "linear-gradient(135deg, #7c3aed 0%, #a855f7 25%, #c084fc 50%, #8b5cf6 75%, #7c3aed 100%)",
+      accent: "from-purple-600 via-purple-400 to-purple-800",
+      cta: "Explore AI Solutions"
     },
     {
       id: 3,
-      title: "Custom Branding Solutions",
-      subtitle: "Your Brand, Our Expertise",
-      description: "Professional logo embossing, custom color schemes, and personalized messaging for your corporate identity. Get your personalized catalog to see our full range.",
-      background: "linear-gradient(135deg, #ffb366 0%, #ffcc99 25%, #ffd9b3 50%, #ffa366 75%, #ff9933 100%)",
-      accent: "from-orange-300 via-orange-200 to-orange-400",
-      cta: "Get Catalog"
+      title: "Cloud Solutions",
+      subtitle: "Scalable & Secure",
+      description: "Comprehensive cloud infrastructure solutions using Oracle Cloud Infrastructure, Microsoft Azure, and Google Cloud Platform.",
+      background: "linear-gradient(135deg, #059669 0%, #10b981 25%, #34d399 50%, #047857 75%, #059669 100%)",
+      accent: "from-green-600 via-green-400 to-green-800",
+      cta: "Cloud Migration"
     },
     {
       id: 4,
-      title: "Luxury Gift Collections",
-      subtitle: "Premium Quality, Exceptional Service",
-      description: "Explore our exclusive range of luxury corporate gifts designed to impress your most valued clients and partners. From elegant accessories to sophisticated office essentials.",
-      background: "linear-gradient(135deg, #6b7280 0%, #9ca3af 25%, #d1d5db 50%, #4b5563 75%, #374151 100%)",
-      accent: "from-gray-500 via-gray-300 to-gray-600",
-      cta: "Explore Collection"
+      title: "Mobile App Development",
+      subtitle: "Cross-Platform Excellence",
+      description: "Native and cross-platform mobile applications using React Native and Flutter for iOS and Android platforms.",
+      background: "linear-gradient(135deg, #dc2626 0%, #ef4444 25%, #f87171 50%, #b91c1c 75%, #dc2626 100%)",
+      accent: "from-red-600 via-red-400 to-red-800",
+      cta: "Build Your App"
     },
     {
       id: 5,
-      title: "Seasonal Specials",
-      subtitle: "Limited Time Offers",
-      description: "Discover our seasonal collection of corporate gifts perfect for holidays, celebrations, and special occasions. Limited quantities available.",
-      background: "linear-gradient(135deg, #fbbf24 0%, #fde047 25%, #fef3c7 50%, #f59e0b 75%, #d97706 100%)",
-      accent: "from-yellow-400 via-yellow-200 to-yellow-500",
-      cta: "Shop Now"
+      title: "Oracle Apex & ERP",
+      subtitle: "Enterprise Solutions",
+      description: "Custom ERP and CRM solutions built with Oracle Apex for rapid application development and enterprise-grade performance.",
+      background: "linear-gradient(135deg, #ea580c 0%, #f97316 25%, #fb923c 50%, #c2410c 75%, #ea580c 100%)",
+      accent: "from-orange-600 via-orange-400 to-orange-800",
+      cta: "ERP Solutions"
     },
     {
       id: 6,
-      title: "Corporate Partnerships",
-      subtitle: "Building Lasting Relationships",
-      description: "Partner with us for your corporate gifting needs. We offer customized solutions, bulk discounts, and dedicated account management for your business.",
-      background: "linear-gradient(135deg, #dc2626 0%, #ef4444 25%, #fca5a5 50%, #b91c1c 75%, #991b1b 100%)",
-      accent: "from-red-600 via-red-300 to-red-700",
-      cta: "Partner With Us"
+      title: "Python Development",
+      subtitle: "Data Science & Web",
+      description: "Python development services including data science, machine learning, Django web applications, and automation solutions.",
+      background: "linear-gradient(135deg, #0891b2 0%, #06b6d4 25%, #67e8f9 50%, #0e7490 75%, #0891b2 100%)",
+      accent: "from-cyan-600 via-cyan-400 to-cyan-800",
+      cta: "Python Services"
     }
   ];
 
@@ -187,7 +187,7 @@ export default function StoreBanner() {
                         ease: "linear" 
                       }}
                     >
-                      CORPORATE GIFTS
+                      IT SOLUTIONS
                     </motion.div>
                   </motion.div>
                   <motion.h1 
@@ -299,7 +299,7 @@ export default function StoreBanner() {
               animate={{ x: 0, opacity: 0.3 }}
               transition={{ duration: 1, delay: 1.7 }}
             >
-              {["DIOR", "CHANEL", "ARMANI"].map((brand, index) => (
+              {["ORACLE", "MICROSOFT", "GOOGLE"].map((brand, index) => (
                 <motion.div 
                   key={brand}
                   className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/20"

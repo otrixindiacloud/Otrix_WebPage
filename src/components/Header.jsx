@@ -4,11 +4,8 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import ThemeToggle from "./ThemeToggle";
-import CartButton from "./CartButton";
 import NotificationButton from "./NotificationButton";
 
-import { useCart } from "../contexts/CartContext";
-import { useAuth } from "../contexts/AuthContext";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
@@ -16,7 +13,6 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { user, logout } = useAuth();
 
   useEffect(() => {
     setMounted(true);
@@ -83,15 +79,19 @@ export default function Header() {
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.2 }}
             >
-              <Link href="/" className="flex items-center" style={{ marginLeft: '-105px'}}>
-                <Image
-                  src="/WhatsApp Image 2025-09-02 at 13.23.47_d30ef7bb.jpg"
-                  alt="Golden Tag Corporate Gifts"
-                  width={300}
-                  height={120}
-                  className="h-20 w-auto"
-                  priority
-                />
+              <Link href="/" className="flex items-center">
+                <div className="flex items-center space-x-3">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-teal-500 opacity-80"></div>
+                    <svg className="w-8 h-8 text-white relative z-10" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h1 className="text-2xl font-bold text-gray-900">Otrix India Tech</h1>
+                    <p className="text-sm text-gray-600">Let's make it perfect!</p>
+                  </div>
+                </div>
               </Link>
             </motion.div>
           </motion.div>
@@ -126,7 +126,7 @@ export default function Header() {
             >
               <input
                 type="text"
-                placeholder="Search gifts..."
+                placeholder="Search services..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-12 pr-12 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-lg font-bold transition-all duration-200 shadow-sm hover:shadow-md placeholder:font-medium"
@@ -200,86 +200,7 @@ export default function Header() {
             >
               <ThemeToggle />
             </motion.div>
-            {/* Cart Button */}
-            <motion.div
-              className="ml-3"
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.3, delay: 1.2 }}
-            >
-              <CartButton />
-            </motion.div>
             
-            {/* Notification Button - Only show when user is logged in */}
-            {mounted && user && (
-              <motion.div
-                className="ml-3"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 0.3, delay: 1.3 }}
-              >
-                <NotificationButton />
-              </motion.div>
-            )}
-            
-            <AnimatePresence mode="wait">
-              {mounted && user ? (
-                <motion.div 
-                  key="user-buttons"
-                  className="hidden sm:flex items-center space-x-3 ml-3"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Link href="/account" className="w-10 h-10 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center" title="Profile" style={{marginRight:-90}} >
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                      </svg>
-                    </Link>
-                  </motion.div>
-                  <motion.div
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <button
-                      onClick={() => {
-                        logout();
-                        setIsMobileMenuOpen(false);
-                      }}
-                      className="w-10 h-10 bg-gray-600 text-white rounded-md hover:bg-gray-700 transition-colors duration-200 flex items-center justify-center"
-                      title="Logout" style={{ marginRight:-300,marginLeft:40}}
-                    >
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                      </svg>
-                    </button>
-                  </motion.div>
-                </motion.div>
-              ) : (
-                <motion.div
-                  key="login-button"
-                  className="ml-3"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.3 }}
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Link href="/login" className="hidden sm:inline-block px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors duration-200 font-medium text-sm mr-2">
-                    Sign In
-                  </Link>
-                  <Link href="/register" className="hidden sm:inline-block px-4 py-2 bg-gradient-to-r from-orange-500 to-yellow-500 text-white rounded-md hover:from-orange-600 hover:to-yellow-600 transition-colors duration-200 font-medium text-sm">
-                    Sign Up
-                  </Link>
-                </motion.div>
-              )}
-            </AnimatePresence>
           </motion.div>
         </motion.div>
 
@@ -291,7 +212,7 @@ export default function Header() {
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="Search gifts..."
+                  placeholder="Search services..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full pl-4 pr-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-base font-bold placeholder:font-bold"
@@ -343,56 +264,6 @@ export default function Header() {
               </div>
             </div>
 
-            {/* Mobile User Actions */}
-            <div className="mt-4 pt-4 border-t border-gray-200">
-              {mounted && user ? (
-                <div>
-                  <Link 
-                    href="/notifications" 
-                    className="flex items-center justify-center px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors duration-200 font-medium w-full"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-5 5v-5zM4.5 19.5h15a2 2 0 002-2v-6.5a7.5 7.5 0 00-15 0v6.5a2 2 0 002 2z" />
-                    </svg>
-                    Notifications
-                  </Link>
-                  <Link 
-                    href="/account" 
-                    className="flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200 font-medium w-full"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Profile
-                  </Link>
-                  <button
-                    onClick={() => {
-                      logout();
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="w-full px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 transition-colors duration-200 font-medium"
-                  >
-                    Logout
-                </button>
-                </div>
-              ) : (
-                <div>
-                  <Link 
-                    href="/login" 
-                    className="block w-full text-center px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors duration-200 font-medium mb-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Login
-                  </Link>
-                  <Link 
-                    href="/register" 
-                    className="block w-full text-center px-4 py-2 bg-gradient-to-r from-orange-500 to-yellow-500 text-white rounded-md hover:from-orange-600 hover:to-yellow-600 transition-colors duration-200 font-medium"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Sign Up
-                  </Link>
-                </div>
-              )}
-            </div>
           </div>
         )}
       </div>

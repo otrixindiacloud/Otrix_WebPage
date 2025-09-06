@@ -1,12 +1,30 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import MapComponent from "../../components/MapComponent";
+import { 
+  FadeInUp, 
+  FadeInLeft, 
+  FadeInRight, 
+  ScaleIn, 
+  StaggerContainer, 
+  StaggerItem, 
+  HoverScale,
+  CountUp,
+  ScrollProgress,
+  RevealOnScroll,
+  TextReveal,
+  MagneticButton,
+  GlowCard
+} from "../../components/animations";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
+    phone: "",
     email: "",
-    company: "",
+    services: "",
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -45,18 +63,19 @@ export default function Contact() {
     
     console.log("Form submitted:", formData);
     setShowSuccess(true);
-    setFormData({ name: "", email: "", company: "", message: "" });
+    setFormData({ name: "", phone: "", email: "", services: "", message: "" });
     setIsSubmitting(false);
     
     // Hide success message after 5 seconds
     setTimeout(() => setShowSuccess(false), 5000);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
   const handleFocus = (fieldName: string) => {
@@ -69,52 +88,223 @@ export default function Contact() {
 
   return (
     <main className="min-h-screen overflow-hidden">
-      {/* Animated Hero Section */}
-      <section 
-        id="hero"
-        ref={(el) => { sectionRefs.current.hero = el; }}
-        className="relative bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 py-20 overflow-hidden"
-      >
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-yellow-200/30 to-amber-200/30 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-amber-200/30 to-orange-200/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-yellow-100/20 to-amber-100/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+      {/* Scroll Progress */}
+      <ScrollProgress />
+      
+      {/* Animated Background */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-50"></div>
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+          <div className="absolute top-40 right-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
+          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-2000"></div>
+        </div>
+      </div>
+      {/* Hero Section */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 right-10 w-40 h-40 bg-red-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-red-600 rounded-full blur-2xl"></div>
         </div>
 
-        <div className="golden-tag-container relative z-10">
-          <div className={`text-center transition-all duration-1000 ${visibleSections.has('hero') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            
-            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 bg-gradient-to-r from-yellow-500 via-amber-500 to-orange-500 bg-clip-text text-transparent">
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <motion.div 
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <motion.h1 
+              className="text-5xl md:text-6xl font-bold text-red-600 mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
               Contact Us
-            </h1>
-            <p className="text-center text-muted-foreground text-xl max-w-3xl mx-auto mb-8 leading-relaxed">
-              Get in touch with our team for personalized corporate gifting solutions and custom branding services
-            </p>
-            <div className="flex justify-center">
-              <span className="bg-gradient-to-r from-yellow-500 to-amber-600 text-white px-8 py-3 rounded-full text-sm font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                Premium Service Since 2015
+            </motion.h1>
+            <motion.h2 
+              className="text-2xl md:text-3xl font-bold text-gray-800 mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              Get In Touch
+            </motion.h2>
+            <motion.p 
+              className="text-lg text-gray-700 mb-4 max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              We are a leading ERP/CRM software development company, offering customized solutions
+            </motion.p>
+            <motion.p 
+              className="text-lg text-gray-600 max-w-5xl mx-auto mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              in Oracle Apex, Data Analytics & AI, Python for Data Science, Django Python, OCI, Power BI, Microsoft Azure, Google Cloud, React Native, and Flutter.
+            </motion.p>
+            <motion.div 
+              className="flex justify-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
+            >
+              <span className="bg-red-600 text-white px-8 py-3 rounded-full text-sm font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                With over 12 years of experience
               </span>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Statistics Section */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 right-10 w-40 h-40 bg-red-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-red-600 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <motion.div 
+            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            {/* Happy Customers */}
+            <motion.div 
+              className="text-center group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                  <span className="text-white text-2xl font-bold">
+                    <CountUp end={200} duration={2} delay={1.0} />
+                  </span>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-2">+</h3>
+                <p className="text-gray-600 font-semibold">Happy Customers</p>
+              </div>
+            </motion.div>
+
+            {/* Completed Projects */}
+            <motion.div 
+              className="text-center group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                  <span className="text-white text-2xl font-bold">
+                    <CountUp end={55} duration={2} delay={1.2} />
+                  </span>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-2">+</h3>
+                <p className="text-gray-600 font-semibold">Completed Projects</p>
+              </div>
+            </motion.div>
+
+            {/* Expert Workers */}
+            <motion.div 
+              className="text-center group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                  <span className="text-white text-2xl font-bold">
+                    <CountUp end={12} duration={2} delay={1.4} />
+                  </span>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-2">+</h3>
+                <p className="text-gray-600 font-semibold">Expert Workers</p>
+              </div>
+            </motion.div>
+
+            {/* Ongoing Projects */}
+            <motion.div 
+              className="text-center group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                  <span className="text-white text-2xl font-bold">
+                    <CountUp end={15} duration={2} delay={1.6} />
+                  </span>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-2">+</h3>
+                <p className="text-gray-600 font-semibold">Ongoing Projects</p>
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Contact Form & Information */}
-      <section 
-        id="contact-form"
-        ref={(el) => { sectionRefs.current['contact-form'] = el; }}
-        className="bg-white py-20"
-      >
-        <div className="golden-tag-container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Animated Contact Form */}
-            <div className={`transition-all duration-1000 delay-200 ${visibleSections.has('contact-form') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-              <div className="bg-gradient-to-br from-white to-yellow-50/30 p-8 rounded-2xl shadow-xl border border-yellow-100">
-                <h2 className="text-4xl font-bold text-foreground mb-8 bg-gradient-to-r from-yellow-500 to-amber-600 bg-clip-text text-transparent">
-                  Send us a Message
-                </h2>
-                
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 right-10 w-40 h-40 bg-red-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-red-600 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <motion.h2 
+              className="text-4xl font-bold text-red-600 mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+                  FREE CONSULTATION
+            </motion.h2>
+            <motion.h3 
+              className="text-2xl font-bold text-gray-800 mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+                  Get a Free Quote
+            </motion.h3>
+          </motion.div>
+
+          <div className="space-y-8">
+            {/* Contact Form Card */}
+            <motion.div 
+              className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -4 }}
+            >
                 {/* Success Message */}
                 {showSuccess && (
                   <div className="mb-6 p-4 bg-green-100 border border-green-300 rounded-lg animate-bounce">
@@ -129,7 +319,7 @@ export default function Contact() {
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="relative">
-                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                       Full Name *
                     </label>
                     <input
@@ -143,15 +333,37 @@ export default function Contact() {
                       required
                       className={`w-full px-4 py-4 border-2 rounded-xl transition-all duration-300 focus:outline-none ${
                         focusedField === 'name' 
-                          ? 'border-yellow-500 shadow-lg shadow-yellow-200/50 transform scale-[1.02]' 
-                          : 'border-gray-200 hover:border-gray-300'
+                        ? 'border-red-500 shadow-lg shadow-red-200/50 transform scale-[1.02]' 
+                        : 'border-gray-300 hover:border-gray-400'
                       }`}
                       placeholder="Enter your full name"
                     />
                   </div>
 
                   <div className="relative">
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      Phone Number *
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      onFocus={() => handleFocus('phone')}
+                      onBlur={handleBlur}
+                      required
+                      className={`w-full px-4 py-4 border-2 rounded-xl transition-all duration-300 focus:outline-none ${
+                        focusedField === 'phone' 
+                        ? 'border-red-500 shadow-lg shadow-red-200/50 transform scale-[1.02]' 
+                        : 'border-gray-300 hover:border-gray-400'
+                      }`}
+                      placeholder="Enter your phone number"
+                    />
+                  </div>
+
+                  <div className="relative">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                       Email Address *
                     </label>
                     <input
@@ -165,36 +377,48 @@ export default function Contact() {
                       required
                       className={`w-full px-4 py-4 border-2 rounded-xl transition-all duration-300 focus:outline-none ${
                         focusedField === 'email' 
-                          ? 'border-yellow-500 shadow-lg shadow-yellow-200/50 transform scale-[1.02]' 
-                          : 'border-gray-200 hover:border-gray-300'
+                        ? 'border-red-500 shadow-lg shadow-red-200/50 transform scale-[1.02]' 
+                        : 'border-gray-300 hover:border-gray-400'
                       }`}
                       placeholder="Enter your email address"
                     />
                   </div>
 
                   <div className="relative">
-                    <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
-                      Company Name
+                  <label htmlFor="services" className="block text-sm font-medium text-gray-700 mb-2">
+                      Services
                     </label>
-                    <input
-                      type="text"
-                      id="company"
-                      name="company"
-                      value={formData.company}
+                    <select
+                      id="services"
+                      name="services"
+                      value={formData.services}
                       onChange={handleChange}
-                      onFocus={() => handleFocus('company')}
+                      onFocus={() => handleFocus('services')}
                       onBlur={handleBlur}
                       className={`w-full px-4 py-4 border-2 rounded-xl transition-all duration-300 focus:outline-none ${
-                        focusedField === 'company' 
-                          ? 'border-yellow-500 shadow-lg shadow-yellow-200/50 transform scale-[1.02]' 
-                          : 'border-gray-200 hover:border-gray-300'
+                        focusedField === 'services' 
+                        ? 'border-red-500 shadow-lg shadow-red-200/50 transform scale-[1.02]' 
+                        : 'border-gray-300 hover:border-gray-400'
                       }`}
-                      placeholder="Enter your company name"
-                    />
+                    >
+                      <option value="">Select a service</option>
+                      <option value="oracle-apex">Oracle Apex & ERP</option>
+                      <option value="data-analytics">Data Analytics & AI</option>
+                      <option value="python">Python for Data Science</option>
+                      <option value="django">Django Python for Web</option>
+                      <option value="databases">Postgres & MySQL Database</option>
+                      <option value="oci">Oracle Cloud Infrastructure</option>
+                      <option value="powerbi">Power BI for Visualization</option>
+                      <option value="azure">Microsoft Azure</option>
+                      <option value="gcp">Google Cloud</option>
+                      <option value="react-native">React Native</option>
+                      <option value="flutter">Flutter</option>
+                      <option value="other">Other</option>
+                    </select>
                   </div>
 
                   <div className="relative">
-                    <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                       Message *
                     </label>
                     <textarea
@@ -208,21 +432,23 @@ export default function Contact() {
                       rows={5}
                       className={`w-full px-4 py-4 border-2 rounded-xl transition-all duration-300 focus:outline-none resize-none ${
                         focusedField === 'message' 
-                          ? 'border-yellow-500 shadow-lg shadow-yellow-200/50 transform scale-[1.02]' 
-                          : 'border-gray-200 hover:border-gray-300'
+                        ? 'border-red-500 shadow-lg shadow-red-200/50 transform scale-[1.02]' 
+                        : 'border-gray-300 hover:border-gray-400'
                       }`}
-                      placeholder="Tell us about your corporate gifting needs"
+                      placeholder="Tell us about your project requirements"
                     />
                   </div>
 
-                  <button
+                <motion.button
                     type="submit"
                     disabled={isSubmitting}
                     className={`w-full py-4 text-lg font-semibold rounded-xl transition-all duration-300 transform ${
                       isSubmitting 
                         ? 'bg-gray-400 cursor-not-allowed' 
-                        : 'bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 hover:scale-105 hover:shadow-xl'
+                      : 'bg-red-600 hover:bg-red-700 hover:scale-105 hover:shadow-xl'
                     } text-white shadow-lg`}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   >
                     {isSubmitting ? (
                       <div className="flex items-center justify-center">
@@ -233,255 +459,325 @@ export default function Contact() {
                         Sending...
                       </div>
                     ) : (
-                      'Send Message'
+                      'Get A Free Quote'
                     )}
-                  </button>
+                </motion.button>
                 </form>
-              </div>
-            </div>
+            </motion.div>
 
-            {/* Animated Contact Information */}
-            <div className={`transition-all duration-1000 delay-400 ${visibleSections.has('contact-form') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-              <h2 className="text-4xl font-bold text-foreground mb-8 bg-gradient-to-r from-yellow-500 to-amber-600 bg-clip-text text-transparent">
-                Get in Touch
-              </h2>
+            {/* Contact Information Card */}
+            <motion.div 
+              className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -4 }}
+            >
+              <motion.h2 
+                className="text-3xl font-bold text-red-600 mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.0 }}
+                viewport={{ once: true }}
+              >
+                Contact Information
+              </motion.h2>
               
               <div className="space-y-8">
                 {/* Office Location Card */}
-                <div className="group">
-                  <h3 className="text-xl font-semibold text-foreground mb-4">Office Location</h3>
-                  <div className="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <motion.div 
+                  className="group"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.2 }}
+                  viewport={{ once: true }}
+                >
+                  <h3 className="text-xl font-semibold text-gray-800 mb-4">Office Location</h3>
+                  <div className="bg-gray-50 border border-gray-200 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                     <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-amber-600 to-orange-600 rounded-full flex items-center justify-center mr-4 shadow-lg">
-                        <span className="text-white text-lg font-bold">GT</span>
+                      <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                        <span className="text-white text-lg font-bold">OT</span>
                       </div>
-                      <h4 className="font-bold text-amber-800 text-xl">GOLDEN TAG</h4>
+                      <h4 className="font-bold text-gray-800 text-xl">OTRIX INDIA TECH</h4>
                     </div>
-                    <p className="text-muted-foreground text-lg leading-relaxed">
-                      <strong className="text-foreground">Manama, Bahrain</strong><br />
-                      Serving the Kingdom of Bahrain<br />
-                      <span className="text-amber-600 font-semibold">Since 2015</span>
+                    <p className="text-gray-600 text-lg leading-relaxed">
+                      <strong className="text-gray-800">Software Development Company</strong><br />
+                      ERP/CRM Solutions Provider<br />
+                      <span className="text-red-600 font-semibold">12+ Years Experience</span>
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Contact Details Cards */}
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-6">Contact Details</h3>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.4 }}
+                  viewport={{ once: true }}
+                >
+                  <h3 className="text-xl font-semibold text-gray-800 mb-6">Contact Details</h3>
                   <div className="space-y-4">
                     {/* Phone Card */}
-                    <div className="group bg-gradient-to-r from-yellow-50 to-amber-50 border border-yellow-200 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <motion.div 
+                      className="group bg-gray-50 border border-gray-200 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 1.6 }}
+                      viewport={{ once: true }}
+                    >
                       <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-amber-600 rounded-full flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                        <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform duration-300">
                           <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                           </svg>
                         </div>
                         <div>
-                          <p className="font-medium text-foreground text-lg">Phone</p>
-                          <p className="text-yellow-600 font-semibold text-xl">+973 3663 0814</p>
+                          <p className="font-medium text-gray-700 text-lg">Phone</p>
+                          <p className="text-gray-800 font-semibold text-xl">+91 9893377444</p>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
 
                     {/* Email Card */}
-                    <div className="group bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <motion.div 
+                      className="group bg-gray-50 border border-gray-200 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 1.8 }}
+                      viewport={{ once: true }}
+                    >
                       <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-gradient-to-r from-amber-500 to-orange-600 rounded-full flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                        <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform duration-300">
                           <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                           </svg>
                         </div>
                         <div>
-                          <p className="font-medium text-foreground text-lg">Email</p>
-                          <p className="text-amber-600 font-semibold text-xl">Info@goldentag.com.bh</p>
+                          <p className="font-medium text-gray-700 text-lg">Email</p>
+                          <p className="text-gray-800 font-semibold text-xl">info@otrix.com</p>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
 
                     {/* Business Hours Card */}
-                    <div className="group bg-gradient-to-r from-orange-50 to-yellow-50 border border-orange-200 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <motion.div 
+                      className="group bg-gray-50 border border-gray-200 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 2.0 }}
+                      viewport={{ once: true }}
+                    >
                       <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                        <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform duration-300">
                           <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
                         </div>
                         <div>
-                          <p className="font-medium text-foreground text-lg">Business Hours</p>
-                          <p className="text-orange-600 font-semibold text-xl">Always Open</p>
+                          <p className="font-medium text-gray-700 text-lg">Business Hours</p>
+                          <p className="text-gray-800 font-semibold text-xl">24/7 Support</p>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Enhanced Map Section */}
-      <section 
-        id="map-section"
-        ref={(el) => { sectionRefs.current['map-section'] = el; }}
-        className="bg-gradient-to-br from-yellow-50 to-amber-50 py-20"
-      >
-        <div className="golden-tag-container">
-          <div className={`text-center mb-12 transition-all duration-1000 delay-200 ${visibleSections.has('map-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 bg-gradient-to-r from-yellow-500 to-amber-600 bg-clip-text text-transparent">
-              Find Us
-            </h2>
-            <p className="text-amber-600 font-semibold text-xl">Located in the Heart of Manama, Bahrain</p>
-          </div>
+      {/* Map Section */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 right-10 w-40 h-40 bg-red-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-red-600 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <motion.h2 
+              className="text-4xl md:text-5xl font-bold text-red-600 mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              FIND US
+            </motion.h2>
+            <motion.h3 
+              className="text-2xl md:text-3xl font-bold text-gray-800 mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              Our Location
+            </motion.h3>
+            <motion.p 
+              className="text-gray-700 font-semibold text-xl"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              Visit our office in Dewas, Madhya Pradesh
+            </motion.p>
+          </motion.div>
           
-          <div className={`transition-all duration-1000 delay-400 ${visibleSections.has('map-section') ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-              {/* Map Section - 80% width on large screens */}
-              <div className="lg:col-span-4">
-                <div className="bg-white p-2 rounded-3xl shadow-2xl border border-yellow-10 overflow-hidden">
-                  <div className="w-full h-96 lg:h-[500px] rounded-2xl relative overflow-hidden">
-                    {/* Interactive Map */}
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.5!2d50.585!3d26.228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49ae0b4b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sManama%2C%20Bahrain!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      className="rounded-2xl"
-                      title="Golden Tag Location - Manama, Bahrain"
-                    ></iframe>
-                    
-                    {/* Map Overlay with Brand Badge */}
-                    
-                  </div>
-                </div>
-              </div>
-
-              {/* Location Information Panel - 20% width on large screens */}
-              <div className="lg:col-span-1">
-                <div className="bg-gradient-to-br from-white to-yellow-50/30 p-6 rounded-3xl shadow-2xl border border-yellow-100 h-full">
-                  <div className="space-y-6">
-                    {/* Location Title */}
-                    <div className="text-center">
-                      <h3 className="text-2xl font-bold text-foreground mb-2 bg-gradient-to-r from-yellow-500 to-amber-600 bg-clip-text text-transparent">
-                        Our Location
-                      </h3>
-                      <div className="w-16 h-1 bg-gradient-to-r from-yellow-500 to-amber-600 mx-auto rounded-full"></div>
-                    </div>
-
-                    {/* Location Details */}
-                    <div className="space-y-4">
-                      <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 p-4 rounded-2xl">
-                        <div className="flex items-center mb-3">
-                          <div className="w-10 h-10 bg-gradient-to-r from-amber-600 to-orange-600 rounded-full flex items-center justify-center mr-3">
-                            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                          </div>
-                          <h4 className="font-bold text-amber-800 text-lg">Address</h4>
-                        </div>
-                        <p className="text-muted-foreground text-sm leading-relaxed">
-                          <strong className="text-foreground">Manama, Bahrain</strong><br />
-                          Kingdom of Bahrain<br />
-                          <span className="text-amber-600 font-semibold">Middle East</span>
-                        </p>
-                      </div>
-
-                      
-
-                      <div className="bg-gradient-to-r from-orange-50 to-yellow-50 border border-orange-200 p-4 rounded-2xl">
-                        <div className="flex items-center mb-3">
-                          <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full flex items-center justify-center mr-3">
-                            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
-                            </svg>
-                          </div>
-                          <h4 className="font-bold text-orange-800 text-lg">Service Area</h4>
-                        </div>
-                        <p className="text-muted-foreground text-sm">
-                          <strong className="text-foreground">Bahrain & GCC</strong><br />
-                          <span className="text-orange-600 font-semibold">International Shipping</span>
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Quick Contact */}
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <motion.div 
+            className="max-w-4xl mx-auto"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <MapComponent className="border border-gray-300 shadow-2xl rounded-2xl" />
+            <motion.div 
+              className="mt-6 text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
+              viewport={{ once: true }}
+            >
+                <p className="text-lg text-gray-700 mb-4">
+                <strong className="text-gray-800">Otrix India Tech</strong><br />
+                  159 LIG Vikas Nagar, Ganga Nagar<br />
+                  Dewas, Madhya Pradesh 455001
+                </p>
+              <motion.a 
+                  href="https://www.google.com/maps/dir//Otrix+Online+159+LIG+Vikas+Nagar,+Ganga+Nagar+Dewas,+Madhya+Pradesh+455001/@22.9528705,76.0292178,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x39631782832fffff:0xe90e0a24a71cfa0e!2m2!1d76.0292178!2d22.9528705?entry=ttu&g_ep=EgoyMDI1MDkwMi4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                >
+                  <span className="mr-2">📍</span>
+                  Get Directions
+              </motion.a>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Animated CTA Section */}
-      <section 
-        id="cta-section"
-        ref={(el) => { sectionRefs.current['cta-section'] = el; }}
-        className="bg-gradient-to-br from-yellow-100 via-amber-600 to-yellow-600 py-20 relative overflow-hidden"
-      >
-        {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-20 -right-20 w-40 h-40 bg-white/10 rounded-full blur-2xl animate-pulse"></div>
-          <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-white/10 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-white/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+      {/* CTA Section */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 right-10 w-40 h-40 bg-red-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-red-600 rounded-full blur-2xl"></div>
         </div>
 
-        <div className="golden-tag-container relative z-10">
-          <div className={`text-center transition-all duration-1000 delay-200 ${visibleSections.has('cta-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="flex justify-center mb-8">
-              <div className="text-5xl font-bold text-white animate-bounce">
-                GOLDEN TAG
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <motion.div 
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <motion.div 
+              className="flex justify-center mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="text-5xl font-bold text-red-600 animate-bounce">
+                OTRIX INDIA TECH
               </div>
-            </div>
-            <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Get Started?</h3>
-            <p className="text-white/90 text-xl mb-12 max-w-3xl mx-auto leading-relaxed">
-              Contact us today to discuss your corporate gifting needs. Our team is ready to help you create meaningful gifts that strengthen your business relationships.
-            </p>
+            </motion.div>
+            <motion.h3 
+              className="text-4xl md:text-5xl font-bold text-gray-800 mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              Ready to Get Started?
+            </motion.h3>
+            <motion.p 
+              className="text-gray-700 text-xl mb-12 max-w-3xl mx-auto leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              We provide ERP/CRM software solutions in Oracle Apex, AI, Python, Django, OCI, Power BI, Azure, Google Cloud, React Native, and Flutter.
+            </motion.p>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              viewport={{ once: true }}
+            >
               {/* Call Us Card */}
-              <div className={`group transition-all duration-1000 delay-300 ${visibleSections.has('cta-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:bg-white/20">
-                  <div className="w-20 h-20 bg-gradient-to-r from-yellow-400 to-amber-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:rotate-12 transition-transform duration-300">
+              <motion.div 
+                className="group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.0 }}
+                viewport={{ once: true }}
+              >
+                <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:bg-gray-50">
+                  <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:rotate-12 transition-transform duration-300">
                     <span className="text-white text-3xl">📞</span>
                   </div>
-                  <h4 className="font-bold text-white text-xl mb-3">Call Us</h4>
-                  <p className="text-white/80 text-lg font-semibold">+973 3663 0814</p>
+                  <h4 className="font-bold text-gray-800 text-xl mb-3">Call Us</h4>
+                  <p className="text-gray-800 text-lg font-semibold">+91 9893377444</p>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Email Us Card */}
-              <div className={`group transition-all duration-1000 delay-500 ${visibleSections.has('cta-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:bg-white/20">
-                  <div className="w-20 h-20 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:rotate-12 transition-transform duration-300">
+              <motion.div 
+                className="group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.2 }}
+                viewport={{ once: true }}
+              >
+                <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:bg-gray-50">
+                  <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:rotate-12 transition-transform duration-300">
                     <span className="text-white text-3xl">✉️</span>
                   </div>
-                  <h4 className="font-bold text-white text-xl mb-3">Email Us</h4>
-                  <p className="text-white/80 text-lg font-semibold">Info@goldentag.com.bh</p>
+                  <h4 className="font-bold text-gray-800 text-xl mb-3">Email Us</h4>
+                  <p className="text-gray-800 text-lg font-semibold">info@otrix.com</p>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Visit Us Card */}
-              <div className={`group transition-all duration-1000 delay-700 ${visibleSections.has('cta-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:bg-white/20">
-                  <div className="w-20 h-20 bg-gradient-to-r from-orange-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:rotate-12 transition-transform duration-300">
+              <motion.div 
+                className="group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.4 }}
+                viewport={{ once: true }}
+              >
+                <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:bg-gray-50">
+                  <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:rotate-12 transition-transform duration-300">
                     <span className="text-white text-3xl">🌐</span>
                   </div>
-                  <h4 className="font-bold text-white text-xl mb-3">Visit Us</h4>
-                  <p className="text-white/80 text-lg font-semibold">www.goldentag.com.bh</p>
+                  <h4 className="font-bold text-gray-800 text-xl mb-3">Visit Us</h4>
+                  <p className="text-gray-800 text-lg font-semibold">www.otrix.com</p>
                 </div>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
-
     </main>
   );
 }

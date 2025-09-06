@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNotifications } from '../../contexts/NotificationContext';
-import ProtectedRoute from '../../components/ProtectedRoute';
 
 export default function NotificationsPage() {
   const { 
@@ -106,8 +105,7 @@ export default function NotificationsPage() {
   };
 
   return (
-    <ProtectedRoute>
-      <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50">
         {/* Header */}
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
@@ -322,6 +320,5 @@ export default function NotificationsPage() {
           </motion.div>
         </div>
       </div>
-    </ProtectedRoute>
   );
 }

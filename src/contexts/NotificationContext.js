@@ -28,7 +28,7 @@ export const NotificationProvider = ({ children }) => {
       const sampleNotifications = [
         {
           id: 1,
-          title: 'Welcome to Golden Tag!',
+          title: 'Welcome to Otrix India Tech!',
           message: 'Thank you for joining us. Explore our premium corporate gifts collection.',
           type: 'welcome',
           read: false,
@@ -37,8 +37,8 @@ export const NotificationProvider = ({ children }) => {
         },
         {
           id: 2,
-          title: 'New Products Available',
-          message: 'Check out our latest collection of eco-friendly corporate gifts.',
+          title: 'New Services Available',
+          message: 'Check out our latest corporate gift solutions and services.',
           type: 'product',
           read: false,
           timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(), // 2 hours ago

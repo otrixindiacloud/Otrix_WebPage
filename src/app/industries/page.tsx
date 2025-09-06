@@ -1,0 +1,414 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { 
+  FadeInUp, 
+  FadeInLeft, 
+  FadeInRight, 
+  ScaleIn, 
+  StaggerContainer, 
+  StaggerItem, 
+  HoverScale,
+  CountUp,
+  ScrollProgress,
+  RevealOnScroll,
+  TextReveal,
+  MagneticButton,
+  GlowCard
+} from "../../components/animations";
+
+export default function IndustriesPage() {
+  const [hoveredIndustry, setHoveredIndustry] = useState(null);
+
+  const industries = [
+    "Healthcare & Fitness",
+    "Education & Learning", 
+    "Government",
+    "On-Demand Solution",
+    "Information Services",
+    "Insurance",
+    "Food & Restaurant",
+    "B2B Solution",
+    "Tracking Systems",
+    "Social Networking",
+    "Shopping App",
+    "Manufacturing",
+    "Logistics",
+    "Smart City",
+    "Non Profit",
+    "Ecommerce & Retail",
+    "Music & Entertainment",
+    "Telecom",
+    "Events and Ticketing",
+    "Travel & Hospitality",
+    "Booking Application",
+    "Real Estate & Property",
+    "Fintech",
+    "Power & renewable energy",
+    "Beauty & Wellness",
+    "Enterprise Mobility",
+    "CRM Solution",
+    "Transportation",
+    "Specialties And Services",
+    "Auction System"
+  ];
+
+  return (
+    <main className="min-h-screen">
+      {/* Scroll Progress */}
+      <ScrollProgress />
+      
+      {/* Animated Background */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-50"></div>
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+          <div className="absolute top-40 right-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
+          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-2000"></div>
+        </div>
+      </div>
+      {/* Hero Section */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 right-10 w-40 h-40 bg-red-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-red-600 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <motion.div 
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <motion.h1 
+              className="text-5xl md:text-6xl font-bold text-red-600 mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              Industries
+            </motion.h1>
+            <motion.h2 
+              className="text-2xl md:text-3xl font-bold text-gray-800 mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              We Serve Diverse Industries
+            </motion.h2>
+            <motion.p 
+              className="text-lg text-gray-700 mb-4 max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              Otrix India Tech provides solutions for various leading industries across the globe. We have expertise in delivering cutting-edge technology solutions tailored to specific industry needs.
+            </motion.p>
+            <motion.p 
+              className="text-lg text-gray-600 max-w-5xl mx-auto mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              Our team of experts has successfully delivered projects across multiple sectors, helping businesses transform digitally and achieve their goals.
+            </motion.p>
+            <motion.div 
+              className="flex justify-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
+            >
+              <span className="bg-red-600 text-white px-8 py-3 rounded-full text-sm font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                With over 12 years of experience
+              </span>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Industries Grid */}
+      <section className="py-20 bg-gray-50 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 right-10 w-40 h-40 bg-red-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-red-600 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <motion.h2 
+              className="text-4xl font-bold text-red-600 mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              Our Industry Expertise
+            </motion.h2>
+            <motion.p 
+              className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              We have successfully delivered projects across various industries, providing customized solutions that meet specific business requirements and drive growth.
+            </motion.p>
+          </motion.div>
+
+          {/* Industries Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+            {industries.map((industry, index) => (
+              <motion.div
+                key={index}
+                className="group cursor-pointer"
+                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.05,
+                  ease: "easeOut"
+                }}
+                viewport={{ once: true }}
+                whileHover={{ 
+                  y: -5,
+                  scale: 1.05,
+                  transition: { duration: 0.3 }
+                }}
+                onHoverStart={() => setHoveredIndustry(index)}
+                onHoverEnd={() => setHoveredIndustry(null)}
+              >
+                <div className="relative bg-white border border-gray-200 rounded-xl p-4 shadow-md hover:shadow-xl transition-all duration-300 group-hover:border-red-300 group-hover:bg-red-50">
+                  {/* Checkmark Icon */}
+                  <motion.div 
+                    className="absolute top-2 right-2 w-5 h-5 bg-red-600 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    whileHover={{ scale: 1.2 }}
+                  >
+                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                    </svg>
+                  </motion.div>
+                  
+                  {/* Industry Name */}
+                  <motion.h4 
+                    className="text-sm font-semibold text-gray-800 text-center group-hover:text-red-600 transition-colors duration-300 pr-6"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    {industry}
+                  </motion.h4>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Statistics Section */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 right-10 w-40 h-40 bg-red-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-red-600 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <motion.h2 
+              className="text-4xl font-bold text-red-600 mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              Our Track Record
+            </motion.h2>
+            <motion.p 
+              className="text-lg text-gray-600 max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              Numbers that speak for our expertise and commitment to excellence
+            </motion.p>
+          </motion.div>
+
+          <motion.div 
+            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            {/* Happy Customers */}
+            <motion.div 
+              className="text-center group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                  <span className="text-white text-2xl font-bold">
+                    <CountUp end={200} duration={2} delay={1.0} />
+                  </span>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-2">+</h3>
+                <p className="text-gray-600 font-semibold">Happy Customers</p>
+              </div>
+            </motion.div>
+
+            {/* Completed Projects */}
+            <motion.div 
+              className="text-center group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                  <span className="text-white text-2xl font-bold">
+                    <CountUp end={55} duration={2} delay={1.2} />
+                  </span>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-2">+</h3>
+                <p className="text-gray-600 font-semibold">Completed Projects</p>
+              </div>
+            </motion.div>
+
+            {/* Expert Workers */}
+            <motion.div 
+              className="text-center group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                  <span className="text-white text-2xl font-bold">
+                    <CountUp end={12} duration={2} delay={1.4} />
+                  </span>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-2">+</h3>
+                <p className="text-gray-600 font-semibold">Expert Workers</p>
+              </div>
+            </motion.div>
+
+            {/* Industries Served */}
+            <motion.div 
+              className="text-center group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
+                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                  <span className="text-white text-2xl font-bold">
+                    <CountUp end={30} duration={2} delay={1.6} />
+                  </span>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-2">+</h3>
+                <p className="text-gray-600 font-semibold">Industries Served</p>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 right-10 w-40 h-40 bg-red-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-red-600 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <motion.div 
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <motion.div 
+              className="flex justify-center mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="text-5xl font-bold text-red-600 animate-bounce">
+                OTRIX INDIA TECH
+              </div>
+            </motion.div>
+            <motion.h3 
+              className="text-4xl md:text-5xl font-bold text-gray-800 mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              Ready to Transform Your Industry?
+            </motion.h3>
+            <motion.p 
+              className="text-gray-700 text-xl mb-12 max-w-3xl mx-auto leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              We provide ERP/CRM software solutions in Oracle Apex, AI, Python, Django, OCI, Power BI, Azure, Google Cloud, React Native, and Flutter.
+            </motion.p>
+            
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <motion.button 
+                className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Get Free Consultation
+              </motion.button>
+              <motion.button 
+                className="bg-transparent border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                View Our Services
+              </motion.button>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+    </main>
+  );
+}

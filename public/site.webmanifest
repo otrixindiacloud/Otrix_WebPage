@@ -1,6 +1,6 @@
 {
-  "name": "Golden Tag - Corporate Gifts & Giveaways",
-  "short_name": "Golden Tag",
+  "name": "Otrix India Tech - Corporate Gifts & Giveaways",
+  "short_name": "Otrix India Tech",
   "description": "Premium corporate gifts and giveaways in Bahrain",
   "start_url": "/",
   "display": "standalone",
@@ -14,7 +14,7 @@
       "purpose": "any"
     },
     {
-      "src": "/golden-tag-logo.svg",
+      "src": "/otrix-logo.svg",
       "sizes": "120x120",
       "type": "image/svg+xml",
       "purpose": "any"
