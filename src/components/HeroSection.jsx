@@ -200,11 +200,13 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             The best place for your all{" "}
-            <Typewriter 
-              text="Web Development & IT Solutions" 
+            <Typewriter
+              texts={["Web Development & IT Solutions", "ERP & CRM Solutions", "App Development", "Data Analytics"]}
               speed={100}
+              eraseSpeed={50}
               delay={1.2}
-              className="text-[#2e95b7]"
+              pause={1200}
+              className="text-[#6BA464]"
             />
           </motion.h1>
           

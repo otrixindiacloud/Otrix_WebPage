@@ -19,7 +19,7 @@ import {
 } from "../../components/animations";
 
 export default function IndustriesPage() {
-  const [hoveredIndustry, setHoveredIndustry] = useState(null);
+  const [hoveredIndustry, setHoveredIndustry] = useState<number | null>(null);
 
   const industries = [
     "Healthcare & Fitness",

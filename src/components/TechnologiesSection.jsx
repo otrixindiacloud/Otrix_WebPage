@@ -8,38 +8,22 @@ export default function TechnologiesSection() {
   const [hoveredTech, setHoveredTech] = useState(null);
 
   const technologies = [
+    "Data Analytics",
     "Node JS",
-    "C",
-    "Bootstrap",
-    "Angular",
-    "HTML",
-    "CSS",
-    "Javascript",
-    "Java",
+    "React Native",
+    "Flutter",
+    "Power BI",
     "Python",
     "Django",
     "React.js",
-    "Flutter",
-    "SQL",
     "MySQL",
     "MongoDB",
     "PostgreSQL",
-    "Vue.js",
-    "AI/ML",
-    "Power BI",
     "Oracle Cloud",
-    "Apex",
+    "Oracle Apex",
     "NextJS",
-    "Azure",
-    "TypeScript",
-    "Git",
-    "Docker",
-    "Kubernetes",
-    "Redis",
-    "Elasticsearch",
-    "AWS",
     "Google Cloud",
-    "Firebase"
+    "Azure"
   ];
 
   return (

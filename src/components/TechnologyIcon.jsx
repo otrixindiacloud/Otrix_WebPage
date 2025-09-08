@@ -2,25 +2,25 @@
 
 import { motion } from "framer-motion";
 import { 
-  SiNodedotjs, 
-  SiC, 
-  SiBootstrap, 
-  SiAngular, 
-  SiHtml5, 
-  SiCss3, 
-  SiJavascript, 
-  SiPython, 
-  SiDjango, 
-  SiReact, 
-  SiFlutter, 
-  SiMysql, 
-  SiMongodb, 
-  SiPostgresql, 
-  SiVuedotjs, 
-  SiTensorflow, 
-  SiOracle, 
-  SiSalesforce, 
-  SiNextdotjs, 
+  SiNodedotjs,
+  SiC,
+  SiBootstrap,
+  SiAngular,
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiPython,
+  SiDjango,
+  SiReact,
+  SiFlutter,
+  SiMysql,
+  SiMongodb,
+  SiPostgresql,
+  SiVuedotjs,
+  SiTensorflow,
+  SiOracle,
+  SiSalesforce,
+  SiNextdotjs,
   SiTypescript,
   SiGit,
   SiDocker,
@@ -29,8 +29,11 @@ import {
   SiElasticsearch,
   SiAmazonwebservices,
   SiGooglecloud,
-  SiFirebase
-} from "react-icons/si";
+  SiFirebase,
+  SiPowerbi,
+  SiMicrosoftazure,
+  SiDataAnalytics
+  } from "react-icons/si";
 
 export default function TechnologyIcon({ 
   technology, 
@@ -40,10 +43,20 @@ export default function TechnologyIcon({
 }) {
   // Technology mapping with real icons and color schemes
   const technologyMap = {
+    "Data Analytics": {
+      icon: SiDataAnalytics,
+      color: "from-blue-400 to-blue-700",
+      bgColor: "bg-blue-400"
+    },
     "Node JS": { 
       icon: SiNodedotjs, 
       color: "from-green-600 to-green-700",
       bgColor: "bg-green-600"
+    },
+    "React Native": {
+      icon: SiReact,
+      color: "from-blue-400 to-cyan-500",
+      bgColor: "bg-blue-400"
     },
     "C": { 
       icon: SiC, 
@@ -131,7 +144,7 @@ export default function TechnologyIcon({
       bgColor: "bg-purple-600"
     },
     "Power BI": { 
-      icon: null, 
+      icon: SiPowerbi, 
       color: "from-yellow-500 to-yellow-600",
       bgColor: "bg-yellow-500"
     },
@@ -139,6 +152,11 @@ export default function TechnologyIcon({
       icon: SiOracle, 
       color: "from-blue-600 to-blue-700",
       bgColor: "bg-blue-600"
+    },
+    "Oracle Apex": {
+      icon: SiSalesforce,
+      color: "from-orange-500 to-orange-600",
+      bgColor: "bg-orange-500"
     },
     "Apex": { 
       icon: SiSalesforce, 
@@ -151,7 +169,7 @@ export default function TechnologyIcon({
       bgColor: "bg-gray-800"
     },
     "Azure": { 
-      icon: null, 
+      icon: SiMicrosoftazure, 
       color: "from-blue-500 to-blue-600",
       bgColor: "bg-blue-500"
     },

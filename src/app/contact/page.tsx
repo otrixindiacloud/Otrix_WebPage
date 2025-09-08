@@ -88,9 +88,37 @@ export default function Contact() {
 
   return (
     <main className="min-h-screen overflow-hidden">
+      {/* Contact Hero Section */}
+      <section 
+        id="hero"
+        ref={(el) => { sectionRefs.current.hero = el; }}
+        className="relative bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-20 overflow-hidden"
+      >
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-yellow-200/30 to-amber-200/30 dark:from-yellow-600/10 dark:to-amber-600/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-amber-200/30 to-orange-200/30 dark:from-amber-600/10 dark:to-orange-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-yellow-100/20 to-amber-100/20 dark:from-yellow-600/5 dark:to-amber-600/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        </div>
+
+        <div className="golden-tag-container relative z-10">
+          <div className={`text-center transition-all duration-1000 ${visibleSections.has('hero') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ color: '#3290AE' }}>
+              Contact Us
+            </h1>
+            <p className="text-center text-xl max-w-3xl mx-auto mb-8 leading-relaxed" style={{ color: '#6BA464' }}>
+              Get in touch with our team for personalized corporate gifting solutions and custom branding services
+            </p>
+            <div className="flex justify-center">
+              <span className="px-8 py-3 rounded-full text-sm font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" style={{ background: 'linear-gradient(to right, #3290AE, #6BA464)', color: 'white' }}>
+                Premium Service Since 2015
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Scroll Progress */}
       <ScrollProgress />
-      
       {/* Animated Background */}
       <div className="fixed inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-50"></div>
@@ -100,67 +128,6 @@ export default function Contact() {
           <div className="absolute -bottom-8 left-20 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-2000"></div>
         </div>
       </div>
-      {/* Hero Section */}
-      <section className="py-20 bg-white relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-10 w-40 h-40 bg-red-400 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-red-600 rounded-full blur-2xl"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <motion.div 
-            className="text-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <motion.h1 
-              className="text-5xl md:text-6xl font-bold text-red-600 mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              Contact Us
-            </motion.h1>
-            <motion.h2 
-              className="text-2xl md:text-3xl font-bold text-gray-800 mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              Get In Touch
-            </motion.h2>
-            <motion.p 
-              className="text-lg text-gray-700 mb-4 max-w-4xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              We are a leading ERP/CRM software development company, offering customized solutions
-            </motion.p>
-            <motion.p 
-              className="text-lg text-gray-600 max-w-5xl mx-auto mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              in Oracle Apex, Data Analytics & AI, Python for Data Science, Django Python, OCI, Power BI, Microsoft Azure, Google Cloud, React Native, and Flutter.
-            </motion.p>
-            <motion.div 
-              className="flex justify-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
-            >
-              <span className="bg-red-600 text-white px-8 py-3 rounded-full text-sm font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                With over 12 years of experience
-              </span>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Statistics Section */}
       <section className="py-20 bg-white relative overflow-hidden">
@@ -188,12 +155,12 @@ export default function Contact() {
               viewport={{ once: true }}
             >
               <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300">
-                  <span className="text-white text-2xl font-bold">
+                <div className="w-16 h-16 rounded-full flex flex-col items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300" style={{ background: 'linear-gradient(135deg, #3290AE, #6BA464)' }}>
+                  <span className="text-white text-2xl font-bold flex items-center gap-1">
                     <CountUp end={200} duration={2} delay={1.0} />
+                    <span className="text-lg font-bold align-top">+</span>
                   </span>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">+</h3>
                 <p className="text-gray-600 font-semibold">Happy Customers</p>
               </div>
             </motion.div>
@@ -207,12 +174,12 @@ export default function Contact() {
               viewport={{ once: true }}
             >
               <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300">
-                  <span className="text-white text-2xl font-bold">
+                <div className="w-16 h-16 rounded-full flex flex-col items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300" style={{ background: 'linear-gradient(135deg, #3290AE, #6BA464)' }}>
+                  <span className="text-white text-2xl font-bold flex items-center gap-1">
                     <CountUp end={55} duration={2} delay={1.2} />
+                    <span className="text-lg font-bold align-top">+</span>
                   </span>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">+</h3>
                 <p className="text-gray-600 font-semibold">Completed Projects</p>
               </div>
             </motion.div>
@@ -226,12 +193,12 @@ export default function Contact() {
               viewport={{ once: true }}
             >
               <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300">
-                  <span className="text-white text-2xl font-bold">
+                <div className="w-16 h-16 rounded-full flex flex-col items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300" style={{ background: 'linear-gradient(135deg, #3290AE, #6BA464)' }}>
+                  <span className="text-white text-2xl font-bold flex items-center gap-1">
                     <CountUp end={12} duration={2} delay={1.4} />
+                    <span className="text-lg font-bold align-top">+</span>
                   </span>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">+</h3>
                 <p className="text-gray-600 font-semibold">Expert Workers</p>
               </div>
             </motion.div>
@@ -245,12 +212,12 @@ export default function Contact() {
               viewport={{ once: true }}
             >
               <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
-                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300">
-                  <span className="text-white text-2xl font-bold">
+                <div className="w-16 h-16 rounded-full flex flex-col items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300" style={{ background: 'linear-gradient(135deg, #3290AE, #6BA464)' }}>
+                  <span className="text-white text-2xl font-bold flex items-center gap-1">
                     <CountUp end={15} duration={2} delay={1.6} />
+                    <span className="text-lg font-bold align-top">+</span>
                   </span>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">+</h3>
                 <p className="text-gray-600 font-semibold">Ongoing Projects</p>
               </div>
             </motion.div>
@@ -268,37 +235,32 @@ export default function Contact() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <motion.h2 
-              className="text-4xl font-bold text-red-600 mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-                  FREE CONSULTATION
-            </motion.h2>
-            <motion.h3 
-              className="text-2xl font-bold text-gray-800 mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-                  Get a Free Quote
-            </motion.h3>
-          </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Contact Form Card */}
+            {/* Map Card (left) */}
             <motion.div 
-              className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group"
+              className="flex items-center justify-center w-full max-w-2xl mx-auto lg:mx-0"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.9907515327513!2d76.02994097439766!3d22.950567719013126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396317be22fcefd5%3A0x7dc9d7c0095581e8!2sOtrix%20Mp%20Online%20Service!5e0!3m2!1sen!2sin!4v1757334365370!5m2!1sen!2sin"
+                width="100%"
+                height="500"
+                style={{ border: 2 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="rounded-2xl border border-gray-300 shadow-2xl w-full min-w-[300px]"
+                title="Otrix MP Online Services Location - Dewas, MP"
+              ></iframe>
+            </motion.div>
+
+            {/* Contact Form Card (right, smaller) */}
+            <motion.div 
+              className="bg-white border border-gray-200 rounded-xl p-2 md:p-4 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.01] group w-full h-full flex flex-col justify-between max-w-md ml-auto lg:mx-10"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -317,7 +279,14 @@ export default function Contact() {
                   </div>
                 )}
 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Get a Free Quote Heading */}
+                <div className="mb-6 text-center">
+                  <h2 className="text-xl font-bold tracking-tight" style={{ color: '#E53935' }}>
+                    Get a Free Quote
+                  </h2>
+                </div>
+
+                <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="relative">
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                       Full Name *
@@ -331,10 +300,10 @@ export default function Contact() {
                       onFocus={() => handleFocus('name')}
                       onBlur={handleBlur}
                       required
-                      className={`w-full px-4 py-4 border-2 rounded-xl transition-all duration-300 focus:outline-none ${
+                      className={`w-full px-4 py-1 border rounded transition-all duration-300 focus:outline-none text-sm font-medium text-gray-800 bg-white/90 ${
                         focusedField === 'name' 
-                        ? 'border-red-500 shadow-lg shadow-red-200/50 transform scale-[1.02]' 
-                        : 'border-gray-300 hover:border-gray-400'
+                        ? 'border-[#3290AE] shadow-lg shadow-blue-100/50' 
+                        : 'border-gray-300 hover:border-[#3290AE]/60'
                       }`}
                       placeholder="Enter your full name"
                     />
@@ -353,10 +322,10 @@ export default function Contact() {
                       onFocus={() => handleFocus('phone')}
                       onBlur={handleBlur}
                       required
-                      className={`w-full px-4 py-4 border-2 rounded-xl transition-all duration-300 focus:outline-none ${
+                      className={`w-full px-4 py-1 border rounded transition-all duration-300 focus:outline-none text-sm font-medium text-gray-800 bg-white/90 ${
                         focusedField === 'phone' 
-                        ? 'border-red-500 shadow-lg shadow-red-200/50 transform scale-[1.02]' 
-                        : 'border-gray-300 hover:border-gray-400'
+                        ? 'border-[#3290AE] shadow-lg shadow-blue-100/50' 
+                        : 'border-gray-300 hover:border-[#3290AE]/60'
                       }`}
                       placeholder="Enter your phone number"
                     />
@@ -375,10 +344,10 @@ export default function Contact() {
                       onFocus={() => handleFocus('email')}
                       onBlur={handleBlur}
                       required
-                      className={`w-full px-4 py-4 border-2 rounded-xl transition-all duration-300 focus:outline-none ${
+                      className={`w-full px-4 py-1 border rounded transition-all duration-300 focus:outline-none text-sm font-medium text-gray-800 bg-white/90 ${
                         focusedField === 'email' 
-                        ? 'border-red-500 shadow-lg shadow-red-200/50 transform scale-[1.02]' 
-                        : 'border-gray-300 hover:border-gray-400'
+                        ? 'border-[#3290AE] shadow-lg shadow-blue-100/50' 
+                        : 'border-gray-300 hover:border-[#3290AE]/60'
                       }`}
                       placeholder="Enter your email address"
                     />
@@ -395,10 +364,10 @@ export default function Contact() {
                       onChange={handleChange}
                       onFocus={() => handleFocus('services')}
                       onBlur={handleBlur}
-                      className={`w-full px-4 py-4 border-2 rounded-xl transition-all duration-300 focus:outline-none ${
+                      className={`w-full px-4 py-1 border rounded transition-all duration-300 focus:outline-none text-sm font-medium text-gray-800 bg-white/90 ${
                         focusedField === 'services' 
-                        ? 'border-red-500 shadow-lg shadow-red-200/50 transform scale-[1.02]' 
-                        : 'border-gray-300 hover:border-gray-400'
+                        ? 'border-[#3290AE] shadow-lg shadow-blue-100/50' 
+                        : 'border-gray-300 hover:border-[#3290AE]/60'
                       }`}
                     >
                       <option value="">Select a service</option>
@@ -429,30 +398,30 @@ export default function Contact() {
                       onFocus={() => handleFocus('message')}
                       onBlur={handleBlur}
                       required
-                      rows={5}
-                      className={`w-full px-4 py-4 border-2 rounded-xl transition-all duration-300 focus:outline-none resize-none ${
+                      rows={1}
+                      className={`w-full px-4 py-2 border rounded transition-all duration-300 focus:outline-none resize-none text-sm font-medium text-gray-800 bg-white/90 h-10 ${
                         focusedField === 'message' 
-                        ? 'border-red-500 shadow-lg shadow-red-200/50 transform scale-[1.02]' 
-                        : 'border-gray-300 hover:border-gray-400'
+                        ? 'border-[#3290AE] shadow-lg shadow-blue-100/50' 
+                        : 'border-gray-300 hover:border-[#3290AE]/60'
                       }`}
-                      placeholder="Tell us about your project requirements"
-                    />
+                    placeholder="Tell us about your project requirements"
+                  />
                   </div>
 
                 <motion.button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full py-4 text-lg font-semibold rounded-xl transition-all duration-300 transform ${
+                    className={`w-full py-2 text-base font-semibold rounded transition-all duration-300 transform ${
                       isSubmitting 
                         ? 'bg-gray-400 cursor-not-allowed' 
-                      : 'bg-red-600 hover:bg-red-700 hover:scale-105 hover:shadow-xl'
-                    } text-white shadow-lg`}
-                  whileHover={{ scale: 1.02 }}
+                        : 'bg-gradient-to-r from-[#3290AE] to-[#6BA464] hover:opacity-90 hover:scale-105 hover:shadow-xl'
+                    } text-white shadow font-bold`}
+                  whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.98 }}
                   >
                     {isSubmitting ? (
                       <div className="flex items-center justify-center">
-                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                         </svg>
@@ -464,187 +433,10 @@ export default function Contact() {
                 </motion.button>
                 </form>
             </motion.div>
-
-            {/* Contact Information Card */}
-            <motion.div 
-              className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -4 }}
-            >
-              <motion.h2 
-                className="text-3xl font-bold text-red-600 mb-8"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.0 }}
-                viewport={{ once: true }}
-              >
-                Contact Information
-              </motion.h2>
-              
-              <div className="space-y-8">
-                {/* Office Location Card */}
-                <motion.div 
-                  className="group"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 1.2 }}
-                  viewport={{ once: true }}
-                >
-                  <h3 className="text-xl font-semibold text-gray-800 mb-4">Office Location</h3>
-                  <div className="bg-gray-50 border border-gray-200 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                    <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mr-4 shadow-lg">
-                        <span className="text-white text-lg font-bold">OT</span>
-                      </div>
-                      <h4 className="font-bold text-gray-800 text-xl">OTRIX INDIA TECH</h4>
-                    </div>
-                    <p className="text-gray-600 text-lg leading-relaxed">
-                      <strong className="text-gray-800">Software Development Company</strong><br />
-                      ERP/CRM Solutions Provider<br />
-                      <span className="text-red-600 font-semibold">12+ Years Experience</span>
-                    </p>
-                  </div>
-                </motion.div>
-
-                {/* Contact Details Cards */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 1.4 }}
-                  viewport={{ once: true }}
-                >
-                  <h3 className="text-xl font-semibold text-gray-800 mb-6">Contact Details</h3>
-                  <div className="space-y-4">
-                    {/* Phone Card */}
-                    <motion.div 
-                      className="group bg-gray-50 border border-gray-200 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.6, delay: 1.6 }}
-                      viewport={{ once: true }}
-                    >
-                      <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform duration-300">
-                          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                          </svg>
-                        </div>
-                        <div>
-                          <p className="font-medium text-gray-700 text-lg">Phone</p>
-                          <p className="text-gray-800 font-semibold text-xl">+91 9893377444</p>
-                        </div>
-                      </div>
-                    </motion.div>
-
-                    {/* Email Card */}
-                    <motion.div 
-                      className="group bg-gray-50 border border-gray-200 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.6, delay: 1.8 }}
-                      viewport={{ once: true }}
-                    >
-                      <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform duration-300">
-                          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                          </svg>
-                        </div>
-                        <div>
-                          <p className="font-medium text-gray-700 text-lg">Email</p>
-                          <p className="text-gray-800 font-semibold text-xl">info@otrix.com</p>
-                        </div>
-                      </div>
-                    </motion.div>
-
-                    {/* Business Hours Card */}
-                    <motion.div 
-                      className="group bg-gray-50 border border-gray-200 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.6, delay: 2.0 }}
-                      viewport={{ once: true }}
-                    >
-                      <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform duration-300">
-                          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                        </div>
-                        <div>
-                          <p className="font-medium text-gray-700 text-lg">Business Hours</p>
-                          <p className="text-gray-800 font-semibold text-xl">24/7 Support</p>
-                        </div>
-                      </div>
-                    </motion.div>
-                  </div>
-                </motion.div>
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="py-20 bg-white relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-10 w-40 h-40 bg-red-400 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-red-600 rounded-full blur-2xl"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <motion.div 
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <motion.h2 
-              className="text-4xl md:text-5xl font-bold text-red-600 mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              FIND US
-            </motion.h2>
-            <motion.h3 
-              className="text-2xl md:text-3xl font-bold text-gray-800 mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              Our Location
-            </motion.h3>
-            <motion.p 
-              className="text-gray-700 font-semibold text-xl"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              viewport={{ once: true }}
-            >
-              Visit our office in Dewas, Madhya Pradesh
-            </motion.p>
-          </motion.div>
-          
-          <motion.div 
-            className="max-w-4xl mx-auto"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <MapComponent className="border border-gray-300 shadow-2xl rounded-2xl" />
-          </motion.div>
-        </div>
-      </section>
 
     </main>
   );

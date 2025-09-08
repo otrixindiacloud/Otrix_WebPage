@@ -3,25 +3,54 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
-const Typewriter = ({ 
-  text, 
+
+const Typewriter = ({
+  text,
+  texts,
   speed = 50,
+  eraseSpeed = 30,
   delay = 0,
+  pause = 1000,
   className = "",
-  ...props 
+  ...props
 }) => {
+  const phrases = texts || (text ? [text] : []);
   const [displayedText, setDisplayedText] = useState("");
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [isErasing, setIsErasing] = useState(false);
 
   useEffect(() => {
-    if (currentIndex < text.length) {
-      const timeout = setTimeout(() => {
-        setDisplayedText(prev => prev + text[currentIndex]);
-        setCurrentIndex(prev => prev + 1);
+    if (phrases.length === 0) return;
+    let timeout;
+    const currentPhrase = phrases[phraseIndex];
+
+    if (!isErasing && charIndex < currentPhrase.length) {
+      timeout = setTimeout(() => {
+        setDisplayedText(currentPhrase.substring(0, charIndex + 1));
+        setCharIndex(charIndex + 1);
       }, speed);
-      return () => clearTimeout(timeout);
+    } else if (!isErasing && charIndex === currentPhrase.length) {
+      timeout = setTimeout(() => setIsErasing(true), pause);
+    } else if (isErasing && charIndex > 0) {
+      timeout = setTimeout(() => {
+        setDisplayedText(currentPhrase.substring(0, charIndex - 1));
+        setCharIndex(charIndex - 1);
+      }, eraseSpeed);
+    } else if (isErasing && charIndex === 0) {
+      timeout = setTimeout(() => {
+        setIsErasing(false);
+        setPhraseIndex((phraseIndex + 1) % phrases.length);
+      }, 400);
     }
-  }, [currentIndex, text, speed]);
+    return () => clearTimeout(timeout);
+  }, [charIndex, isErasing, phraseIndex, phrases, speed, eraseSpeed, pause]);
+
+  useEffect(() => {
+    setCharIndex(0);
+    setDisplayedText("");
+    setIsErasing(false);
+  }, [phraseIndex, phrases]);
 
   return (
     <motion.span
