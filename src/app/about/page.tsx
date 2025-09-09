@@ -282,7 +282,7 @@ export default function About() {
               </div>
               <h3 className="text-xl font-bold text-black mb-4 group-hover:text-[#6BA464]-600 transition-colors duration-300 text-center">Client Success</h3>
               <p className="text-black leading-relaxed">
-                Our success is measured by our clients' success. We are committed to delivering solutions that drive real business value.
+                Our success is measured by our clients&apos; success. We are committed to delivering solutions that drive real business value.
               </p>
             </motion.div>
 
@@ -596,7 +596,7 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              Don't just take our word for it - hear from the companies we've helped
+              Don&apos;t just take our word for it - hear from the companies we&apos;ve helped
             </motion.p>
           </motion.div>
 
@@ -648,7 +648,7 @@ export default function About() {
                   </div>
                 </div>
                 <p className="text-black mb-6 leading-relaxed group-hover:text-[#3290AE] transition-colors duration-300 relative z-10">
-                  "{testimonial.quote}"
+                  &ldquo;{testimonial.quote}&rdquo;
                 </p>
                 <div className="flex items-center relative z-10">
                   <div className="w-12 h-12 bg-[#3290AE] rounded-full flex items-center justify-center mr-4 group-hover:bg-[#e6f2fa] transition-all duration-300">
@@ -698,7 +698,7 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              Let's discuss how our team can help transform your business with innovative technology solutions.
+              Let&apos;s discuss how our team can help transform your business with innovative technology solutions.
             </motion.p>
             <motion.div 
               className="flex flex-col sm:flex-row gap-4 justify-center"

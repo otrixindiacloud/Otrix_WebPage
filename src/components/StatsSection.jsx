@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 export default function StatsSection() {
   const [counts, setCounts] = useState({
@@ -10,12 +10,12 @@ export default function StatsSection() {
     ongoing: 0
   });
 
-  const stats = [
+  const stats = useMemo(() => [
     { key: 'customers', value: 200, label: 'Happy Customers', suffix: '+' },
     { key: 'projects', value: 55, label: 'Completed Projects', suffix: '+' },
     { key: 'workers', value: 12, label: 'Expert Workers', suffix: '+' },
     { key: 'ongoing', value: 15, label: 'Ongoing Projects', suffix: '+' }
-  ];
+  ], []);
 
   useEffect(() => {
     const animateCounts = () => {
@@ -37,7 +37,7 @@ export default function StatsSection() {
     };
 
     animateCounts();
-  }, []);
+  }, [stats]);
 
   return (
     <section className="py-20 bg-white text-black relative overflow-hidden">

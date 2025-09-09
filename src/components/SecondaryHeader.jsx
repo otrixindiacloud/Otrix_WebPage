@@ -159,7 +159,7 @@ export default function SecondaryHeader() {
                   <AppIcon size="w-8 h-8" />
                   <div>
                     <h2 className="text-lg font-bold text-foreground">Otrix India Tech</h2>
-                    <p className="text-sm text-muted-foreground">Let's make it perfect!</p>
+                    <p className="text-sm text-muted-foreground">Let&apos;s make it perfect!</p>
                   </div>
                 </div>
               </div>

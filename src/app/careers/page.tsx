@@ -294,7 +294,7 @@ export default function CareersPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Be part of a dynamic team that's building the future of technology. We're looking for passionate individuals who want to make a difference.
+              Be part of a dynamic team that&apos;s building the future of technology. We&apos;re looking for passionate individuals who want to make a difference.
             </motion.p>
             <motion.p 
               className="text-lg text-black-600 max-w-5xl mx-auto mb-12"
@@ -635,7 +635,7 @@ export default function CareersPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              Don't See Your Perfect Role?
+              Don&apos;t See Your Perfect Role?
             </motion.h2>
             <motion.p 
               className="text-lg mb-8 max-w-3xl mx-auto"
@@ -645,7 +645,7 @@ export default function CareersPage() {
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              We're always looking for talented individuals. Send us your resume and let us know how you can contribute to our team.
+              We&apos;re always looking for talented individuals. Send us your resume and let us know how you can contribute to our team.
             </motion.p>
             
             <motion.div 

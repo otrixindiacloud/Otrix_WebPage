@@ -22,7 +22,10 @@ export function HoverLink({
   enabled = true,
   external = false 
 }: HoverLinkProps) {
-  const hoverNavProps = enabled ? useHoverNavigation(href, { delay: hoverDelay }) : {};
+  const hoverNavProps = useHoverNavigation(href, { 
+    delay: hoverDelay,
+    enabled: enabled && !external
+  });
   
   if (external) {
     return (
@@ -31,7 +34,6 @@ export function HoverLink({
         target="_blank"
         rel="noopener noreferrer"
         className={cn("transition-all duration-200", className)}
-        {...hoverNavProps}
       >
         {children}
       </a>
@@ -42,7 +44,7 @@ export function HoverLink({
     <Link
       href={href}
       className={cn("transition-all duration-200", className)}
-      {...hoverNavProps}
+      {...(enabled ? hoverNavProps : {})}
     >
       {children}
     </Link>

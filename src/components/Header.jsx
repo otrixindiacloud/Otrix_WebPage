@@ -89,7 +89,7 @@ export default function Header() {
                   </div>
                   <div>
                     <h1 className="text-8xl font-bold text-gray-900">Otrix India Tech</h1>
-                    <p className="text-sm text-gray-600">Let's make it perfect!</p>
+                    <p className="text-sm text-gray-600">Let&apos;s make it perfect!</p>
                   </div>
                 </div>
               </Link>

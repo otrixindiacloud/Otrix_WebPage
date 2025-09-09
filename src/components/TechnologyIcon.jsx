@@ -29,11 +29,9 @@ import {
   SiElasticsearch,
   SiAmazonwebservices,
   SiGooglecloud,
-  SiFirebase,
-  SiPowerbi,
-  SiMicrosoftazure,
-  SiDataAnalytics
+  SiFirebase
   } from "react-icons/si";
+import { FaChartBar, FaMicrosoft } from "react-icons/fa";
 
 export default function TechnologyIcon({ 
   technology, 
@@ -44,7 +42,7 @@ export default function TechnologyIcon({
   // Technology mapping with real icons and color schemes
   const technologyMap = {
     "Data Analytics": {
-      icon: SiDataAnalytics,
+      icon: FaChartBar,
       color: "from-blue-400 to-blue-700",
       bgColor: "bg-blue-400"
     },
@@ -144,7 +142,7 @@ export default function TechnologyIcon({
       bgColor: "bg-purple-600"
     },
     "Power BI": { 
-      icon: SiPowerbi, 
+      icon: FaChartBar, 
       color: "from-yellow-500 to-yellow-600",
       bgColor: "bg-yellow-500"
     },
@@ -169,7 +167,7 @@ export default function TechnologyIcon({
       bgColor: "bg-gray-800"
     },
     "Azure": { 
-      icon: SiMicrosoftazure, 
+      icon: FaMicrosoft, 
       color: "from-blue-500 to-blue-600",
       bgColor: "bg-blue-500"
     },

@@ -47,14 +47,17 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, href, hoverNavigation = false, hoverDelay = 800, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
     
-    // Use hover navigation if enabled and href is provided
-    const hoverNavProps = hoverNavigation && href ? useHoverNavigation(href, { delay: hoverDelay }) : {}
+    // Always call the hook with a fallback, but disable it when not needed
+    const hoverNavProps = useHoverNavigation(href || "", { 
+      delay: hoverDelay,
+      enabled: hoverNavigation && !!href
+    })
     
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
-        {...hoverNavProps}
+        {...(hoverNavigation && href ? hoverNavProps : {})}
         {...props}
       />
     )

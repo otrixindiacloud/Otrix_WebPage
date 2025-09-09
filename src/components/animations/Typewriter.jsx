@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 
 const Typewriter = ({
@@ -14,7 +14,7 @@ const Typewriter = ({
   className = "",
   ...props
 }) => {
-  const phrases = texts || (text ? [text] : []);
+  const phrases = useMemo(() => texts || (text ? [text] : []), [texts, text]);
   const [displayedText, setDisplayedText] = useState("");
   const [charIndex, setCharIndex] = useState(0);
   const [phraseIndex, setPhraseIndex] = useState(0);

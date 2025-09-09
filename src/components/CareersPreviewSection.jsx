@@ -41,7 +41,7 @@ export default function CareersPreviewSection() {
           <h2 className="text-4xl font-bold bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 bg-clip-text text-transparent mb-4">
             Join Our Team
           </h2>
-          <h3 className="text-2xl font-semibold text-blue-600 mb-6">We're Hiring Talented Professionals</h3>
+          <h3 className="text-2xl font-semibold text-blue-600 mb-6">We&apos;re Hiring Talented Professionals</h3>
           <p className="text-lg text-slate-700 max-w-3xl mx-auto mb-8">
             Be part of our innovative team and help us build the future of technology. 
             We offer exciting opportunities for growth and development.
