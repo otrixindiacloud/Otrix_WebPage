@@ -9,42 +9,51 @@ export default function ProjectsSection() {
   const projects = [
     {
       id: 1,
-      title: "Enterprise ERP System",
-      description: "Comprehensive enterprise resource planning system for manufacturing company",
-      image: "/OtrixPNG.png"
+      title: "Pharmacy ERP System",
+      description: "Pharmacy provides trusted healthcare solutions, offering quality medicines and personalized customer care. We are committed to ensuring health, convenience, and reliability for every customer.",
+      image: "/pharma.jpg"
     },
     {
       id: 2,
-      title: "Mobile Banking App",
-      description: "Secure mobile banking application with real-time transactions",
-    image: "/OtrixPNG.png"
+      title: "ERP System",
+      description: "The ERP System Project is an Oracle APEX–based application built to streamline and digitize business processes. It enhances efficiency, accuracy, and overall organizational productivity",
+      image: "/erp.jpg"
     },
     {
       id: 3,
-      title: "Business Intelligence Dashboard",
-      description: "Interactive dashboard for sales and marketing analytics",
-    image: "/OtrixPNG.png"
+      title: "Global Marketing Dashboard",
+      description: "An interactive dashboard designed for sales and marketing analytics, providing real-time insights into performance metrics. It helps teams track trends, optimize strategies, and drive growth",
+      image: "/global.png"
     },
     {
       id: 4,
-      title: "Machine Learning Platform",
-      description: "AI-powered platform for predictive analytics and automation",
-    image: "/OtrixPNG.png"
+      title: "Feeder Management System",
+      description: "The Feeder Management System is a technology-driven solution that automates and optimizes feeding operations. It ensures efficiency, reduces waste, and improves overall productivity..",
+      image: "/feeder.png"
     },
     {
       id: 5,
-      title: "E-commerce Mobile App",
-      description: "Cross-platform e-commerce application with payment integration",
-    image: "/OtrixPNG.png"
+      title: "Strategic Dashboard",
+      description: "The Strategic Dashboard is a business intelligence tool that delivers real-time KPI insights through interactive visualizations, helping leaders make quick, informed decisions.",
+      image: "/powerbi.png"
+    },
+    {
+      id: 6,
+      title: "Baazar Market App",
+      description: "A digital marketplace that connects buyers and sellers with secure payments, real-time order tracking, and vendor management tools for a seamless shopping experience.",
+      image: "/grocery.png"
     }
   ];
 
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
-      <div className="max-w-5xl mx-auto px-4 relative z-10">
-        <h2 className="text-4xl font-bold text-black mb-10 text-center">Latest Projects</h2>
+    <section className="py-20 bg-white relative overflow-hidden w-full">
+      <div className="w-full px-0 relative z-10"> {/* Remove max-width, remove horizontal padding */}
+        <h2 className="text-4xl font-bold text-black mb-4 text-center w-full">Latest Projects</h2>
+        <p className="text-lg text-gray-700 mb-10 text-center w-full max-w-3xl mx-auto">
+          Explore some of our most recent and impactful projects, showcasing our expertise in delivering innovative solutions across various industries.
+        </p>
         <Swiper
-          spaceBetween={30}
+          spaceBetween={0}
           slidesPerView={1}
           breakpoints={{
             640: { slidesPerView: 2 },
@@ -53,13 +62,13 @@ export default function ProjectsSection() {
           modules={[Autoplay]}
           autoplay={{ delay: 1000, disableOnInteraction: false }}
           loop={true}
-          className="project-slider"
+          className="project-slider w-full"
         >
           {projects.map((project) => (
             <SwiperSlide key={project.id}>
-              <div className="rounded-2xl overflow-hidden shadow-lg bg-white flex flex-col items-center">
+              <div className="rounded-2xl overflow-hidden shadow-lg bg-white flex flex-col items-center w-[90vw] max-w-[500px] h-[500px] mx-auto"> {/* Card width responsive to viewport */}
                 <img src={project.image} alt={project.title} className="w-full h-64 object-cover" />
-                <div className="p-6 w-full">
+                <div className="p-6 w-full flex-1 flex flex-col justify-center">
                   <h3 className="text-xl font-bold mb-2 text-center">{project.title}</h3>
                   <p className="text-gray-600 text-center">{project.description}</p>
                 </div>

@@ -249,7 +249,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 1.0 }}
           >
             {[
-              { number: 500, label: "Projects Completed", suffix: "+" },
+              { number: 100, label: "Projects Completed", suffix: "+" },
               { number: 8, label: "Countries Served", suffix: "+" },
               { number: 10, label: "Years Experience", suffix: "+" },
               { number: 99, label: "Client Satisfaction", suffix: "%" }

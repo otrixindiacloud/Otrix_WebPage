@@ -25,7 +25,9 @@ export default function CreateIndustriesPage() {
     { value: "from-pink-500 to-rose-500", label: "Pink to Rose", preview: "bg-gradient-to-br from-pink-500 to-rose-500" }
   ];
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -33,7 +35,7 @@ export default function CreateIndustriesPage() {
     }));
   };
 
-  const handleServiceChange = (index, value) => {
+  const handleServiceChange = (index: number, value: string) => {
     const newServices = [...formData.services];
     newServices[index] = value;
     setFormData(prev => ({
@@ -49,7 +51,7 @@ export default function CreateIndustriesPage() {
     }));
   };
 
-  const removeService = (index) => {
+  const removeService = (index: number) => {
     if (formData.services.length > 1) {
       const newServices = formData.services.filter((_, i) => i !== index);
       setFormData(prev => ({
@@ -59,7 +61,7 @@ export default function CreateIndustriesPage() {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     

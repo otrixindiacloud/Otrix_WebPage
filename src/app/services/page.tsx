@@ -197,38 +197,22 @@ const automationTech = [
 ];
 
 const technologies = [
-  "Node JS",
-  "C",
-  "Bootstrap",
-  "Angular",
-  "HTML",
-  "CSS",
-  "Javascript",
-  "Java",
-  "Python",
-  "Django",
-  "React.js",
-  "Flutter",
-  "SQL",
-  "MySQL",
-  "MongoDB",
-  "PostgreSQL",
-  "Vue.js",
-  "AI/ML",
-  "Power BI",
-  "Oracle Cloud",
-  "Apex",
-  "NextJS",
-  "Azure",
-  "TypeScript",
-  "Git",
-  "Docker",
-  "Kubernetes",
-  "Redis",
-  "Elasticsearch",
-  "AWS",
-  "Google Cloud",
-  "Firebase"
+  "Data Analytics",
+    "Node JS",
+    "React Native",
+    "Flutter",
+    "Power BI",
+    "Python",
+    "Django",
+    "React.js",
+    "MySQL",
+    "MongoDB",
+    "PostgreSQL",
+    "Oracle Cloud",
+    "Oracle Apex",
+    "NextJS",
+    "Google Cloud",
+    "Azure"
 ];
 
 export default function ServicesPage() {
@@ -238,105 +222,101 @@ export default function ServicesPage() {
       <ScrollProgress />
       
       {/* Animated Background */}
-      <div className="fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-50"></div>
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
-          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-2000"></div>
-        </div>
-      </div>
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-10 w-40 h-40 bg-blue-400 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-[#2e95b7] rounded-full blur-2xl"></div>
+      <section className="relative overflow-hidden min-h-[600px] flex items-center justify-center bg-gradient-to-br from-[#e0f2fe] via-white to-[#f0f9ff]">
+        {/* Decorative Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/service.png" 
+            alt="Otrix Hero Background" 
+            className="w-full h-100 object-cover object-center opacity-100 scale-100 blur-sm select-none pointer-events-none" 
+            draggable="false"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#2e95b7]/70 via-white/60 to-[#e0f2fe]/80" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
+        <div className="relative z-10 w-full max-w-7xl px-4 py-24 flex flex-col items-center justify-center">
+          <motion.h1 
+            className="text-5xl md:text-7xl font-extrabold mb-6 text-[#2e95b7] drop-shadow-lg text-center"
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <motion.h1 
-              className="text-6xl font-bold text-[#2e95b7] mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              Our Services
-            </motion.h1>
-            <motion.p 
-              className="text-xl text-gray-700 mb-4 max-w-4xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              Otrix India Tech is a leading information technology (IT) company for IT Solutions & software services
-            </motion.p>
-            <motion.p 
-              className="text-lg text-gray-600 max-w-5xl mx-auto mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              We specialize in Web and Mobile Apps Development, offering customized solutions in Oracle Apex, Data Analytics & AI, Python for Data Science, Django Python, OCI, Power BI, Microsoft Azure, Google Cloud, React Native, and Flutter.
-            </motion.p>
-            <motion.div 
-              className="bg-gradient-to-r from-blue-50 to-blue-100 border border-[#2e95b7] rounded-xl p-6 max-w-4xl mx-auto mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              <h3 className="text-lg font-bold text-[#2e95b7] mb-3 text-center">🌍 Our Services Available In:</h3>
-              <div className="flex flex-wrap justify-center gap-3">
-                {["India", "Dubai", "Qatar", "UAE", "Saudi Arabia", "Bahrain", "Kuwait", "Oman"].map((country, index) => (
-                  <motion.span
-                    key={country}
-                    className="bg-white px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-[#2e95b7] shadow-sm"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: 0.9 + index * 0.1 }}
-                    whileHover={{ scale: 1.05, backgroundColor: "#f0f8ff" }}
-                  >
-                    {country}
-                  </motion.span>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Statistics */}
-            <motion.div 
-              className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              {[
-                { number: 500, label: "Projects Completed", suffix: "+" },
-                { number: 50, label: "Technologies", suffix: "+" },
-                { number: 8, label: "Countries Served", suffix: "+" },
-                { number: 100, label: "Client Satisfaction", suffix: "%" }
-              ].map((stat, index) => (
-                <motion.div
-                  key={index}
-                  className="text-center"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="text-3xl font-bold text-[#2e95b7] mb-2">
-                    <CountUp end={stat.number} duration={2} delay={1.0 + index * 0.2} />
-                    {stat.suffix}
-                  </div>
-                  <div className="text-sm text-gray-600">{stat.label}</div>
-                </motion.div>
-              ))}
-            </motion.div>
+            Our Services
+          </motion.h1>
+          <motion.p 
+            className="text-2xl md:text-3xl text-gray-800 mb-6 max-w-3xl mx-auto drop-shadow text-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Otrix India Tech is a leading information technology IT company for IT Solutions & software services
+          </motion.p>
+          {/* Statistics */}
+          <motion.div 
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            {[
+              { number: 100, label: "Projects Completed", suffix: "+" },
+              { number: 50, label: "Technologies", suffix: "+" },
+              { number: 8, label: "Countries Served", suffix: "+" },
+              { number: 100, label: "Client Satisfaction", suffix: "%" }
+            ].map((stat, index) => (
+              <motion.div
+                key={index}
+                className="text-center"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="text-3xl font-bold text-[#2e95b7] mb-2">
+                  <CountUp end={stat.number} duration={2} delay={1.0 + index * 0.2} />
+                  {stat.suffix}
+                </div>
+                <div className="text-sm text-gray-600">{stat.label}</div>
+              </motion.div>
+            ))}
           </motion.div>
+        </div>
+      </section>
+
+      {/* Services List Section - moved and redesigned */}
+      <section className="py-12 bg-gradient-to-r from-[#e0f2fe] via-white to-[#f0f9ff] relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none select-none">
+          <div className="absolute top-10 left-1/2 transform -translate-x-1/2 w-96 h-32 bg-blue-200 rounded-full blur-3xl opacity-30"></div>
+          <div className="absolute bottom-0 right-10 w-40 h-40 bg-[#2e95b7] rounded-full blur-2xl opacity-10"></div>
+        </div>
+        <div className="max-w-4xl mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="text-center mb-10"
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-[#2e95b7] mb-4">Our Core Services</h2>
+            <p className="text-lg text-gray-700">Explore our main offerings for your digital growth</p>
+          </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {servicesList.map((service, index) => (
+              <motion.div
+                key={index}
+                className="flex items-center gap-4 p-5 rounded-2xl bg-white/80 shadow-md border border-[#2e95b7]/10 hover:shadow-lg hover:bg-[#e0f2fe]/80 transition-all duration-300 group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.04 }}
+              >
+                <div className="w-4 h-4 bg-[#2e95b7] rounded-full flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
+                <span className="text-lg font-semibold text-gray-800 group-hover:text-[#2e95b7] transition-colors duration-300">
+                  {service}
+                </span>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -350,120 +330,39 @@ export default function ServicesPage() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16">
-            {/* Left Column - Services List */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <motion.h2 
-                className="text-4xl font-bold mb-8"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
-                <span className="text-[#2e95b7]">Services</span>{" "}
-                <span className="text-gray-800">We are Providing</span>
-              </motion.h2>
-              
-              <div className="space-y-4">
-                {servicesList.map((service, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex items-center space-x-4 p-4 rounded-xl hover:bg-gray-50 transition-all duration-300 group"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                    viewport={{ once: true }}
-                    whileHover={{ x: 10 }}
-                  >
-                    <div className="w-3 h-3 bg-gray-800 rounded-sm flex-shrink-0 group-hover:bg-[#2e95b7] transition-colors duration-300"></div>
-                    <span className="text-lg text-gray-800 font-medium group-hover:text-[#2e95b7] transition-colors duration-300">
-                      {service}
-                    </span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Right Column - Service Cards Grid */}
-            <motion.div
-              className="grid grid-cols-2 gap-6"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              {serviceCards.map((service, index) => (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="text-center mb-10"
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl font-bold text-[#2e95b7] mb-6">Cities We Serve Internationally</h2>
+            <p className="text-lg text-gray-700 mb-8">We proudly work with clients in these global cities:</p>
+            <div className="flex flex-wrap justify-center gap-6">
+              {[
+                "Doha (Qatar)",
+                "Manama (Bahrain)",
+                "Dubai (UAE)",
+                "Riyadh (Saudi Arabia)",
+                "Kuwait City (Kuwait)",
+                "Muscat (Oman)",
+                "New York (USA)",
+              ].map((city, idx) => (
                 <motion.div
-                  key={index}
-                  className="relative bg-white border border-gray-200 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 group cursor-pointer"
-                  initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ 
-                    duration: 0.6, 
-                    delay: 0.8 + index * 0.1,
-                    ease: "easeOut"
-                  }}
+                  key={city}
+                  className="bg-white border border-[#2e95b7]/30 rounded-xl px-6 py-4 shadow-md text-[#2e95b7] font-semibold text-lg flex items-center gap-2 hover:bg-[#e0f2fe] hover:text-[#1a5c7a] transition-all duration-300"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: 0.2 + idx * 0.07 }}
                   viewport={{ once: true }}
-                  whileHover={{ 
-                    y: -8,
-                    scale: 1.05,
-                    transition: { duration: 0.3 }
-                  }}
                 >
-                  {/* Hover Background Effect */}
-                  <motion.div 
-                    className="absolute inset-0 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 1 }}
-                  />
-                  
-                  <div className="relative z-10 flex items-center space-x-4">
-                    {/* Service Icon */}
-                    <motion.div 
-                      className="text-gray-700 group-hover:text-[#2e95b7] transition-colors duration-300"
-                      whileHover={{ 
-                        scale: 1.2,
-                        rotate: [0, -5, 5, 0],
-                        transition: { duration: 0.5 }
-                      }}
-                    >
-                      {service.icon}
-                    </motion.div>
-                    
-                    {/* Service Name */}
-                    <motion.h4 
-                      className="text-lg font-bold text-gray-800 group-hover:text-[#2e95b7] transition-colors duration-300 flex-1"
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      {service.name}
-                    </motion.h4>
-                    
-                    {/* Checkmark Icon */}
-                    <motion.div 
-                      className="text-[#2e95b7] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      whileHover={{ scale: 1.2 }}
-                    >
-                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-                      </svg>
-                    </motion.div>
-                  </div>
-
-                  {/* Animated Border on Hover */}
-                  <motion.div 
-                    className="absolute inset-0 rounded-2xl border-2 border-[#2e95b7] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 1 }}
-                  />
+                  <svg className="w-5 h-5 text-[#2e95b7] mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 20a8 8 0 100-16 8 8 0 000 16zm0-14a6 6 0 110 12A6 6 0 0110 6zm0 2a4 4 0 100 8 4 4 0 000-8z" /></svg>
+                  {city}
                 </motion.div>
               ))}
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -490,13 +389,13 @@ export default function ServicesPage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white p-8 rounded-xl hover:shadow-xl transition-all duration-300 hover:scale-105 group border border-gray-200"
+                className="bg-white p-8 rounded-xl hover:shadow-xl transition-all duration-300 hover:scale-105 group border border-gray-200 flex flex-col items-center text-center"
                 viewport={{ once: true }}
               >
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-800">
+                <h3 className="text-xl font-bold mb-3 text-gray-800 text-center">
                   {service.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
@@ -551,93 +450,9 @@ export default function ServicesPage() {
               transition={{ duration: 0.8, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              Looking for the best software development company? Hire Otrix India Tech for the latest technologies like AngularJs, ReactJs, NodeJs, Python, Swift, Kotlin, Flutter, Objective-C, Core Java, PHP etc.
+              Looking for the best software development company? Hire Otrix India Tech for the latest technologies like Data Analytics,Node JS,React Native,Flutter, Power BI, Python,Django,React.js, MySQL,MongoDB, PostgreSQL,Oracle Cloud, Oracle Apex, NextJS,Google Cloud,Azure etc.
             </motion.p>
           </motion.div>
-
-          {/* Technology Categories */}
-          <div className="mb-12">
-            {[
-              {
-                title: "Frontend Technologies",
-                techs: ["React.js", "Angular", "Vue.js", "NextJS", "TypeScript", "HTML", "CSS", "Bootstrap", "Javascript"]
-              },
-              {
-                title: "Backend Technologies", 
-                techs: ["Node JS", "Python", "Django", "Java", "C", "PHP"]
-              },
-              {
-                title: "Mobile Development",
-                techs: ["Flutter", "React Native", "Swift", "Kotlin", "Objective-C"]
-              },
-              {
-                title: "Databases",
-                techs: ["SQL", "MySQL", "MongoDB", "PostgreSQL", "Redis", "Elasticsearch"]
-              },
-              {
-                title: "Cloud & DevOps",
-                techs: ["AWS", "Google Cloud", "Azure", "Oracle Cloud", "Docker", "Kubernetes", "Git", "Firebase"]
-              },
-              {
-                title: "Data & Analytics",
-                techs: ["AI/ML", "Power BI", "Apex", "Big Data", "Data Analytics"]
-              }
-            ].map((category, categoryIndex) => (
-              <motion.div
-                key={categoryIndex}
-                className="mb-12"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <h4 className="text-2xl font-bold text-gray-800 mb-6 text-center">{category.title}</h4>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-                  {category.techs.map((tech, techIndex) => {
-                    const techIndexInMain = technologies.indexOf(tech);
-                    return (
-                      <motion.div
-                        key={techIndex}
-                        className="group cursor-pointer"
-                        initial={{ opacity: 0, y: 20, scale: 0.9 }}
-                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                        transition={{ 
-                          duration: 0.4, 
-                          delay: techIndex * 0.05,
-                          ease: "easeOut"
-                        }}
-                        viewport={{ once: true }}
-                        whileHover={{ 
-                          y: -3,
-                          scale: 1.03,
-                          transition: { duration: 0.2 }
-                        }}
-                      >
-                        <div className="relative bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-300 group-hover:border-[#2e95b7] group-hover:bg-blue-50">
-                          {/* Technology Icon */}
-                          <div className="mb-3 flex justify-center">
-                            <TechnologyIcon 
-                              technology={tech}
-                              size="w-12 h-12"
-                              showName={false}
-                            />
-                          </div>
-                          
-                          {/* Technology Name */}
-                          <motion.h5 
-                            className="text-xs font-semibold text-gray-800 text-center group-hover:text-[#2e95b7] transition-colors duration-300"
-                            whileHover={{ scale: 1.05 }}
-                          >
-                            {tech}
-                          </motion.h5>
-                        </div>
-                      </motion.div>
-                    );
-                  })}
-                </div>
-              </motion.div>
-            ))}
-          </div>
 
           {/* All Technologies Grid */}
           <motion.div
@@ -646,7 +461,7 @@ export default function ServicesPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-2xl font-bold text-gray-800 mb-6 text-center">All Technologies</h4>
+            {/* <h4 className="text-2xl font-bold text-gray-800 mb-6 text-center">All Technologies</h4> */}
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
               {technologies.map((tech, index) => (
                 <motion.div
@@ -735,105 +550,9 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Global Presence & Service Areas Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-10 w-40 h-40 bg-blue-400 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-[#2e95b7] rounded-full blur-2xl"></div>
-        </div>
+      
 
-        <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-            viewport={{ once: true }}
-          >
-            <h2 className="text-5xl font-bold text-[#2e95b7] mb-6">Global Presence</h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-8">
-              Otrix India Tech operates globally with offices and partnerships across multiple continents
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Global Operations */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-3xl font-bold text-gray-800 mb-6">🌍 Global Operations</h3>
-              <div className="space-y-4">
-                {[
-                  { region: "Asia Pacific", countries: ["India", "Australia"] },
-                  { region: "North America", countries: ["Canada", "USA"] },
-                  { region: "Europe", countries: ["UK", "Europe"] }
-                ].map((region, index) => (
-                  <motion.div
-                    key={index}
-                    className="bg-white p-6 rounded-xl shadow-lg border border-gray-200"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.2 }}
-                    viewport={{ once: true }}
-                    whileHover={{ scale: 1.02 }}
-                  >
-                    <h4 className="text-xl font-bold text-gray-800 mb-3">{region.region}</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {region.countries.map((country, countryIndex) => (
-                        <span
-                          key={countryIndex}
-                          className="bg-blue-100 text-[#2e95b7] px-3 py-1 rounded-full text-sm font-medium"
-                        >
-                          {country}
-                        </span>
-                      ))}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Service Areas */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-3xl font-bold text-gray-800 mb-6">🚀 Service Areas</h3>
-              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                <p className="text-gray-600 mb-6">
-                  Our IT solutions and software services are specifically available in the following regions:
-                </p>
-                <div className="grid grid-cols-2 gap-3">
-                  {["India", "Dubai", "Qatar", "UAE", "Saudi Arabia", "Bahrain", "Kuwait", "Oman"].map((country, index) => (
-                    <motion.div
-                      key={index}
-                      className="flex items-center space-x-3 p-3 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg border border-[#2e95b7]"
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.3, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      <div className="w-2 h-2 bg-[#2e95b7] rounded-full"></div>
-                      <span className="text-gray-700 font-medium">{country}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Industries Section */}
-      <IndustriesSection />
+      
 
       {/* Why Choose Us Section */}
       <section className="py-20 bg-white relative overflow-hidden">
@@ -899,8 +618,17 @@ export default function ServicesPage() {
       </section>
 
       {/* Call to Action Footer */}
-      <section className="py-16 bg-[#2e95b7]">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="py-16 bg-[#a6d0de] relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/getquote.png" 
+            alt="Call to Action Background" 
+            className="w-full h-full object-cover object-center opacity-20 blur-sm select-none pointer-events-none" 
+            draggable="false"
+          />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

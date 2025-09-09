@@ -91,14 +91,14 @@ export default function IndustriesSection() {
                 onHoverStart={() => setHoveredIndustry(index)}
                 onHoverEnd={() => setHoveredIndustry(null)}
               >
-                <div className="relative bg-white/80 border border-[#6BA464] rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 group-hover:border-[#3290AE] group-hover:bg-gradient-to-br group-hover:from-[#6BA464]/80 group-hover:to-[#3290AE]/80 flex flex-col items-center justify-center">
+                <div className="relative bg-white/80 border border-[#6BA464] rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 group-hover:border-[#3290AE] flex flex-col items-center justify-center min-h-[160px] min-w-[160px] h-[160px] w-full">
                   {/* Industry Icon */}
                   {Icon && (
                     <Icon className="mb-2 text-3xl transition-colors duration-300" style={{ color: hoveredIndustry === index ? '#3290AE' : '#6BA464' }} />
                   )}
                   {/* Industry Name */}
                   <motion.h4 
-                    className="text-sm font-semibold text-gray-800 text-center group-hover:text-[#3290AE] transition-colors duration-300 pr-6"
+                    className="text-sm font-semibold text-gray-800 text-center group-hover:text-[#3290AE] transition-colors duration-300 pr-0"
                     whileHover={{ scale: 1.05 }}
                   >
                     {industry}

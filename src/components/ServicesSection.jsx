@@ -1,77 +1,49 @@
 "use client";
 
+
 import { motion } from "framer-motion";
 import { useState } from "react";
+import TechnologyIcon from "./TechnologyIcon";
+import { FaMobileAlt, FaGlobe, FaObjectGroup, FaChartBar } from "react-icons/fa";
 
 export default function ServicesSection() {
   const [hoveredService, setHoveredService] = useState(null);
 
-  const servicesList = [
-    "ERP / CRM Development",
-    "Data Analytics",
-    "Oracle Apex Development",
-    "Mobile App Development",
-    "Web Development",
-    "React Js Website Development",
-  ];
-
   const serviceCards = [
     {
-      name: "Mobile App Development",
-      icon: (
-        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M17 1.01L7 1c-1.1 0-1.99.9-1.99 2v18c0 1.1.89 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z" />
-        </svg>
-      )
+      name: "ERP / CRM",
+      icon: <TechnologyIcon technology="Oracle Apex" size="w-12 h-12" />,
+      desc: "Custom ERP and CRM solutions for business automation."
     },
     {
       name: "Web Development",
-      icon: (
-        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-        </svg>
-      )
+      icon: <FaGlobe className="w-12 h-12 text-[#3290AE]" />,
+      desc: "Modern, scalable websites and web applications."
     },
     {
-      name: "Quality Assurance",
-      icon: (
-        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
-        </svg>
-      )
-    },
-
-    {
-      name: "UI/UX Development",
-      icon: (
-        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-        </svg>
-      )
+      name: "App Development",
+      icon: <FaMobileAlt className="w-12 h-12 text-[#3290AE]" />,
+      desc: "Cross-platform mobile app development (iOS & Android)."
     },
     {
-      name: "eCommerce Development",
-      icon: (
-        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
-        </svg>
-      )
+      name: "Cloud Services",
+      icon: <TechnologyIcon technology="AWS" size="w-12 h-12" />,
+      desc: "Cloud migration, hosting, and management (AWS, Azure, Oracle Cloud)."
     },
     {
       name: "Data Analytics",
-      icon: (
-        <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M7 17h2v-7H3v7zm4 0h2v-4H7v4zm4 0h2V7h-2v10zm4 0h2v-2h-2v2zm4 0h2v-9h-2v9z" />
-        </svg>
-      )
+      icon: <FaChartBar className="w-12 h-12 text-[#3290AE]" />,
+      desc: "Business intelligence, analytics, and reporting."
+    },
+    {
+      name: "UI/UX Designer",
+      icon: <FaObjectGroup className="w-12 h-12 text-[#3290AE]" />,
+      desc: "User interface and experience design for digital products."
     },
   ];
 
   return (
-  <section className="py-20 bg-white relative overflow-hidden">
-      {/* Background Pattern */}
-  {/* Decorative background elements removed as per request */}
-
+    <section className="py-20 bg-gradient-to-br from-[#e0f7fa] to-[#f1f8e9] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         {/* Header Section */}
         <motion.div
@@ -82,155 +54,94 @@ export default function ServicesSection() {
           viewport={{ once: true }}
         >
           <motion.h2
-            className="text-5xl font-bold mb-6 text-[#3290AE]"
+            className="text-5xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#3290AE] to-[#6BA464] drop-shadow-lg"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Services
+            Our Services
           </motion.h2>
           <motion.p
-            className="text-lg text- mb-4 max-w-4xl mx-auto"
+            className="text-lg text-gray-700 mb-4 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            We are a leading ERP/CRM software development company, offering customized solutions
-          </motion.p>
-          <motion.p
-            className="text-lg text- max-w-5xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            viewport={{ once: true }}
-          >
-            in Oracle Apex, Data Analytics & AI, Python for Data Science, Django Python, OCI, Power BI, Microsoft Azure, Google Cloud, React Native, and Flutter.
+            We deliver innovative solutions in ERP/CRM, Data Analytics, Oracle Apex, Mobile & Web Development, and more. Explore our expertise below.
           </motion.p>
         </motion.div>
 
-  <div className="grid lg:grid-cols-2 gap-16">
-          {/* Left Column - Services List */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <motion.h3
-              className="text-4xl font-bold mb-8 text-[#6BA464]"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+        {/* Modern Card Grid */}
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          {serviceCards.map((service, index) => (
+            <motion.div
+              key={index}
+              className="relative group cursor-pointer flex flex-col items-center justify-start text-center overflow-hidden p-0"
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{
+                duration: 0.6,
+                delay: 0.3 + index * 0.1,
+                ease: "easeOut"
+              }}
               viewport={{ once: true }}
+              whileHover={{
+                y: -8,
+                scale: 1.04,
+                boxShadow: "0 8px 32px 0 rgba(50,144,174,0.25)",
+                transition: { duration: 0.3 }
+              }}
+              onHoverStart={() => setHoveredService(index)}
+              onHoverEnd={() => setHoveredService(null)}
             >
-              <span className="text-[#3290AE]">Services</span>{" "}
-              <span className="text-[#6BA464]">We are Providing</span>
-            </motion.h3>
-
-            <div className="space-y-4">
-              {servicesList.map((service, index) => (
+              {/* Accent Bar */}
+              <div className="absolute left-0 top-0 h-full w-2  rounded-l-3xl opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+              {/* Card Body */}
+              <div className="relative z-10 flex flex-col items-center justify-center w-full h-full bg-white/70 backdrop-blur-lg rounded-3xl  px-6 py-10 min-h-[240px]">
+                {/* Service Icon */}
                 <motion.div
-                  key={index}
-                  className="flex items-center space-x-4 p-4 rounded-xl hover:bg-gradient-to-r hover:from-[#6BA464]/20 hover:to-[#3290AE]/20 transition-all duration-300 group"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ x: 10 }}
+                  className="mb-4"
+                  whileHover={{
+                    scale: 1.18,
+                    rotate: [0, -6, 6, 0],
+                    transition: { duration: 0.5 }
+                  }}
+                  animate={hoveredService === index ? {
+                    scale: [1, 1.08, 1],
+                    transition: { duration: 0.7, repeat: Infinity }
+                  } : {}}
                 >
-                  <div className="w-3 h-3 bg-[#3290AE] rounded-sm flex-shrink-0 group-hover:bg-[#6BA464] transition-colors duration-300"></div>
-                  <span className="text-lg text-[#3290AE] font-medium group-hover:text-[#6BA464] transition-colors duration-300">
-                    {service}
-                  </span>
+                  {service.icon}
                 </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Right Column - Service Cards Grid */}
-          <motion.div
-            className="grid grid-cols-2 gap-6"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            {serviceCards.map((service, index) => (
+                {/* Service Name */}
+                <motion.h4
+                  className="text-lg font-bold text-[#3290AE] group-hover:text-[#6BA464] transition-colors duration-300 mb-2 drop-shadow-sm"
+                  whileHover={{ scale: 1.07 }}
+                >
+                  {service.name}
+                </motion.h4>
+                {/* Service Description */}
+                <p className="text-gray-700 text-sm font-medium mb-0 mt-1 px-1">
+                  {service.desc}
+                </p>
+              </div>
+              {/* Animated Border on Hover */}
               <motion.div
-                key={index}
-                className="relative bg-white border-2 border-[#3290AE] rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 group cursor-pointer flex flex-col items-center justify-center text-center"
-                initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.8 + index * 0.1,
-                  ease: "easeOut"
-                }}
-                viewport={{ once: true }}
-                whileHover={{
-                  y: -8,
-                  scale: 1.05,
-                  transition: { duration: 0.3 }
-                }}
-                onHoverStart={() => setHoveredService(index)}
-                onHoverEnd={() => setHoveredService(null)}
-              >
-                {/* Hover Background Effect */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-[#6BA464]/30 to-[#3290AE]/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 1 }}
-                />
-
-                <div className="relative z-10 flex flex-col items-center justify-center w-full">
-                  {/* Service Icon */}
-                  <motion.div
-                    className="text-[#3290AE] group-hover:text-[#6BA464] transition-colors duration-300 mb-4 flex items-center justify-center"
-                    whileHover={{
-                      scale: 1.2,
-                      rotate: [0, -5, 5, 0],
-                      transition: { duration: 0.5 }
-                    }}
-                    animate={hoveredService === index ? {
-                      scale: [1, 1.1, 1],
-                      transition: { duration: 0.6, repeat: Infinity }
-                    } : {}}
-                  >
-                    {service.icon}
-                  </motion.div>
-
-                  {/* Service Name */}
-                  <motion.h4
-                    className="text-xl font-bold text-[#3290AE] group-hover:text-[#6BA464] transition-colors duration-300 mb-2"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    {service.name}
-                  </motion.h4>
-
-                  {/* Checkmark Icon: Only show when NOT hovered */}
-                  {hoveredService !== index && (
-                    <motion.div
-                      className="text-[#6BA464] opacity-100 transition-opacity duration-300 mt-2"
-                    >
-                      <svg className="w-6 h-6 mx-auto" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
-                      </svg>
-                    </motion.div>
-                  )}
-                </div>
-
-                {/* Animated Border on Hover */}
-                <motion.div
-                  className="absolute inset-0 rounded-2xl border-2 border-[#6BA464] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 1 }}
-                />
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
+                className="absolute inset-0 rounded-3xl  opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+              />
+            </motion.div>
+          ))}
+        </motion.div>
 
         {/* Call to Action */}
         <motion.div
@@ -242,9 +153,9 @@ export default function ServicesSection() {
         >
           <motion.a
             href="/services"
-            className="inline-block px-8 py-4 bg-gradient-to-r from-[#3290AE] to-[#6BA464] text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="inline-block px-10 py-4 bg-gradient-to-r from-[#3290AE] to-[#6BA464] text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-lg tracking-wide"
+            whileHover={{ scale: 1.07 }}
+            whileTap={{ scale: 0.96 }}
           >
             View All Services
           </motion.a>

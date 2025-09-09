@@ -19,30 +19,30 @@ export default function Footer() {
     {
       title: "Services",
       links: [
-        { name: "Web Development", href: "/services/web-development" },
-        { name: "Mobile Apps", href: "/services/mobile-apps" },
-        { name: "Software Solutions", href: "/services/software" },
-        { name: "IT Consulting", href: "/services/consulting" },
-        { name: "Cloud Solutions", href: "/services/cloud" },
-        { name: "Digital Marketing", href: "/services/digital-marketing" }
+        { name: "Web Development"},
+        { name: "Mobile Apps"},
+        { name: "Software Solutions"},
+        { name: "IT Consulting"},
+        { name: "Cloud Solutions"},
+        { name: "Digital Marketing"}
       ]
     },
     {
       title: "Connect with Us",
       links: [
-        { name: "Facebook", href: "https://www.facebook.com", external: true },
-        { name: "LinkedIn", href: "https://www.linkedin.com", external: true },
-        { name: "Instagram", href: "https://www.instagram.com", external: true },
-        { name: "Twitter", href: "https://www.twitter.com", external: true }
+        { name: "Facebook", href: "", external: true },
+        { name: "LinkedIn", href: "https://www.linkedin.com/in/otrix-india-tech/", external: true },
+        { name: "Instagram", href: "https://www.instagram.com/otrix_india_tech/", external: true },
+        { name: "Twitter", href: "", external: true }
       ]
     },
     {
       title: "Support",
       links: [
-        { name: "Help Center", href: "/help" },
-        { name: "Documentation", href: "/docs" },
-        { name: "Privacy Policy", href: "/privacy" },
-        { name: "Terms of Service", href: "/terms" }
+        { name: "Help Center"},
+        { name: "Documentation"},
+        { name: "Privacy Policy"},
+        { name: "Terms of Service"}
       ]
     }
   ];
@@ -79,13 +79,13 @@ export default function Footer() {
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                   </svg>
-                  info@otrixindia.com
+                  otrixindiatech@gmail.com
                 </p>
                 <p className="flex items-center">
                   <svg className="w-5 h-5 mr-3 text-[#2e95b7]" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                   </svg>
-                  +91 98765 43210
+                  +91 97700 76130
                 </p>
               </div>
             </div>
@@ -134,6 +134,12 @@ export default function Footer() {
                           return (
                             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                          );
+                        case "LinkedIn":
+                          return (
+                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.381-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/>
                             </svg>
                           );
                         case "Twitter":
@@ -189,30 +195,34 @@ export default function Footer() {
               <ul className="space-y-1">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    {link.external ? (
-                      <motion.a
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-white hover:bg-gradient-to-r hover:from-[#6BA464] hover:to-[#3290AE] hover:text-transparent hover:bg-clip-text transition-colors duration-200 text-sm"
-                        whileHover={{ x: 5 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        {link.name}
-                      </motion.a>
-                    ) : (
-                      <motion.div
-                        whileHover={{ x: 5 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <HoverLink 
+                    {link.href ? (
+                      link.external ? (
+                        <motion.a
                           href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="text-white hover:bg-gradient-to-r hover:from-[#6BA464] hover:to-[#3290AE] hover:text-transparent hover:bg-clip-text transition-colors duration-200 text-sm"
-                          hoverDelay={500}
+                          whileHover={{ x: 5 }}
+                          transition={{ duration: 0.2 }}
                         >
                           {link.name}
-                        </HoverLink>
-                      </motion.div>
+                        </motion.a>
+                      ) : (
+                        <motion.div
+                          whileHover={{ x: 5 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <HoverLink 
+                            href={link.href}
+                            className="text-white hover:bg-gradient-to-r hover:from-[#6BA464] hover:to-[#3290AE] hover:text-transparent hover:bg-clip-text transition-colors duration-200 text-sm"
+                            hoverDelay={500}
+                          >
+                            {link.name}
+                          </HoverLink>
+                        </motion.div>
+                      )
+                    ) : (
+                      <span className="text-white/60 cursor-default text-sm">{link.name}</span>
                     )}
                   </li>
                 ))}

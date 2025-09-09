@@ -69,7 +69,7 @@ export default function TechnologiesSection() {
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            Looking for the best software development company? Hire Otrix India Tech for the latest technologies like AngularJs, ReactJs, NodeJs, Python, Swift, Kotlin, Flutter, Objective-C, Core Java, PHP etc.
+            Looking for the best software development company? Hire Otrix India Tech for the latest technologies like AngularJs, ReactJs, NodeJs, Python, React Native,  Flutter, Oracle Apex etc.
           </motion.p>
         </motion.div>
 

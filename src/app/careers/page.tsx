@@ -34,7 +34,7 @@ export default function CareersPage() {
 
   // Set page metadata
   useEffect(() => {
-    document.title = "Careers - Join Our Team | Otrix Online";
+    document.title = "Careers - Join Our Team";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
@@ -249,14 +249,23 @@ export default function CareersPage() {
       </div>
       {/* Hero Section */}
       <section className="py-20 bg-white relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/image copy.png" 
+            alt="Careers Hero Background" 
+            className="w-full h-full object-cover object-center opacity-40 blur-sm select-none pointer-events-none" 
+            draggable="false"
+          />
+        </div>
         {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 opacity-5 z-10">
           <div className="absolute top-10 right-10 w-40 h-40 bg-[#2e95b7] rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
           <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-[#2e95b7] rounded-full blur-2xl"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 relative z-20">
           <motion.div 
             className="text-center"
             initial={{ opacity: 0, y: 30 }}
@@ -280,7 +289,7 @@ export default function CareersPage() {
               Build the Future with Us
             </motion.h2>
             <motion.p 
-              className="text-lg text-gray-700 mb-4 max-w-4xl mx-auto"
+              className="text-lg text-black-700 mb-4 max-w-4xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -288,7 +297,7 @@ export default function CareersPage() {
               Be part of a dynamic team that's building the future of technology. We're looking for passionate individuals who want to make a difference.
             </motion.p>
             <motion.p 
-              className="text-lg text-gray-600 max-w-5xl mx-auto mb-12"
+              className="text-lg text-black-600 max-w-5xl mx-auto mb-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
@@ -490,7 +499,7 @@ export default function CareersPage() {
 
           {/* Job Cards - Horizontal Single Card Layout */}
           <motion.div 
-            className="space-y-6"
+            className="space-y-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
@@ -499,93 +508,87 @@ export default function CareersPage() {
             {filteredJobs.map((job, index) => (
               <motion.div 
                 key={job.id} 
-                className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group"
+                className="bg-white border border-[#3290AE] rounded-2xl p-10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.0 + index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -4 }}
               >
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-                  {/* Left Side - Job Info */}
-                  <div className="flex-1">
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
-                      <div>
-                        <h3 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors duration-300">{job.title}</h3>
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          <span className="bg-blue-600 text-white text-sm font-medium px-4 py-2 rounded-full">
-                            {job.category}
-                          </span>
-                          <span className="bg-gray-600 text-white text-sm font-medium px-4 py-2 rounded-full">
-                            {job.type}
-                          </span>
-                          <span className="bg-gray-500 text-white text-sm font-medium px-4 py-2 rounded-full">
-                            {job.experience}
-                          </span>
-                        </div>
+                {/* Left Side - Job Info */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 gap-2">
+                    <div>
+                      <h3 className="text-2xl font-bold text-[#3290AE] mb-2 group-hover:text-[#6BA464] transition-colors duration-300">{job.title}</h3>
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        <span className="bg-[#6BA464] text-white text-sm font-medium px-4 py-2 rounded-full">
+                          {job.category}
+                        </span>
+                        <span className="bg-[#3290AE] text-white text-sm font-medium px-4 py-2 rounded-full">
+                          {job.type}
+                        </span>
+                        <span className="bg-gray-200 text-[#3290AE] text-sm font-medium px-4 py-2 rounded-full border border-[#3290AE]/30">
+                          {job.experience}
+                        </span>
                       </div>
                     </div>
+                  </div>
 
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-6">
-                      <div className="flex items-center text-gray-600">
-                        <span className="mr-2 text-blue-500">📍</span>
-                        {job.location}
-                      </div>
-                      <div className="flex items-center text-gray-600">
-                        <span className="mr-2 text-blue-500">📅</span>
-                        Posted on {new Date(job.postedDate).toLocaleDateString()}
-                      </div>
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-6">
+                    <div className="flex items-center text-[#3290AE] font-medium">
+                      <span className="mr-2">📍</span>
+                      {job.location}
                     </div>
+                    <div className="flex items-center text-[#6BA464] font-medium">
+                      <span className="mr-2">📅</span>
+                      Posted on {new Date(job.postedDate).toLocaleDateString()}
+                    </div>
+                  </div>
 
-                    <p className="text-gray-600 mb-6 leading-relaxed text-lg">
-                      {job.description}
-                    </p>
+                  <p className="text-gray-700 mb-6 leading-relaxed text-lg">
+                    {job.description}
+                  </p>
 
+                  <div className="mb-6">
+                    <h4 className="font-semibold text-[#3290AE] mb-3 text-lg">Key Requirements:</h4>
+                    <ul className="list-none space-y-2 md:columns-2 md:gap-8">
+                      {job.requirements.slice(0, 4).map((req, reqIndex) => (
+                        <li key={reqIndex} className="flex items-start gap-2">
+                          <span className="mt-0 text-[#6BA464] text-base">•</span>
+                          <span className="text-sm text-gray-700 leading-snug">{req}</span>
+                        </li>
+                      ))}
+                      
+                    </ul>
+                  </div>
+
+                  {job.skills && (
                     <div className="mb-6">
-                      <h4 className="font-semibold text-gray-800 mb-3 text-lg">Key Requirements:</h4>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                        {job.requirements.slice(0, 4).map((req, reqIndex) => (
-                          <div key={reqIndex} className="flex items-start">
-                            <span className="mr-2 text-blue-500 mt-1">•</span>
-                            <span className="text-sm text-gray-600">{req}</span>
-                          </div>
+                      <h4 className="font-semibold text-[#6BA464] mb-3 text-lg">Skills:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {job.skills.map((skill, skillIndex) => (
+                          <span 
+                            key={skillIndex}
+                            className="bg-[#eaf6ef] text-[#6BA464] text-sm font-medium px-3 py-1 rounded-full border border-[#6BA464]/30"
+                          >
+                            {skill}
+                          </span>
                         ))}
-                        {job.requirements.length > 4 && (
-                          <div className="text-sm text-blue-600 font-medium col-span-2">
-                            +{job.requirements.length - 4} more requirements
-                          </div>
-                        )}
                       </div>
                     </div>
+                  )}
+                </div>
 
-                    {job.skills && (
-                      <div className="mb-6">
-                        <h4 className="font-semibold text-gray-800 mb-3 text-lg">Skills:</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {job.skills.map((skill, skillIndex) => (
-                            <span 
-                              key={skillIndex}
-                              className="bg-blue-100 text-blue-700 text-sm font-medium px-3 py-1 rounded-full border border-blue-200"
-                            >
-                              {skill}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Right Side - Apply Button */}
-                  <div className="lg:w-48 flex-shrink-0">
-                    <motion.button
-                      onClick={() => handleJobApply(job)}
-                      className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      Apply for this Position
-                    </motion.button>
-                  </div>
+                {/* Right Side - Apply Button */}
+                <div className="lg:w-56 flex-shrink-0 flex items-center justify-center">
+                  <motion.button
+                    onClick={() => handleJobApply(job)}
+                    className="w-full bg-gradient-to-r from-[#3290AE] to-[#6BA464] hover:from-[#6BA464] hover:to-[#3290AE] text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border-2 border-transparent hover:border-[#3290AE] focus:outline-none focus:ring-2 focus:ring-[#6BA464]"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Apply for this Position
+                  </motion.button>
                 </div>
               </motion.div>
             ))}
@@ -611,9 +614,9 @@ export default function CareersPage() {
       <section className="py-20 bg-gray-50 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-10 w-40 h-40 bg-blue-400 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-blue-600 rounded-full blur-2xl"></div>
+          <div className="absolute top-10 right-10 w-40 h-40 bg-[#3290AE] rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-10 w-32 h-32 bg-[#6BA464] rounded-full blur-3xl"></div>
+          <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-[#6BA464] rounded-full blur-2xl"></div>
         </div>
 
         <div className="max-w-4xl mx-auto px-4 relative z-10">
@@ -625,7 +628,8 @@ export default function CareersPage() {
             viewport={{ once: true }}
           >
             <motion.h2 
-              className="text-4xl font-bold text-blue-600 mb-6"
+              className="text-4xl font-bold mb-6"
+              style={{ color: '#6BA464' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -634,7 +638,8 @@ export default function CareersPage() {
               Don't See Your Perfect Role?
             </motion.h2>
             <motion.p 
-              className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto"
+              className="text-lg mb-8 max-w-3xl mx-auto"
+              style={{ color: '#3290AE' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -652,7 +657,7 @@ export default function CareersPage() {
             >
               <motion.button 
                 onClick={() => setShowApplicationForm(true)}
-                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="bg-gradient-to-r from-[#6BA464] to-[#3290AE] hover:from-[#3290AE] hover:to-[#6BA464] text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -663,7 +668,7 @@ export default function CareersPage() {
                   const element = document.getElementById('why-work-with-us');
                   element?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="bg-transparent border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+                className="bg-transparent border-2 border-[#3290AE] text-[#3290AE] hover:bg-[#3290AE] hover:text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

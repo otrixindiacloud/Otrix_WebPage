@@ -4,6 +4,15 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNotifications } from '../../contexts/NotificationContext';
 
+type Notification = {
+  id: string;
+  title: string;
+  message: string;
+  type: string;
+  read: boolean;
+  timestamp: string | number | Date;
+};
+
 export default function NotificationsPage() {
   const { 
     notifications, 
@@ -14,18 +23,18 @@ export default function NotificationsPage() {
     clearAllNotifications 
   } = useNotifications();
   
-  const [filter, setFilter] = useState('all'); // 'all', 'unread', 'read'
-  const [selectedNotifications, setSelectedNotifications] = useState([]);
+  const [filter, setFilter] = useState<'all' | 'unread' | 'read'>('all'); // 'all', 'unread', 'read'
+  const [selectedNotifications, setSelectedNotifications] = useState<string[]>([]);
 
-  const filteredNotifications = notifications.filter(notification => {
+  const filteredNotifications = notifications.filter((notification: Notification) => {
     if (filter === 'unread') return !notification.read;
     if (filter === 'read') return notification.read;
     return true;
   });
 
-  const formatTimeAgo = (timestamp) => {
-    const now = new Date();
-    const notificationTime = new Date(timestamp);
+  const formatTimeAgo = (timestamp: string | number | Date) => {
+    const now = new Date().getTime();
+    const notificationTime = new Date(timestamp).getTime();
     const diffInMinutes = Math.floor((now - notificationTime) / (1000 * 60));
 
     if (diffInMinutes < 1) return 'Just now';
@@ -34,7 +43,7 @@ export default function NotificationsPage() {
     return `${Math.floor(diffInMinutes / 1440)}d ago`;
   };
 
-  const formatDate = (timestamp) => {
+  const formatDate = (timestamp: string | number | Date) => {
     return new Date(timestamp).toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
@@ -44,7 +53,7 @@ export default function NotificationsPage() {
     });
   };
 
-  const getNotificationIcon = (type) => {
+  const getNotificationIcon = (type: string) => {
     switch (type) {
       case 'welcome':
         return '🎉';
@@ -61,7 +70,7 @@ export default function NotificationsPage() {
     }
   };
 
-  const getNotificationColor = (type) => {
+  const getNotificationColor = (type: string) => {
     switch (type) {
       case 'welcome':
         return 'bg-green-100 text-green-800 border-green-200';
@@ -78,7 +87,7 @@ export default function NotificationsPage() {
     }
   };
 
-  const handleSelectNotification = (notificationId) => {
+  const handleSelectNotification = (notificationId: string) => {
     setSelectedNotifications(prev => 
       prev.includes(notificationId)
         ? prev.filter(id => id !== notificationId)
@@ -90,7 +99,7 @@ export default function NotificationsPage() {
     if (selectedNotifications.length === filteredNotifications.length) {
       setSelectedNotifications([]);
     } else {
-      setSelectedNotifications(filteredNotifications.map(n => n.id));
+      setSelectedNotifications(filteredNotifications.map((n: Notification) => n.id));
     }
   };
 
@@ -163,7 +172,7 @@ export default function NotificationsPage() {
                 ].map((tab) => (
                   <button
                     key={tab.key}
-                    onClick={() => setFilter(tab.key)}
+                    onClick={() => setFilter(tab.key as 'all' | 'unread' | 'read')}
                     className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                       filter === tab.key
                         ? 'bg-white text-gray-900 shadow-sm'
@@ -227,7 +236,7 @@ export default function NotificationsPage() {
               </div>
             ) : (
               <AnimatePresence>
-                {filteredNotifications.map((notification, index) => (
+                {filteredNotifications.map((notification: Notification, index: number) => (
                   <motion.div
                     key={notification.id}
                     initial={{ opacity: 0, y: 20 }}

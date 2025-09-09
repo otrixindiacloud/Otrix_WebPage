@@ -1,4 +1,4 @@
-// File: /workspaces/Otrix_WebPage/src/app/contact/page.tsx
+// File: /workspaces/Otrix_WebPage/src/app/contact/page.jsx
 import * as entry from '../../../../src/app/contact/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

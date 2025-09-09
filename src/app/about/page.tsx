@@ -61,12 +61,12 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <motion.h1 
-              className="text-5xl md:text-6xl font-bold text-red-600 mb-6"
+              className="text-5xl md:text-6xl font-bold mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              About <span className="text-black">Otrix India Tech</span>
+              <span className="text-[#3290AE]">About</span> <span className="text-black">Otrix India Tech</span>
             </motion.h1>
             <motion.p 
               className="text-xl md:text-2xl text-black mb-8 leading-relaxed"
@@ -74,7 +74,7 @@ export default function About() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Otrix India Tech is a leading information technology (IT) company for IT Solutions & software services, deals in Web and Mobile Apps Development.
+              Otrix India Tech is a leading information technology IT company for IT Solutions & software services, deals in Web and Mobile Apps Development.
             </motion.p>
             <motion.div 
               className="flex flex-wrap justify-center gap-4 text-sm text-black"
@@ -109,7 +109,7 @@ export default function About() {
               viewport={{ once: true }}
             >
               <div className="mb-8">
-                <span className="text-red-600 font-semibold text-sm uppercase tracking-wider">Our Journey</span>
+                <span className="text-[#3290AE] font-semibold text-sm uppercase tracking-wider">Our Journey</span>
                 <h2 className="text-4xl font-bold text-black mt-2 mb-6">
                   Empowering Digital Transformation
                 </h2>
@@ -130,7 +130,7 @@ export default function About() {
               </div>
 
               {/* Achievement Badge */}
-              <motion.div 
+              {/* <motion.div 
                 className="mt-8 p-6 bg-red-50 rounded-xl border border-red-200 hover:bg-red-100 transition-colors duration-300"
                 whileHover={{ scale: 1.02 }}
               >
@@ -143,7 +143,7 @@ export default function About() {
                     <p className="text-black">Transforming businesses worldwide</p>
                   </div>
                 </div>
-              </motion.div>
+              </motion.div> */}
             </motion.div>
 
             {/* Visual Element */}
@@ -154,15 +154,14 @@ export default function About() {
               viewport={{ once: true }}
             >
               <div className="relative">
-                <div className="bg-white border border-gray-200 rounded-2xl p-8 h-96 flex items-center justify-center shadow-lg hover:shadow-2xl transition-all duration-300">
-                  <div className="text-center">
-                    <div className="w-24 h-24 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl">
-                      <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <h3 className="text-xl font-semibold text-black mb-2">Technology Solutions</h3>
-                    <p className="text-black">Innovation at its finest</p>
+                <div className="bg-white border border-gray-200 rounded-4xl p-0 w-90 h-61 flex items-center justify-center shadow-lg hover:shadow-2xl transition-all duration-300">
+                  <div className="text-center w-200 h-450 flex flex-col items-center justify-center">
+                    <img 
+                      src="/digital.png" 
+                      alt="Technology Solutions Visual" 
+                      className="object-contain max-h-90 w-100  mb-4 rounded-xl shadow-xl"
+                    />
+                    
                   </div>
                 </div>
                 {/* Decorative elements */}
@@ -192,7 +191,7 @@ export default function About() {
             viewport={{ once: true }}
           >
             <motion.span 
-              className="text-red-600 font-semibold text-sm uppercase tracking-wider"
+              className="text-[#6BA464]-600 font-semibold text-lg md:text-xl uppercase tracking-wider"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -221,7 +220,7 @@ export default function About() {
           </motion.div>
 
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
@@ -229,19 +228,19 @@ export default function About() {
           >
             {/* Innovation */}
             <motion.div 
-              className="group bg-white border border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
+              className="group bg-white border border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 flex flex-col items-center text-center"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.0 }}
               viewport={{ once: true }}
               whileHover={{ y: -8 }}
             >
-              <div className="w-16 h-16 bg-red-600 rounded-xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-300">
+              <div className="w-16 h-16 bg-[#6BA464] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3290AE] group-hover:rotate-12 transition-transform duration-300 mx-auto">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-black mb-4 group-hover:text-red-600 transition-colors duration-300">Innovation</h3>
+              <h3 className="text-xl font-bold text-black mb-4 group-hover:text-[#6BA464]-600 transition-colors duration-300 text-center">Innovation</h3>
               <p className="text-black leading-relaxed">
                 We constantly push the boundaries of technology to deliver cutting-edge solutions that give our clients a competitive advantage.
               </p>
@@ -256,12 +255,12 @@ export default function About() {
               viewport={{ once: true }}
               whileHover={{ y: -8 }}
             >
-              <div className="w-16 h-16 bg-red-600 rounded-xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-300">
+              <div className="w-16 h-16 bg-[#6BA464] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3290AE] group-hover:rotate-12 transition-transform duration-300 mx-auto">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-black mb-4 group-hover:text-red-600 transition-colors duration-300">Quality</h3>
+              <h3 className="text-xl font-bold text-black mb-4 group-hover:text-[#6BA464]-600 transition-colors duration-300 text-center">Quality</h3>
               <p className="text-black leading-relaxed">
                 We maintain the highest standards of quality in everything we do, from code development to client service delivery.
               </p>
@@ -276,12 +275,12 @@ export default function About() {
               viewport={{ once: true }}
               whileHover={{ y: -8 }}
             >
-              <div className="w-16 h-16 bg-red-600 rounded-xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-300">
+              <div className="w-16 h-16 bg-[#6BA464] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3290AE] group-hover:rotate-12 transition-transform duration-300 mx-auto">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-black mb-4 group-hover:text-red-600 transition-colors duration-300">Client Success</h3>
+              <h3 className="text-xl font-bold text-black mb-4 group-hover:text-[#6BA464]-600 transition-colors duration-300 text-center">Client Success</h3>
               <p className="text-black leading-relaxed">
                 Our success is measured by our clients' success. We are committed to delivering solutions that drive real business value.
               </p>
@@ -296,12 +295,12 @@ export default function About() {
               viewport={{ once: true }}
               whileHover={{ y: -8 }}
             >
-              <div className="w-16 h-16 bg-red-600 rounded-xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-300">
+              <div className="w-16 h-16 bg-[#6BA464] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3290AE] group-hover:rotate-12 transition-transform duration-300 mx-auto">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-black mb-4 group-hover:text-red-600 transition-colors duration-300">Collaboration</h3>
+              <h3 className="text-xl font-bold text-black mb-4 group-hover:text-[#6BA464]-600 transition-colors duration-300 text-center">Collaboration</h3>
               <p className="text-black leading-relaxed">
                 We believe in the power of teamwork and work closely with our clients as partners in their digital transformation journey.
               </p>
@@ -323,21 +322,21 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Mission */}
             <motion.div 
-              className="text-center lg:text-left"
+              className="flex flex-col items-center text-center"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
               <motion.div 
-                className="w-20 h-20 bg-red-600 rounded-2xl flex items-center justify-center mx-auto lg:mx-0 mb-6 shadow-lg hover:rotate-12 transition-transform duration-300"
+                className="w-20 h-20 bg-[#3290AE] rounded-2xl flex items-center justify-center mb-6 shadow-lg hover:rotate-12 transition-transform duration-300"
                 whileHover={{ scale: 1.1 }}
               >
                 <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </motion.div>
-              <h2 className="text-3xl font-bold text-black mb-6">Our Mission</h2>
+              <h2 className="text-3xl font-bold text-black mb-6 text-center">Our Mission</h2>
               <p className="text-lg text-black leading-relaxed">
                 To empower businesses with cutting-edge technology solutions that drive growth, efficiency, and innovation. 
                 We believe in transforming complex challenges into simple, elegant solutions that deliver real business value.
@@ -346,14 +345,14 @@ export default function About() {
 
             {/* Vision */}
             <motion.div 
-              className="text-center lg:text-left"
+              className="flex flex-col items-center text-center"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
               <motion.div 
-                className="w-20 h-20 bg-red-600 rounded-2xl flex items-center justify-center mx-auto lg:mx-0 mb-6 shadow-lg hover:rotate-12 transition-transform duration-300"
+                className="w-20 h-20 bg-[#3290AE] rounded-2xl flex items-center justify-center mb-6 shadow-lg hover:rotate-12 transition-transform duration-300"
                 whileHover={{ scale: 1.1 }}
               >
                 <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -361,7 +360,7 @@ export default function About() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                 </svg>
               </motion.div>
-              <h2 className="text-3xl font-bold text-black mb-6">Our Vision</h2>
+              <h2 className="text-3xl font-bold text-black mb-6 text-center">Our Vision</h2>
               <p className="text-lg text-black leading-relaxed">
                 To be the leading technology partner for businesses worldwide, recognized for our innovation, quality, 
                 and commitment to client success. We envision a future where technology seamlessly integrates with 
@@ -417,7 +416,7 @@ export default function About() {
             viewport={{ once: true }}
           >
             {[
-              { number: 500, label: "Projects Completed", suffix: "+" },
+              { number: 100, label: "Projects Completed", suffix: "+" },
               { number: 8, label: "Countries Served", suffix: "+" },
               { number: 10, label: "Years Experience", suffix: "+" },
               { number: 99, label: "Client Satisfaction", suffix: "%" }
@@ -431,11 +430,11 @@ export default function About() {
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="text-4xl md:text-5xl font-bold mb-2 text-red-600 group-hover:text-red-700 transition-colors duration-300">
+                <div className="text-4xl md:text-5xl font-bold mb-2 text-[#3290AE] group-hover:text-[#3290AE] transition-colors duration-300">
                   <CountUp end={stat.number} duration={2} delay={1.0 + index * 0.2} />
                   {stat.suffix}
                 </div>
-                <div className="text-lg text-black group-hover:text-red-600 transition-colors duration-300">
+                <div className="text-lg   font-bold text-black group-hover:text-black transition-colors duration-300">
                   {stat.label}
                 </div>
               </motion.div>
@@ -462,7 +461,7 @@ export default function About() {
             viewport={{ once: true }}
           >
             <motion.span 
-              className="text-red-600 font-semibold text-sm uppercase tracking-wider"
+              className="font-semibold text-2xl uppercase tracking-wider"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -490,8 +489,9 @@ export default function About() {
             </motion.p>
           </motion.div>
 
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          {/* New Team Cards Row Design */}
+          <motion.div
+            className="flex flex-row flex-nowrap gap-8 overflow-x-auto lg:overflow-x-visible justify-center"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
@@ -499,58 +499,55 @@ export default function About() {
           >
             {[
               {
-                name: "Rajesh Kumar",
-                position: "CEO & Founder",
-                description: "With over 15 years of experience in enterprise software development, Rajesh leads our strategic vision and drives innovation across all our solutions.",
+                name: "Bhavani Luniya",
+                position: "Founder",
+                description: "Founder of the Otrix India Tech, Bhavani sets the vision, drives growth, and ensures the highest standards across all aspects of the business.",
                 icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
               },
               {
-                name: "Priya Sharma",
+                name: "Vikas Prajapati",
+                position: "CEO ",
+                description: "As CEO, Vikas provides strategic leadership, drives growth, and ensures the highest standards of excellence across the company.",
+                icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+              },
+              {
+                name: "Arpit Bajpai",
                 position: "CTO",
-                description: "A technology visionary with expertise in AI, machine learning, and cloud architecture. Priya oversees our technical strategy and innovation initiatives.",
+                description: "A technology visionary with expertise in AI, machine learning, and cloud architecture. Arpit oversees our technical strategy and innovation initiatives.",
                 icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
               },
               {
-                name: "Amit Patel",
-                position: "Head of Engineering",
-                description: "An expert in Oracle technologies and enterprise solutions, Amit leads our development teams and ensures the highest quality standards.",
+                name: "Roshan Luniya",
+                position: "CFO",
+                description: "An expert in financial strategy and enterprise solutions, Roshan leads our finance team and ensures the highest standards of fiscal responsibility and performance.",
                 icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
               },
               {
-                name: "Sneha Reddy",
-                position: "Head of Design",
-                description: "A creative leader with a passion for user experience, Sneha ensures our solutions are not only functional but also intuitive and beautiful.",
+                name: "Sapna Luniya",
+                position: "CHO",
+                description: "A creative leader with a passion for user experience, Sapna ensures our solutions are not only functional but also intuitive and beautiful.",
                 icon: "M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"
               }
             ].map((member, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
-                className="group text-center"
+                className="group flex-shrink-0 w-80 bg-white rounded-2xl shadow-xl hover:shadow-2xl border border-gray-200 p-8 flex flex-col items-center transition-all duration-300 relative"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.0 + index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -8 }}
+                whileHover={{ y: -8, scale: 1.04 }}
               >
-                <div className="relative mb-6">
-                  <div className="w-40 h-40 bg-white border border-gray-200 rounded-2xl mx-auto flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300">
-                    <div className="w-32 h-32 bg-red-600 rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
-                      <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={member.icon} />
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-600 rounded-full flex items-center justify-center">
-                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                {/* Avatar/Icon */}
+                <div className="w-28 h-28 rounded-full bg-gradient-to-br from-[#6BA464] to-[#3290AE] flex items-center justify-center mb-5 shadow-lg border-4 border-white -mt-16 z-10">
+                  <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={member.icon} />
+                  </svg>
                 </div>
-                <h3 className="text-xl font-bold text-black mb-2 group-hover:text-red-600 transition-colors duration-300">{member.name}</h3>
-                <p className="text-red-600 font-medium mb-3">{member.position}</p>
-                <p className="text-black text-sm leading-relaxed">
-                  {member.description}
-                </p>
+                {/* Card Content */}
+                <h3 className="text-2xl font-bold text-black mb-1 group-hover:text-[#3290AE] transition-colors duration-300 text-center">{member.name}</h3>
+                <p className="text-[#3290AE] font-semibold mb-2 text-center">{member.position}</p>
+                <p className="text-gray-700 text-base leading-relaxed text-center mb-2">{member.description}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -613,33 +610,35 @@ export default function About() {
             {[
               {
                 quote: "Otrix India Tech has been our go-to partner for IT solutions for over 3 years. Their expertise in web and mobile app development is unmatched. Every project reflects their technical excellence perfectly.",
-                author: "Sarah Mohammed",
+                author: "Bijin Chandran",
                 position: "CTO, TechCorp Bahrain",
-                initials: "SM"
+                initials: "BJ"
               },
               {
                 quote: "The technical solutions they provide are incredible. They turned our complex business requirements into reality and delivered exactly what we needed for our digital transformation.",
-                author: "Ahmed Khalil",
-                position: "CEO, FinanceFirst Group UAE",
-                initials: "AK"
+                author: "Biju Chacko Mathews",
+                position: "CEO, Manama Bahrain",
+                initials: "BM"
               },
               {
                 quote: "Professional, reliable, and always on time. Otrix India Tech has helped us strengthen our digital presence through their exceptional web and mobile development services.",
-                author: "Fatima Al-Rashid",
-                position: "IT Director, Global Solutions Ltd Qatar",
-                initials: "FA"
+                author: "Intalio Global",
+                position: "Global Solutions Ltd Qatar",
+                initials: "IG"
               }
             ].map((testimonial, index) => (
               <motion.div 
                 key={index}
-                className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 group"
+                className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg transition-all duration-300 hover:scale-105 group relative overflow-hidden"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.0 + index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -8 }}
               >
-                <div className="flex items-center mb-4">
+                {/* Light blue overlay on hover */}
+                <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl z-0" style={{background: '#e6f2fa'}}></div>
+                <div className="flex items-center mb-4 relative z-10">
                   <div className="flex text-yellow-400">
                     {[...Array(5)].map((_, i) => (
                       <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
@@ -648,16 +647,16 @@ export default function About() {
                     ))}
                   </div>
                 </div>
-                <p className="text-black mb-6 leading-relaxed group-hover:text-red-600 transition-colors duration-300">
+                <p className="text-black mb-6 leading-relaxed group-hover:text-[#3290AE] transition-colors duration-300 relative z-10">
                   "{testimonial.quote}"
                 </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mr-4 group-hover:bg-red-700 transition-colors duration-300">
-                    <span className="text-white font-semibold">{testimonial.initials}</span>
+                <div className="flex items-center relative z-10">
+                  <div className="w-12 h-12 bg-[#3290AE] rounded-full flex items-center justify-center mr-4 group-hover:bg-[#e6f2fa] transition-all duration-300">
+                    <span className="text-white font-semibold group-hover:text-[#3290AE]">{testimonial.initials}</span>
                   </div>
                   <div>
-                    <p className="font-bold text-black group-hover:text-red-600 transition-colors duration-300">{testimonial.author}</p>
-                    <p className="text-sm text-black">{testimonial.position}</p>
+                    <p className="font-bold text-black group-hover:text-[#3290AE] transition-colors duration-300">{testimonial.author}</p>
+                    <p className="text-sm text-black group-hover:text-[#3290AE] transition-colors duration-300">{testimonial.position}</p>
                   </div>
                 </div>
               </motion.div>
@@ -710,7 +709,7 @@ export default function About() {
             >
               <motion.a 
                 href="/contact" 
-                className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="bg-gradient-to-r from-[#6BA464] to-[#3290AE] hover:from-[#3290AE] hover:to-[#6BA464] text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -718,7 +717,7 @@ export default function About() {
               </motion.a>
               <motion.a 
                 href="/careers" 
-                className="border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
+                className="border-2 border-[#6BA464] text-[#6BA464] hover:bg-gradient-to-r hover:from-[#6BA464] hover:to-[#3290AE] hover:text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

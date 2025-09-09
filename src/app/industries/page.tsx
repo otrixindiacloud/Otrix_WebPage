@@ -1,7 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { industryIcons } from "../../components/industryIcons";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { 
   FadeInUp, 
   FadeInLeft, 
@@ -19,6 +21,7 @@ import {
 } from "../../components/animations";
 
 export default function IndustriesPage() {
+  const router = useRouter();
   const [hoveredIndustry, setHoveredIndustry] = useState<number | null>(null);
 
   const industries = [
@@ -30,17 +33,9 @@ export default function IndustriesPage() {
     "Insurance",
     "Food & Restaurant",
     "B2B Solution",
-    "Tracking Systems",
-    "Social Networking",
     "Shopping App",
     "Manufacturing",
-    "Logistics",
-    "Smart City",
-    "Non Profit",
     "Ecommerce & Retail",
-    "Music & Entertainment",
-    "Telecom",
-    "Events and Ticketing",
     "Travel & Hospitality",
     "Booking Application",
     "Real Estate & Property",
@@ -69,15 +64,24 @@ export default function IndustriesPage() {
         </div>
       </div>
       {/* Hero Section */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      <section className="py-20 bg-[#5d6375] relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          <img 
+            src="/industries.png" 
+            alt="Industries Hero Background" 
+            className="w-full h-full object-cover object-center opacity-10" 
+            style={{ pointerEvents: 'none' }}
+          />
+        </div>
         {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 opacity-5 z-10">
           <div className="absolute top-10 right-10 w-40 h-40 bg-[#2e95b7] rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 left-10 w-32 h-32 bg-gray-500 rounded-full blur-3xl"></div>
           <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-[#2e95b7] rounded-full blur-2xl"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 relative z-20">
           <motion.div 
             className="text-center"
             initial={{ opacity: 0, y: 30 }}
@@ -101,7 +105,7 @@ export default function IndustriesPage() {
               We Serve Diverse Industries
             </motion.h2>
             <motion.p 
-              className="text-lg text-gray-700 mb-4 max-w-4xl mx-auto"
+              className="text-lg text-[#ffffff] text-700 mb-4 max-w-4xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -109,7 +113,7 @@ export default function IndustriesPage() {
               Otrix India Tech provides solutions for various leading industries across the globe. We have expertise in delivering cutting-edge technology solutions tailored to specific industry needs.
             </motion.p>
             <motion.p 
-              className="text-lg text-gray-600 max-w-5xl mx-auto mb-12"
+              className="text-lg text-600 text-[#ffffff] max-w-5xl mx-auto mb-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
@@ -168,48 +172,47 @@ export default function IndustriesPage() {
           </motion.div>
 
           {/* Industries Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-            {industries.map((industry, index) => (
-              <motion.div
-                key={index}
-                className="group cursor-pointer"
-                initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ 
-                  duration: 0.6, 
-                  delay: index * 0.05,
-                  ease: "easeOut"
-                }}
-                viewport={{ once: true }}
-                whileHover={{ 
-                  y: -5,
-                  scale: 1.05,
-                  transition: { duration: 0.3 }
-                }}
-                onHoverStart={() => setHoveredIndustry(index)}
-                onHoverEnd={() => setHoveredIndustry(null)}
-              >
-                <div className="relative bg-white border border-gray-200 rounded-xl p-4 shadow-md hover:shadow-xl transition-all duration-300 group-hover:border-[#2e95b7] group-hover:bg-blue-50">
-                  {/* Checkmark Icon */}
-                  <motion.div 
-                    className="absolute top-2 right-2 w-5 h-5 bg-[#2e95b7] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    whileHover={{ scale: 1.2 }}
-                  >
-                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-                    </svg>
-                  </motion.div>
-                  
-                  {/* Industry Name */}
-                  <motion.h4 
-                    className="text-sm font-semibold text-gray-800 text-center group-hover:text-[#2e95b7] transition-colors duration-300 pr-6"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    {industry}
-                  </motion.h4>
-                </div>
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+            {industries.map((industry, index) => {
+              const Icon = industryIcons[industry as keyof typeof industryIcons] || null;
+              return (
+                <motion.div
+                  key={index}
+                  className="group cursor-pointer"
+                  initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ 
+                    duration: 0.6, 
+                    delay: index * 0.05,
+                    ease: "easeOut"
+                  }}
+                  viewport={{ once: true }}
+                  whileHover={{ 
+                    y: -8,
+                    scale: 1.07,
+                    transition: { duration: 0.3 }
+                  }}
+                  onHoverStart={() => setHoveredIndustry(index)}
+                  onHoverEnd={() => setHoveredIndustry(null)}
+                >
+                  <div className="relative flex flex-col items-center justify-center bg-white border border-gray-200 rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 group-hover:border-[#2e95b7] group-hover:bg-blue-50 min-h-[170px] min-w-[150px]">
+                    {/* Icon */}
+                    {Icon && (
+                      <span className="mb-4 text-[#2e95b7] group-hover:text-[#6BA464] transition-colors duration-300 text-4xl">
+                        <Icon />
+                      </span>
+                    )}
+                    {/* Industry Name */}
+                    <motion.h4 
+                      className="text-base font-semibold text-gray-800 text-center group-hover:text-[#2e95b7] transition-colors duration-300"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      {industry}
+                    </motion.h4>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -268,11 +271,11 @@ export default function IndustriesPage() {
             >
               <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
                 <div className="w-16 h-16 bg-[#2e95b7] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300">
-                  <span className="text-white text-2xl font-bold">
+                  <span className="text-white text-2xl font-bold flex items-end">
                     <CountUp end={200} duration={2} delay={1.0} />
+                    <span className="text-lg font-bold ml-1 mb-0.5">+</span>
                   </span>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">+</h3>
                 <p className="text-gray-600 font-semibold">Happy Customers</p>
               </div>
             </motion.div>
@@ -287,11 +290,11 @@ export default function IndustriesPage() {
             >
               <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
                 <div className="w-16 h-16 bg-[#2e95b7] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300">
-                  <span className="text-white text-2xl font-bold">
+                  <span className="text-white text-2xl font-bold flex items-end">
                     <CountUp end={55} duration={2} delay={1.2} />
+                    <span className="text-lg font-bold ml-1 mb-0.5">+</span>
                   </span>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">+</h3>
                 <p className="text-gray-600 font-semibold">Completed Projects</p>
               </div>
             </motion.div>
@@ -306,11 +309,11 @@ export default function IndustriesPage() {
             >
               <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
                 <div className="w-16 h-16 bg-[#2e95b7] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300">
-                  <span className="text-white text-2xl font-bold">
+                  <span className="text-white text-2xl font-bold flex items-end">
                     <CountUp end={12} duration={2} delay={1.4} />
+                    <span className="text-lg font-bold ml-1 mb-0.5">+</span>
                   </span>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">+</h3>
                 <p className="text-gray-600 font-semibold">Expert Workers</p>
               </div>
             </motion.div>
@@ -325,11 +328,11 @@ export default function IndustriesPage() {
             >
               <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 group">
                 <div className="w-16 h-16 bg-[#2e95b7] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:rotate-12 transition-transform duration-300">
-                  <span className="text-white text-2xl font-bold">
+                  <span className="text-white text-2xl font-bold flex items-end">
                     <CountUp end={30} duration={2} delay={1.6} />
+                    <span className="text-lg font-bold ml-1 mb-0.5">+</span>
                   </span>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">+</h3>
                 <p className="text-gray-600 font-semibold">Industries Served</p>
               </div>
             </motion.div>
@@ -361,9 +364,7 @@ export default function IndustriesPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="text-5xl font-bold text-[#2e95b7] animate-bounce">
-                OTRIX INDIA TECH
-              </div>
+              
             </motion.div>
             <motion.h3 
               className="text-4xl md:text-5xl font-bold text-gray-800 mb-6"
@@ -395,6 +396,7 @@ export default function IndustriesPage() {
                 className="bg-[#2e95b7] hover:bg-[#236f8a] text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => router.push('/contact')}
               >
                 Get Free Consultation
               </motion.button>
@@ -402,6 +404,7 @@ export default function IndustriesPage() {
                 className="bg-transparent border-2 border-[#2e95b7] text-[#2e95b7] hover:bg-[#2e95b7] hover:text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => router.push('/services')}
               >
                 View Our Services
               </motion.button>
