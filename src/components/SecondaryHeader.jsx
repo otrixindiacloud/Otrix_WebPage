@@ -154,7 +154,7 @@ export default function SecondaryHeader() {
               transition={{ duration: 0.2 }}
             >
               {/* Mobile Company Info */}
-              <div className="px-4 py-3 border-b border-border">
+              {/* <div className="px-4 py-3 border-b border-border">
                 <div className="flex items-center space-x-3">
                   <AppIcon size="w-8 h-8" />
                   <div>
@@ -162,7 +162,7 @@ export default function SecondaryHeader() {
                     <p className="text-sm text-muted-foreground">Let&apos;s make it perfect!</p>
                   </div>
                 </div>
-              </div>
+              </div> */}
               
               <nav className="px-4 py-4 space-y-2">
                 {navigationItems.map((link) => {

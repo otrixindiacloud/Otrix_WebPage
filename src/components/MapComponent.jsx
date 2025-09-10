@@ -99,7 +99,7 @@ export default function MapComponent({ className = "" }) {
               Madhya Pradesh 455001
             </p>
             <p style="margin: 5px 0 0 0; font-size: 12px; color: #666;">
-              Phone: +91 9893377444
+              Phone: +91 98938 92517
             </p>
           </div>
         `
@@ -150,7 +150,7 @@ export default function MapComponent({ className = "" }) {
               <p><strong>Otrix India Tech</strong></p>
               <p>159 LIG Vikas Nagar, Ganga Nagar</p>
               <p>Dewas, Madhya Pradesh 455001</p>
-              <p>Phone: +91 9893377444</p>
+              <p>Phone: +91 98938 92517</p>
             </div>
           </div>
           

@@ -155,27 +155,6 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Blue Notification Icon */}
-      <motion.div 
-        className="absolute top-20 left-20 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center shadow-lg"
-        animate={{ 
-          scale: [1, 1.1, 1],
-          boxShadow: [
-            "0 0 0 0 rgba(62, 153, 174, 0.7)",
-            "0 0 0 10px rgba(62, 153, 174, 0)",
-            "0 0 0 0 rgba(62, 153, 174, 0)"
-          ]
-        }}
-        transition={{ 
-          duration: 2,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      >
-        <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-        </svg>
-      </motion.div>
 
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">

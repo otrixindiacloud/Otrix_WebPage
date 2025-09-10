@@ -68,7 +68,7 @@ export default function CareersPage() {
         "Professional development opportunities",
         "Work from home options"
       ],
-      postedDate: "2024-01-15"
+      postedDate: "2025-09-01"
     },
     {
       id: 2,
@@ -93,7 +93,7 @@ export default function CareersPage() {
         "Professional development opportunities",
         "Work from home options"
       ],
-      postedDate: "2024-01-10"
+      postedDate: "2025-09-10"
     },
     {
       id: 3,
@@ -118,7 +118,7 @@ export default function CareersPage() {
         "Professional development opportunities",
         "Work from home options"
       ],
-      postedDate: "2024-01-08"
+      postedDate: "2025-08-31"
     },
     {
       id: 4,
@@ -143,7 +143,7 @@ export default function CareersPage() {
         "Professional development opportunities",
         "Work from home options"
       ],
-      postedDate: "2024-01-05"
+      postedDate: "2025-09-01"
     },
     {
       id: 5,
@@ -168,7 +168,7 @@ export default function CareersPage() {
         "Professional development opportunities",
         "Work from home options"
       ],
-      postedDate: "2024-01-03"
+      postedDate: "2025-08-01"
     },
     {
       id: 6,
@@ -193,7 +193,7 @@ export default function CareersPage() {
         "Professional development opportunities",
         "Work from home options"
       ],
-      postedDate: "2024-01-01"
+      postedDate: "2025-09-01"
     }
   ];
 
@@ -655,14 +655,16 @@ export default function CareersPage() {
               transition={{ duration: 0.8, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              <motion.button 
-                onClick={() => setShowApplicationForm(true)}
-                className="bg-gradient-to-r from-[#6BA464] to-[#3290AE] hover:from-[#3290AE] hover:to-[#6BA464] text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              <motion.a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=support@otrixindia.com&su=Resume%20Submission%20for%20Otrix%20India%20Tech&body=Dear%20Otrix%20India%20Tech%20Team%2C%0D%0A%0D%0APlease%20find%20my%20resume%20attached%20for%20your%20consideration.%0D%0A%0D%0ARegards%2C%0D%0A%5BYour%20Name%5D"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-r from-[#6BA464] to-[#3290AE] hover:from-[#3290AE] hover:to-[#6BA464] text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Send Your Resume
-              </motion.button>
+              </motion.a>
               <motion.button 
                 onClick={() => {
                   const element = document.getElementById('why-work-with-us');

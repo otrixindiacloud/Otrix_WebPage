@@ -491,12 +491,12 @@ export default function About() {
 
           {/* New Team Cards Row Design */}
           <motion.div
-            className="flex flex-row flex-nowrap gap-8 overflow-x-auto lg:overflow-x-visible justify-center"
+            className="flex flex-col md:flex-row md:flex-nowrap gap-16 overflow-x-auto md:overflow-x-visible justify-center"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             viewport={{ once: true }}
-          >
+           >
             {[
               {
                 name: "Bhavani Luniya",
@@ -531,7 +531,7 @@ export default function About() {
             ].map((member, index) => (
               <motion.div
                 key={index}
-                className="group flex-shrink-0 w-80 bg-white rounded-2xl shadow-xl hover:shadow-2xl border border-gray-200 p-8 flex flex-col items-center transition-all duration-300 relative"
+                className=" flex-shrink-0 w-80 bg-white rounded-3xl shadow-xl hover:shadow-2xl border border-gray-200 p-4 flex flex-col items-center transition-all duration-300 relative"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.0 + index * 0.1 }}

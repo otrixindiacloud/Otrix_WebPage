@@ -516,9 +516,11 @@ export default function ServicesPage() {
             className="text-center mb-16"
             viewport={{ once: true }}
           >
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-1 h-12 bg-[#2e95b7] mr-4"></div>
-              <h2 className="text-4xl font-bold text-gray-800">Intelligent Automation</h2>
+            <div className="flex flex-col items-center justify-center mb-6">
+              <div className="flex items-center justify-center mb-2">
+                <span className="text-5xl text-[#2e95b7] mr-0">🤖</span>
+              </div>
+              <h2 className="text-4xl font-bold text-gray-800 text-center">Intelligent Automation</h2>
             </div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Cutting-edge technologies to automate and optimize your business processes
@@ -532,16 +534,16 @@ export default function ServicesPage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white p-8 rounded-xl hover:shadow-xl transition-all duration-300 hover:scale-105 group border border-gray-200"
+                className="bg-white p-8 rounded-xl hover:shadow-xl transition-all duration-300 hover:scale-105 group border border-gray-200 flex flex-col items-center text-center"
                 viewport={{ once: true }}
               >
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center items-center">
                   {tech.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-800">
+                <h3 className="text-xl font-bold mb-3 text-gray-800 text-center">
                   {tech.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed text-center">
                   {tech.description}
                 </p>
               </motion.div>

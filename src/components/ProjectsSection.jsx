@@ -53,7 +53,7 @@ export default function ProjectsSection() {
           Explore some of our most recent and impactful projects, showcasing our expertise in delivering innovative solutions across various industries.
         </p>
         <Swiper
-          spaceBetween={0}
+          spaceBetween={20}
           slidesPerView={1}
           breakpoints={{
             640: { slidesPerView: 2 },

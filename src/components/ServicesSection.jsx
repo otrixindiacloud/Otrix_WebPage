@@ -12,32 +12,32 @@ export default function ServicesSection() {
   const serviceCards = [
     {
       name: "ERP / CRM",
-      icon: <TechnologyIcon technology="Oracle Apex" size="w-12 h-12" />,
+      icon: <TechnologyIcon technology="Oracle Apex" size="w-12 h-12" />, 
       desc: "Custom ERP and CRM solutions for business automation."
     },
     {
       name: "Web Development",
-      icon: <FaGlobe className="w-12 h-12 text-[#3290AE]" />,
+      icon: <FaGlobe className="w-12 h-12 text-black-500 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full p-2" />, 
       desc: "Modern, scalable websites and web applications."
     },
     {
       name: "App Development",
-      icon: <FaMobileAlt className="w-12 h-12 text-[#3290AE]" />,
+      icon: <FaMobileAlt className="w-12 h-12 text-blue-500 bg-gradient-to-br from-pink-400 to-yellow-400 rounded-full p-2" />, 
       desc: "Cross-platform mobile app development (iOS & Android)."
     },
     {
       name: "Cloud Services",
-      icon: <TechnologyIcon technology="AWS" size="w-12 h-12" />,
+      icon: <TechnologyIcon technology="AWS" size="w-12 h-12" />, 
       desc: "Cloud migration, hosting, and management (AWS, Azure, Oracle Cloud)."
     },
     {
       name: "Data Analytics",
-      icon: <FaChartBar className="w-12 h-12 text-[#3290AE]" />,
+      icon: <FaChartBar className="w-12 h-12 text-500 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full p-2" />, 
       desc: "Business intelligence, analytics, and reporting."
     },
     {
       name: "UI/UX Designer",
-      icon: <FaObjectGroup className="w-12 h-12 text-[#3290AE]" />,
+      icon: <FaObjectGroup className="w-12 h-12 text-blue-600 bg-gradient-to-br from-gray-400 to-indigo-400 rounded-full p-2" />, 
       desc: "User interface and experience design for digital products."
     },
   ];
